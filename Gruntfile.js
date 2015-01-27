@@ -37,7 +37,7 @@ module.exports = function(grunt){
       govuk: {
         files: [{
           expand: true,
-          cwd: 'node_modules/govuk_frontend_toolkit',
+          cwd: 'node_modules/govuk_frontend_toolkit/govuk_frontend_toolkit',
           src: '**',
           dest: 'govuk_modules/govuk_frontend_toolkit/'
         },
@@ -67,6 +67,11 @@ module.exports = function(grunt){
       css: {
         files: ['app/assets/sass/**/*.scss'],
         tasks: ['sass'],
+        options: { nospawn: true }
+      },
+      js: {
+        files: ['app/assets/javascripts/**.js'],
+        tasks: ['copy:assets'],
         options: { nospawn: true }
       }
     },
