@@ -42,3 +42,14 @@
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you,
 // either add and import new partial files, or modify those in GOV.UK elements to fit your user needs.
+
+.button-secondary {
+    @include button ($grey-3);
+    font-family: "nta", Arial, sans-serif;
+  color: black;
+  font-size: 14px;
+  line-height: 1.0;
+  font-weight: 400;
+  }
+
+

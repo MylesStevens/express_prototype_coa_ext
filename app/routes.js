@@ -19,5 +19,16 @@ module.exports = {
       res.render('examples/alpha/alpha', {'assetPath' : assetPath });    
     });
 
+    
+    app.get('/COA_2/2COA_1', function (req, res) {
+      var pcode = req.query.postcode;
+      var hnum = req.query.housenum;
+       var errortext = "Not Quite Working";
+
+// if (pcode == "pop"){
+      res.render('COA_2/2COA_1', {'assetPath' : assetPath, 'err' : pcode });
+     // }
+  });
+
   }
 };

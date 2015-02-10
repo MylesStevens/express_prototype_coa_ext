@@ -42,3 +42,67 @@
 
 // Panels
 @import "elements/panels";
+
+
+
+.form-control-dropdown {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.31579;
+  font-weight: 400;
+  text-transform: none;
+  width: 100%;
+  //-webkit-box-sizing: border-box;
+  //-moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 4px;
+  background-color: #fff;
+  border: 1px solid #bfc1c3;
+  //-webkit-appearance: none;
+  border-radius: 0; }
+  @media (max-width: 640px) {
+    .form-control-dropdown {
+      font-size: 16px;
+      line-height: 1.25; } }
+  @media (min-width: 641px) {
+    .form-control-dropdown {
+      width: 50%; } }
+
+
+.button-secondary {
+    @include button ($grey-3);
+    font-family: "nta", Arial, sans-serif;
+  color: black;
+  font-size: 14px;
+  line-height: 1.0;
+  font-weight: 400;
+  }
+
+
+
+.bold-small {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.9;
+  font-weight: 700;
+  
+  text-transform: none;
+   }
+
+   .light-small {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.9;
+  font-weight: 100;
+  
+  text-transform: none;
+   }
+
+   .right {
+    position: absolute;
+    right: 0px;
+    width: 400px;
+    
+}
+
+
