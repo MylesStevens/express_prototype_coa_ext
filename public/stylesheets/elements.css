@@ -1082,3 +1082,34 @@ ul, ol {
   position: relative;
   left: 827px;
   width: 400px; }
+
+.dwp-permission-group {
+  background-color: #D5E8F3;
+  padding: 19px;
+  border-radius: 4px;
+  border-width: 1px;
+  border-color: #CBCBCB;
+  border-style: solid;
+  margin: 0.5em 0 0 0; }
+
+.form-control-noborders {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 13px;
+  line-height: 0.8;
+  font-weight: 400;
+  text-transform: none;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0px;
+  background-color: #fff;
+  border: 2px solid blue;
+  border-radius: 0; }
+
+@media (max-width: 640px) {
+  .form-control-dropdown {
+    font-size: 13px;
+    line-height: 0.8; } }
+
+@media (min-width: 641px) {
+  .form-control-dropdown {
+    width: 50%; } }
