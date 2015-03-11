@@ -73,8 +73,8 @@
     @include button ($grey-3);
     font-family: "nta", Arial, sans-serif;
   color: black;
-  font-size: 14px;
-  line-height: 1.0;
+  font-size: 17px;
+  line-height: 1.2;
   font-weight: 400;
   }
 
@@ -139,3 +139,44 @@ margin: 0.5em 0 0 0;
     .form-control-dropdown {
       width: 50%; } }
 
+.column-full {
+  padding: 0 15px;
+  box-sizing: border-box; }
+  @media (min-width: 641px) {
+    .column-full {
+      float: left;
+      width: 100%; } }
+
+
+      .column-eighth {
+        padding: 0 15px;
+        box-sizing: border-box; }
+      @media (min-width: 641px) {
+    .column-eighth {
+      float: left;
+      width: 8%; } }
+
+     
+
+
+.border-bottom {
+
+padding-bottom: 19px;
+
+border-width: 1px;
+border-color: #c0c0c0;
+border-bottom-style: solid;
+margin: 0.5em 0 0 0;
+}
+
+.starthidden {
+    display: none;
+ 
+  }
+
+
+.form-control-9-10 {
+  width: 100%; }
+  @media (min-width: 641px) {
+    .form-control-9-10 {
+      width: 100%; } }

@@ -1,0 +1,270 @@
+
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+{{/head}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation3}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+<header class="page-header">
+
+<script>
+  function FindAddress2() { 
+
+// var postcodeV = document.forms["form1"]["postcode"].value;
+
+// if (postcodeV ==""){
+// document.getElementById("postcodeerror").innerHTML = "Please complete all the fields";
+// }
+// else{
+
+
+    window.location.href ="hypoglycemia.html";
+  // }
+  
+  }
+  //document.getElementById("MyElement").className = "MyClass";
+  </script>
+
+<script>
+  function shownext() { 
+    question3.style.display = "block";
+
+  }
+</script>
+
+<script>
+  function hidenext() { 
+    question3.style.display = "none";
+
+  }
+</script>
+
+<script>
+  function shownext2() { 
+    question4.style.display = "block";
+
+  }
+</script>
+
+<script>
+  function hidenext2() { 
+    question4.style.display = "none";
+
+  }
+</script>
+
+<script>
+  function shownext3() { 
+    form4.style.display = "block";
+
+  }
+</script>
+
+<script>
+  function nextscreen() { 
+
+
+    window.location.href ="summary.html";
+  // }
+  
+  }
+  //document.getElementById("MyElement").className = "MyClass";
+  </script>
+</header>
+
+
+
+<main id="page-container" role="main">
+
+      
+   
+
+
+<p><br></P>
+<form>
+ <div class="grid-row">
+    <div class="column-full">
+
+      <label class="form-label">Do you know what the symptoms of hypoglycaemia are?
+
+      <span class="form-hint">e.g. sweating, shakiness, hungry, palpitations, tingling lips</span></label>
+      
+<div class="form-group">
+  <label class="block-label" for="radio-1">
+    <input id="radio-1" type="radio" name="radio-group1" value="Yes">
+    Yes
+  </label>
+  <label class="block-label" for="radio-2">
+    <input id="radio-2" type="radio" name="radio-group1" value="No">
+    No
+  </label>
+
+</div>
+</div>
+
+</div>
+  
+</form>
+    
+
+    
+<form>
+  <div class="grid-row">
+    <div class="column-full">
+
+      <label class="form-label">Have you ever had an episode of hypoglycaemia?</label>
+
+<div class="form-group">
+  <label class="block-label" for="radio-3">
+    <input id="radio-3" type="radio" name="radio-group2" value="Yes2" onclick="shownext()">
+    Yes
+  </label>
+  <label class="block-label" for="radio-4">
+    <input id="radio-4" type="radio" name="radio-group2" value="No2" onclick="hidenext()">
+    No
+  </label>
+
+</div>
+</div>
+
+</div>
+</form>
+
+<form>
+<div class="grid-row starthidden" id="question3">
+    <div class="column-full">
+
+      <label class="form-label">Have you had more than one episode of <b><em class="highlight">severe</em></b> hypoglycaemia (requiring assistance from another person) in the last 12 months?  
+        <span class="form-hint">Do not count episodes where you were given help but could have helped yourself</span>
+</label>
+
+<div class="form-group">
+  <label class="block-label" for="radio-5">
+
+    <input id="radio-5" type="radio" name="radio-group3" value="Yes3" onclick="shownext2()">
+    Yes
+  </label>
+
+  <label class="block-label" for="radio-6">
+    <input id="radio-6" type="radio" name="radio-group3" value="No3" onclick="hidenext2()">
+    No
+  </label>
+
+</div>
+</div>
+
+</div>
+</form>
+<div class="grid-row">
+  </div>
+
+
+
+
+
+<div class="grid-row starthidden" id="question4">
+
+  <div class="column-full">
+   <label class="form-label"> Please provide dates of <em class="highlight">two</em> most recent events 
+       
+</label>
+
+  <div class="form-group">
+    <div class="column-eighth">
+      <label class="form-label" for="postcode">
+        Day
+         </label>
+          
+           <input type="text" class="form-control-3-4" id="day" name="day">
+    </div>
+<div class="column-eighth">
+
+       <label class="form-label" for="postcode">
+        Month
+         </label>
+
+          
+
+           <input type="text" class="form-control-3-4" id="day" name="month">
+           </div>
+<div class="column-quarter">
+           <label class="form-label" for="postcode">
+        Year
+         </label>
+          
+           <input type="text" class="form-control-1-4" id="day" name="year">
+      </div>
+    </div>
+    <div class="grid-row"> </div>
+</div>
+
+  <div class="column-full">
+
+  <div class="form-group">
+    <div class="column-eighth">
+      <label class="form-label" for="postcode">
+        Day
+         </label>
+          
+           <input type="text" class="form-control-3-4" id="day" name="day">
+    </div>
+<div class="column-eighth">
+
+       <label class="form-label" for="postcode">
+        Month
+         </label>
+
+          
+
+           <input type="text" class="form-control-3-4" id="day" name="month">
+           </div>
+<div class="column-quarter">
+           <label class="form-label" for="postcode">
+        Year
+         </label>
+          
+           <input type="text" class="form-control-1-4" id="day" name="year">
+      </div>
+    </div>
+    <div class="grid-row"> </div>
+</div>
+</div>
+
+<!-- 
+<div class="grid-row"> -->
+<div class="form-group">
+ 
+ 
+    
+   <input name="Findaddress4" type="button" class="button" value="Continue" onclick="nextscreen()">  
+
+
+<!-- </div> -->
+</div>
+
+<form action="{{next}}">
+
+ <a class="back-to-previous" href="/drivers-details">
+    <i class="fa fa-angle-left"></i>
+    Back <span class="visuallyhidden"> to the previous question</span>
+</a> 
+
+</form>
+
+ </main>
+
+ {{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}
+

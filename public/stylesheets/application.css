@@ -763,13 +763,13 @@ fieldset {
 .block-label {
   display: block;
   float: none;
-  clear: left;
   position: relative;
   background: #dee0e2;
   border: 1px solid #dee0e2;
   padding: 18px 30px 15px 45px;
   margin-top: 10px;
   margin-bottom: 10px;
+  margin-right: 30px;
   cursor: pointer; }
   @media (min-width: 641px) {
     .block-label {
@@ -1020,8 +1020,8 @@ ul, ol {
   color: #0b0c0c;
   font-family: "nta", Arial, sans-serif;
   color: black;
-  font-size: 14px;
-  line-height: 1;
+  font-size: 17px;
+  line-height: 1.2;
   font-weight: 400; }
   .button-secondary:visited {
     background-color: #dee0e2; }
@@ -1113,6 +1113,41 @@ ul, ol {
 @media (min-width: 641px) {
   .form-control-dropdown {
     width: 50%; } }
+
+.column-full {
+  padding: 0 15px;
+  box-sizing: border-box; }
+
+@media (min-width: 641px) {
+  .column-full {
+    float: left;
+    width: 100%; } }
+
+.column-eighth {
+  padding: 0 15px;
+  box-sizing: border-box; }
+
+@media (min-width: 641px) {
+  .column-eighth {
+    float: left;
+    width: 8%; } }
+
+.border-bottom {
+  padding-bottom: 19px;
+  border-width: 1px;
+  border-color: #c0c0c0;
+  border-bottom-style: solid;
+  margin: 0.5em 0 0 0; }
+
+.starthidden {
+  display: none; }
+
+.form-control-9-10 {
+  width: 100%; }
+
+@media (min-width: 641px) {
+  .form-control-9-10 {
+    width: 100%; } }
 
 #content {
   max-width: 960px;
@@ -1249,8 +1284,8 @@ ul, ol {
   color: #0b0c0c;
   font-family: "nta", Arial, sans-serif;
   color: black;
-  font-size: 14px;
-  line-height: 1;
+  font-size: 17px;
+  line-height: 1.2;
   font-weight: 400; }
   .button-secondary:visited {
     background-color: #dee0e2; }
@@ -1323,3 +1358,54 @@ ul, ol {
 @media (min-width: 641px) {
   .form-control-dropdown {
     width: 50%; } }
+
+.column-full {
+  padding: 0 15px;
+  box-sizing: border-box; }
+
+@media (min-width: 641px) {
+  .column-full {
+    float: left;
+    width: 100%; } }
+
+.column-eighth {
+  padding: 0 15px;
+  box-sizing: border-box; }
+
+@media (min-width: 641px) {
+  .column-eighth {
+    float: left;
+    width: 8%; } }
+
+.starthidden {
+  display: none; }
+
+.block-label-new {
+  background: #dee0e2;
+  border: 1px solid #dee0e2;
+  padding: 18px 30px 15px 45px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  cursor: pointer; }
+
+@media (min-width: 641px) {
+  .block-label {
+    float: left;
+    margin-top: 5px;
+    margin-bottom: 5px; } }
+
+.block-label input {
+  position: absolute;
+  top: 18px;
+  left: 15px;
+  cursor: pointer; }
+
+.block-label:hover {
+  border-color: #0b0c0c; }
+
+.form-control-9-10 {
+  width: 100%; }
+
+@media (min-width: 641px) {
+  .form-control-9-10 {
+    width: 100%; } }
