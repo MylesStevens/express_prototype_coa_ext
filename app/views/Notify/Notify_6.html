@@ -5,7 +5,7 @@
 {{/head}}
 
 {{$propositionHeader}}
-  {{>includes/propositional_navigation}}
+  {{>includes/propositional_navigation3}}
 {{/propositionHeader}}
 
 {{$headerClass}}with-proposition{{/headerClass}}
@@ -15,6 +15,7 @@
 
   <script>
   function shownext() { 
+    noclickedVar ="no";
     form1.style.display = "block";
 
   }
@@ -22,15 +23,28 @@
 
 <script>
   function FindAddress2() { 
+if (noclickedVar =="yes"){
 
 
 
+    window.location.href ="Notify_7.html";
+  } else{
+  window.location.href ="Notify_6a.html";}
 
-    window.location.href ="Notify_6a.html";
-  }
-  
+}
+
   
   //document.getElementById("MyElement").className = "MyClass";
+  </script>
+
+  <script>
+  var noclickedVar="no";
+
+  function noclicked() {
+  noclickedVar ="yes";
+
+}
+
   </script>
 
 </header>
@@ -64,7 +78,7 @@
     Yes
   </label>
   <label class="block-label" for="radio-2">
-    <input id="radio-2" type="radio" name="radio-group1" value="No">
+    <input id="radio-2" type="radio" name="radio-group1" value="No" onclick="noclicked()">
     No
   </label>
 

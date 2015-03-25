@@ -25,7 +25,7 @@
 // else{
 
 
-    window.location.href ="hypoglycemia.html";
+    window.location.href ="hypoglycaemia.html";
   // }
   
   }
@@ -68,6 +68,13 @@
 </script>
 
 <script>
+  function showhypo() { 
+    hypoinfo.style.display = "block";
+
+  }
+</script>
+
+<script>
   function nextscreen() { 
 
 
@@ -102,7 +109,7 @@
     Yes
   </label>
   <label class="block-label" for="radio-2">
-    <input id="radio-2" type="radio" name="radio-group1" value="No">
+    <input id="radio-2" type="radio" name="radio-group1" value="No" onclick="showhypo()">
     No
   </label>
 
@@ -112,6 +119,33 @@
 </div>
   
 </form>
+    
+    <div class="panel-indent starthidden" id="hypoinfo">
+
+      <h3 class="heading-small">Hypoglycaemia causes symptoms such as</h3>
+      
+  <ul class="list-bullet">
+    <li>hunger</li>
+    <li>shakiness</li>
+    <li>nervousness</li>
+    <li>sweating</li>
+    <li>dizziness or light-headedness</li>
+    <li>sleepiness</li>
+    <li>confusion</li>
+    <li>difficulty speaking</li>
+    <li>anxiety</li>
+    <li>weakness</li>
+  </ul>
+  
+  <p>Hypoglycaemia can also happen during sleep. Some signs of hypoglycaemia during sleep include</p>
+  <ul class="list-bullet">
+    <li>crying out or having nightmares</li>
+    <li>finding pajamas or sheets damp from perspiration</li>
+    <li>feeling tired, irritable, or confused after waking up</li>
+  </ul>
+
+
+    </div>
     
 
     
