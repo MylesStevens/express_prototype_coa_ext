@@ -46,7 +46,7 @@ else{
     <div class="column-two-thirds">
 
     <p>
-     This is a secure service for notifying DVLA of a medical condition.</h4>
+     This is a secure service for notifying DVLA of a medical condition.</p>
     
 </div>
 </div>
@@ -57,10 +57,13 @@ else{
     <div class="form-group">
        <label class="form-label" for="drivernumber">
         Your driving licence number</label>
+        <span class="form-hint">
+          For example, 'MORGA657054SM9IJ'
+           </span>
         
-           <input type="text" class="form-control" id="drivernumber" name="housenum" placeholder="eg MORGA657054SM9IJ">
-           <a href="/">Where to find this</a>
-          <br>
+           <input type="text" class="form-control" id="drivernumber" name="housenum">
+           <br>
+           <p><a href="/">Where to find this</a></p>
       </div>
     
 
@@ -69,32 +72,36 @@ else{
        <label class="form-label" for="drivernumber">
         Your National Insurance number</label>
         
-           <input type="text" class="form-control" id="drivernumber" name="housenum" placeholder="eg QQ123456C">
-           <a href="/">Where to find this</a>
-          <br>
-      
-    </div>
+                 <span class="form-hint">
+          For example, 'QQ123456C'
+           </span>
+        
+           <input type="text" class="form-control" id="drivernumber" name="housenum">
+           <br>
+           <p><a href="/">Where to find this</a></p>
+      </div>
+
 
     <div class="form-group">
-      <label class="form-label" for="postcode">
-        Postcode
-         </label>
-          
-           <input type="text" class="form-control-half" id="postcode" name="postcode" placeholder="eg EH1 9SP">
-       
-      
-    </div>
+       <label class="form-label" for="drivernumber">
+        Your Postcode</label>
+        
+                 <span class="form-hint">
+          For example, 'EH19SP'
+           </span>
+        
+           <input type="text" class="form-control" id="drivernumber" name="postcode">
+          <!--  <br>
+           <p><a href="/">Where to find this</a></p> -->
+      </div>
+
+
     <div class="grid-row"> </div>
 
     
     <div class="dwp-permission-group">
             <label><input type="checkbox" id="dwpPermission" name="dwpPermission" value="1">
                 By ticking this box, you are providing the Driver and Vehicle Licensing Agency (DVLA) with your consent to check your personal details including your National Insurance number with the Department for Work and Pensions and Her Majesty's Revenue and Customs to help verify your identity.<br>
-
-          <em>This is where we could write some medical terms and conditions.</em><br>
-
-
-
                 For more information on how the DVLA will use your information and the alternative ways of accessing this service please see our privacy policy.
             </label>
         </div>
@@ -102,7 +109,7 @@ else{
 
 <p class ="validation-message" id="postcodeerror"> </p>
   
-           <p class="fields"><input name="Findaddress1" type="button" class="button" value="View now" onclick="FindAddress2()">
+           <p class="fields"><input name="Findaddress1" type="button" class="button" value="Continue" onclick="FindAddress2()">
 
      <!-- <div class="validation-message">
           <p class="validation-message">{{err}}</p>

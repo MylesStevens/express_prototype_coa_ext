@@ -149,6 +149,7 @@
     });
   }
 
+
   // Bind two load events for modern and older browsers
   // If the first one fires it will set a flag to block the second one
   // but if it's not supported then the second one will fire
@@ -156,3 +157,5 @@
   addEvent(window, 'load', addDetailsPolyfill);
 
 })();
+
+

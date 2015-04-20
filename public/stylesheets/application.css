@@ -1380,29 +1380,6 @@ ul, ol {
 .starthidden {
   display: none; }
 
-.block-label-new {
-  background: #dee0e2;
-  border: 1px solid #dee0e2;
-  padding: 18px 30px 15px 45px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  cursor: pointer; }
-
-@media (min-width: 641px) {
-  .block-label {
-    float: left;
-    margin-top: 5px;
-    margin-bottom: 5px; } }
-
-.block-label input {
-  position: absolute;
-  top: 18px;
-  left: 15px;
-  cursor: pointer; }
-
-.block-label:hover {
-  border-color: #0b0c0c; }
-
 .form-control-9-10 {
   width: 100%; }
 

@@ -5,7 +5,7 @@
 {{/head}}
 
 {{$propositionHeader}}
-  {{>includes/propositional_navigation}}
+  {{>includes/propositional_navigation3}}
 {{/propositionHeader}}
 
 {{$headerClass}}with-proposition{{/headerClass}}
@@ -13,22 +13,39 @@
 {{$content}}
 <header class="page-header">
 
+  <script>
+  function shownext() { 
+    noclickedVar ="no";
+    form1.style.display = "block";
+
+  }
+</script>
+
 <script>
   function FindAddress2() { 
+if (noclickedVar =="yes"){
 
-var postcodeV = document.forms["form1"]["postcode"].value;
 
-if (postcodeV ==""){
-document.getElementById("postcodeerror").innerHTML = "Please complete all the fields";
+
+    window.location.href ="Notify_7.html";
+  } else{
+    var locky = "Epilepsy7a.html";
+    window.location.href =locky;}
+
 }
-else{
 
-
-    window.location.href ="2COA_2.html";
-  }
   
-  }
   //document.getElementById("MyElement").className = "MyClass";
+  </script>
+
+  <script>
+  var noclickedVar="no";
+
+  function noclicked() {
+  noclickedVar ="yes";
+
+}
+
   </script>
 
 </header>
@@ -42,18 +59,64 @@ else{
 
   
 
-    <h1 class="form-title heading-medium">
-      What is your new address?
+    
+
+<form>
+ <div class="grid-row">
+    <div class="column-full">
+
+      <h1 class="form-title heading-medium">
+      Tell us about any consultants/clincs you visit
+
     </h1>
 
+      <label class="form-label">Do you see a consultant or visit a clinic for your <em class="hilight">Epilepsy</em>?
 
- <form id="form1" action="2COA_2" method="get" class="form">
+      
+<div class="form-group">
+  <label class="block-label" for="radio-1">
+    <input id="radio-1" type="radio" name="radio-group1" value="Yes" onclick="shownext()">
+    Yes
+  </label>
+  <label class="block-label" for="radio-2">
+    <input id="radio-2" type="radio" name="radio-group1" value="No" onclick="noclicked()">
+    No
+  </label>
+
+</div>
+</div>
+
+</div>
+  
+</form>
+
+<form id="form1" action="Notify_6a.html" method="get" class="form starthidden">
+
+
+       
+
+ 
    
     <div class="form-group">
+
+      <h1 class="form-title heading-small">
+      The consultant/clinic details
+    </h1>
+
        <label class="form-label" for="postcode">
-        House name or number
+        Name of consultant
         <span class="form-hint">
-          For example, '244', 'Flat 2 244' or 'Rivendell' 
+          For example, 'Dr. Otto Octavius' 
+           </span>
+           <input type="text" class="form-control" id="housenum" name="housenum">
+          <br>
+      </label>
+    </div>
+    <div class="form-group">
+       <label class="form-label" for="postcode">
+        Name clinic/hospital
+        <span class="form-hint">
+          For example, 'Morriston Hospital'
            </span>
            <input type="text" class="form-control" id="housenum" name="housenum">
           <br>
@@ -63,16 +126,19 @@ else{
       <label class="form-label" for="postcode">
         Postcode
         <span class="form-hint">
+          This is the postcode as it appears in the address
+          <br>
           For example, 'SA5 8ET'
           </span>
            <input type="text" class="form-control" id="postcode" name="postcode">
         </label>
       
     </div>
+    </form>  
 
 <p class ="validation-message" id="postcodeerror"> </p>
   
-           <p class="fields"><input name="Findaddress1" type="button" class="button" value="Find Address" onclick="FindAddress2()">
+           <p class="fields"><input name="Findaddress1" type="button" class="button" value="Contine" onclick="FindAddress2()">
 
      <!-- <div class="validation-message">
           <p class="validation-message">{{err}}</p>
@@ -83,7 +149,7 @@ else{
         Find Address
     </button> -->
     
-  </form>  
+  
     
       <ul>
         <!-- <li><a href="#">Skip this section for now</a></li> -->
@@ -93,7 +159,7 @@ else{
 
     
 
-    <details>
+    <!-- <details>
     <summary><span class="summary">I don’t know what postcode to use</span></summary>
     <div class="panel-indent">
      <p>
@@ -116,15 +182,9 @@ else{
         <p>
           If you’re a long term patient in a psychiatric hospital, use the address of the hospital.
         </p>
-        <p>
-          If you’re a prisoner on long term remand, use the address of the prison.
-        </p>
-        <h4>If you can’t provide an address</h4>
-        <p>
-          If you can’t provide an address, contact <a href="https://www.gov.uk/get-on-electoral-register">your local Electoral Registration Office</a> for advice.
-        </p>
+        
     </div>
-  </details>
+  </details> -->
 
 
 

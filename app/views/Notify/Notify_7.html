@@ -13,7 +13,7 @@
 {{$content}}
 <main id="page-container" role="main">
 
-  <p>{{postcode}}</p>
+  
 
 <!--   <a href="/" class="example-back-link">Back</a>
 <h1 class="form-title heading-medium">
@@ -35,12 +35,12 @@
   
 
     <h1 class="form-title heading-medium">
-      Can you read a car number plate (using glasses or contact lenses if needed) from a distance of or 20 metres (65 feet)?
+      Can you read a number plate from 20 metres in good light with glassess or corrective lenses if worn?
 
     </h1>
          
      
- <form action="Notify_8" method="NULL" class="form">     
+ <form action="Notify7" method="get" class="form">     
  
   <div class="grid-row">
     <div class="column-full">
@@ -49,11 +49,11 @@
 
 <div class="form-group">
   <label class="block-label" for="radio-3">
-    <input id="radio-3" type="radio" name="radio-group2" value="Yes2" >
+    <input id="radio-3" type="radio" name="Notify7a" value="happy" >
     Yes
   </label>
   <label class="block-label" for="radio-4">
-    <input id="radio-4" type="radio" name="radio-group2" value="No2" >
+    <input id="radio-4" type="radio" name="Notify7a" value="sad" >
     No
   </label>
 
@@ -65,7 +65,7 @@
   
   </div>
    
-      <button type="submit" id="continue" class="button next validation-submit" data-validation-sources="radio-3 radio-4"  >
+      <button type="submit" id="continue" class="button" >
         Continue
     </button>
     
