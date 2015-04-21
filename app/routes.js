@@ -20,8 +20,68 @@ module.exports = {
     });
 
     /*-----------------------------------------------------*/
+    /*---------------FOR CHANGE OF ADDRESS!!!!!-----------------*/
+
 
     
+    app.get('/COA_2/2COA_2Aquery', function (req, res) {
+
+    var yinhouse = req.query.housenum;
+    var yinpostcode = req.query.postcode;
+  
+    var BROKEN ="";
+    var BROKEN2 ="";
+
+    if (yinhouse == "" && yinpostcode == ""){
+   
+    BROKEN = "noboth";
+    
+
+     res.render('COA_2/2COA_A', {'assetPath' : assetPath, 'ROUTECHOICE' : BROKEN })
+
+    }  
+
+    if (yinhouse == "" && yinpostcode != ""){
+   
+    BROKEN = "nohouse";
+    
+
+     res.render('COA_2/2COA_A', {'assetPath' : assetPath, 'ROUTECHOICE' : BROKEN })
+
+    }  
+
+if (yinhouse != "" && yinpostcode == ""){
+   
+    BROKEN = "nopostcode";
+    
+     res.render('COA_2/2COA_A', {'assetPath' : assetPath, 'ROUTECHOICE' : BROKEN })
+
+    } 
+
+if (yinhouse != "" && yinpostcode != ""){
+   
+    BROKEN = "Both";
+    
+     res.render('COA_2/2COA_2', {'assetPath' : assetPath, 'ROUTECHOICE' : BROKEN })
+
+    } 
+   
+ 
+
+
+  
+    });
+
+
+
+
+
+
+    /*-----------------------------------------------------*/
+    /*----------FOR NOTIFY!!!!!!!--------------------------*/
+
+
+
 
   app.get('/Notify/BINGO', function (req, res) {
 

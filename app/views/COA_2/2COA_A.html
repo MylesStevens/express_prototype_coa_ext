@@ -14,21 +14,42 @@
 <header class="page-header">
 
 <script>
-  function FindAddress2() { 
 
-var postcodeV = document.forms["form1"]["postcode"].value;
+  function showerrors() { 
 
-if (postcodeV ==""){
-document.getElementById("postcodeerror").innerHTML = "Please complete all the fields";
+ var housenumV = document.forms["form1"]["housenum"].value;  
+
+ var postcodeV = document.forms["form1"]["postcode"].value; 
+
+
+if (housenumV =="" && postcodeV=="" ){
+
+houseerrordiv.style.display = "block";
+document.getElementById("housefield").className = "validation-summary-field-div";
+
+ postcodeerrordiv.style.display = "block";
+ document.getElementById("postcodefield").className = "validation-summary-field-div";
+
+} else if (housenumV =="" && postcodeV!="" ){
+
+houseerrordiv.style.display = "block";
+document.getElementById("housefield").className = "validation-summary-field-div";
+
+
+}else if (housenumV !="" && postcodeV=="" ){
+
+postcodeerrordiv.style.display = "block";
+ document.getElementById("postcodefield").className = "validation-summary-field-div";
+
 }
-else{
 
-
+else 
+{
     window.location.href ="2COA_2.html";
   }
-  
-  }
-  //document.getElementById("MyElement").className = "MyClass";
+
+}
+
   </script>
 
 </header>
@@ -43,47 +64,47 @@ else{
   
 
     <h1 class="form-title heading-medium">
-      What is your new address?
+      What is your new address? {{ROUTECHOICE}}
     </h1>
 
-
- <form id="form1" action="2COA_2" method="get" class="form">
+<body>
+ <form id="form1" action="" method="get" class="form">
    
-    <div class="form-group">
+    <div class="" id ="housefield">
        <label class="form-label" for="postcode">
         House name or number
         <span class="form-hint">
           For example, '244', 'Flat 2 244' or 'Rivendell' 
            </span>
-           <input type="text" class="form-control" id="housenum" name="housenum">
+           <input type="text" class="form-control " id="housenum" name="housenum" maxlength="30">
           <br>
       </label>
     </div>
-    <div class="form-group">
+<div class="validation-summary-field-div starthidden" id ="houseerrordiv"> <p class ="heading-validation-message" id="houseerror"> House name or number required </p> </div>
+<div class="collumn-full"><br></div>
+
+
+    <div class="" id ="postcodefield">
       <label class="form-label" for="postcode">
         Postcode
         <span class="form-hint">
           For example, 'SA5 8ET'
           </span>
-           <input type="text" class="form-control" id="postcode" name="postcode">
+           <input type="text" class="form-control" id="postcode" name="postcode" maxlength="8">
         </label>
       
     </div>
+<div class="collumn-full"><br></div>
 
-<p class ="validation-message" id="postcodeerror"> </p>
-  
-           <p class="fields"><input name="Findaddress1" type="button" class="button" value="Find Address" onclick="FindAddress2()">
 
-     <!-- <div class="validation-message">
-          <p class="validation-message">{{err}}</p>
-    </div> -->
-    <!-- Primary buttons, secondary links -->
-     <!-- <div class="form-group">
-      <button type="submit" id="continue" class="button next validation-submit" data-validation-sources="postcode">
-        Find Address
-    </button> -->
-    
-  </form>  
+
+<div class="validation-summary-field-div starthidden"id ="postcodeerrordiv"> <p class ="heading-validation-message" id="postcodeerror"> Postcode required</p></div>
+   </form>
+
+   <input name="Findaddress4" type="button" class="button" value="Continue" onclick="showerrors()">  
+          
+
+   
     
       <ul>
         <!-- <li><a href="#">Skip this section for now</a></li> -->
@@ -129,7 +150,7 @@ else{
 
 
 </main>
-
+</body>
 
 {{/content}}
 

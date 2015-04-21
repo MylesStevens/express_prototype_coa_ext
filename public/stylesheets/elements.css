@@ -1148,3 +1148,26 @@ ul, ol {
 @media (min-width: 641px) {
   .form-control-9-10 {
     width: 100%; } }
+
+.heading-validation-message {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.31579;
+  font-weight: 700;
+  color: #df3034;
+  text-transform: none; }
+
+@media (max-width: 640px) {
+  .bold-small {
+    font-size: 16px;
+    line-height: 1.25; } }
+
+.validation-summary-field-div {
+  border-left: 3px solid #df3034;
+  padding: 15px 30px;
+  margin-bottom: 30px; }
+
+.validation-summary-field {
+  border-left: 3px solid #df3034;
+  padding: 15px 30px;
+  margin-bottom: 30px; }
