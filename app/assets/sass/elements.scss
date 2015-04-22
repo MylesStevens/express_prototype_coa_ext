@@ -194,7 +194,7 @@ margin: 0.5em 0 0 0;
       line-height: 1.25; } }  
 
 .validation-summary-field-div{
-  border-left: 3px solid #df3034;
+  border-left: 5px solid #df3034;
   padding: 15px 30px;
   margin-bottom: 30px; }
 
@@ -202,5 +202,10 @@ margin: 0.5em 0 0 0;
   border-left: 3px solid #df3034;
   padding: 15px 30px;
   margin-bottom: 30px; }
+
+  .validation-summary-input{
+  border: 5px solid #df3034;
+  
+  }
 
      

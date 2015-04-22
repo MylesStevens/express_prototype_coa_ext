@@ -32,40 +32,32 @@ module.exports = {
     var BROKEN ="";
     var BROKEN2 ="";
 
-    if (yinhouse == "" && yinpostcode == ""){
-   
-    BROKEN = "noboth";
-    
+    if (yinhouse != "" && yinpostcode != ""){
+    BROKEN = yinhouse;
+    BROKEN2 = yinpostcode;
 
-     res.render('COA_2/2COA_A', {'assetPath' : assetPath, 'ROUTECHOICE' : BROKEN })
-
-    }  
-
-    if (yinhouse == "" && yinpostcode != ""){
-   
-    BROKEN = "nohouse";
-    
-
-     res.render('COA_2/2COA_A', {'assetPath' : assetPath, 'ROUTECHOICE' : BROKEN })
+     res.render('COA_2/2COA_A_alt', {'assetPath' : assetPath, 'ROUTECHOICE' : BROKEN, 'ROUTECHOICE2' : BROKEN2 })
 
     }  
 
-if (yinhouse != "" && yinpostcode == ""){
-   
-    BROKEN = "nopostcode";
+  // if (yinhouse == "" && yinpostcode != ""){
+  //   BROKEN2 ="1";
     
-     res.render('COA_2/2COA_A', {'assetPath' : assetPath, 'ROUTECHOICE' : BROKEN })
 
-    } 
+  //    res.render('COA_2/2COA_A_alt', {'assetPath' : assetPath, 'ROUTECHOICE' : BROKEN, 'ROUTECHOICE2' : BROKEN2 })
 
-if (yinhouse != "" && yinpostcode != ""){
-   
-    BROKEN = "Both";
+  //   }  
+
+  //   if (yinhouse != "" && yinpostcode == ""){
+  //   BROKEN ="1";
     
-     res.render('COA_2/2COA_2', {'assetPath' : assetPath, 'ROUTECHOICE' : BROKEN })
 
-    } 
-   
+  //    res.render('COA_2/2COA_A_alt', {'assetPath' : assetPath, 'ROUTECHOICE' : BROKEN, 'ROUTECHOICE2' : BROKEN2 })
+
+  //   } 
+
+
+    
  
 
 

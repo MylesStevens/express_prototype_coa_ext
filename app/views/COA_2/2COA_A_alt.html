@@ -17,9 +17,9 @@
 
   function showerrors() { 
 
- var housenumV = document.forms["form1"]["housenum"].value;  
+ var housenumV = {{ROUTECHOICE}}
 
- var postcodeV = document.forms["form1"]["postcode"].value; 
+ var postcodeV = {{ROUTECHOICE2}}
 
 
 if (housenumV =="" && postcodeV=="" ){
@@ -49,7 +49,15 @@ postcodeerrordiv.style.display = "block";
 
 else 
 {
-    window.location.href ="2COA_2.html";
+  houseerrordiv.style.display = "block";
+document.getElementById("housefield").className = "validation-summary-field-div";
+document.getElementById("housenum").className += "validation-summary-input";
+ 
+postcodeerrordiv.style.display = "block";
+document.getElementById("postcodefield").className = "validation-summary-field-div";
+document.getElementById("postcodeinput").className = "validation-summary-input form-control";
+
+    // window.location.href ="2COA_2.html";
   }
 
 }
@@ -68,11 +76,11 @@ else
   
 
     <h1 class="form-title heading-medium">
-      What is your new address? {{ROUTECHOICE}}
+      What is your new address? r1:{{ROUTECHOICE}} r2:{{ROUTECHOICE2}}
     </h1>
 
-<body>
- <form id="form1" action="" method="get" class="form">
+<body onload="showerrors()">
+ <form id="form1" action="2COA_2Aquery" method="get" class="form">
    
     <div class="" id ="housefield">
        <label class="form-label" for="postcode">
@@ -103,11 +111,11 @@ else
 
 
 <div class="validation-summary-field-div starthidden"id ="postcodeerrordiv"> <p class ="heading-validation-message" id="postcodeerror"> Postcode required</p></div>
-   </form>
+   
 
-   <input name="Findaddress4" type="button" class="button" value="Continue" onclick="showerrors()">  
+   <input name="Findaddress4" type="submit" class="button" value="Continue">  
           
-
+</form>
    
     
       <ul>
@@ -152,9 +160,11 @@ else
   </details>
 
 
+</body>
+
 
 </main>
-</body>
+
 
 {{/content}}
 
