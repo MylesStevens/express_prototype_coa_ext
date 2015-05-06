@@ -40,7 +40,7 @@
 <script>
   function nextscreen() { 
 
-    window.location.href ="Eyesight_1.html";
+    window.location.href ="Declaration.html";
 
   }
   
@@ -74,10 +74,11 @@
     <div class="form-group border-bottom">
        <label class="form-label" for="drivernumber">
         Medical condition</label>
+        <span class="form-hint">For example, Diabetes</span>
         
-           <input type="text" class="form-control" list=conditions id="drivernumber" name="housenum" placeholder="eg Diabetes">
+           <input type="text" class="form-control" list=conditions id="drivernumber" name="housenum" >
            <datalist id=conditions >
-<option> Acoustic neuroma
+<option> Acoustic neuroma</option>
 <option>  Addison’s disease
 <option>  Agoraphobia
 <option>  AIDS
@@ -136,7 +137,8 @@
 <option>  Déjà vu
 <option>  Dementia
 <option>  Depression
-<option>  Diabetes
+<option>  Diabetes - Insulin
+<option>  Diabetes - Other injectable
 <option>  Dilated cardiomyopathy
 <option>  Diplopia (double vision)
 <option>  Dizziness
@@ -271,7 +273,7 @@
        <label class="form-label" for="drivernumber">
         Your second medical condition</label>
         
-           <input type="text" class="form-control" list=conditions id="drivernumber" name="housenum" placeholder="eg Diabetes">
+           <input type="text" class="form-control" list=conditions id="drivernumber" name="housenum" >
            
 
 <input name="Findaddress2" type="button" class="button-secondary" value="+ Add another condition" onclick="shownext2()">
@@ -290,7 +292,7 @@
        <label class="form-label" for="drivernumber">
         Your third medical condition</label>
         
-           <input type="text" class="form-control" list=conditions id="drivernumber" name="housenum" placeholder="eg Diabetes">
+           <input type="text" class="form-control" list=conditions id="drivernumber" name="housenum" >
           
 
 <input name="Findaddress3" type="button" class="button-secondary" value="+ Add another condition" onclick="shownext3()">
@@ -310,7 +312,7 @@
        <label class="form-label" for="drivernumber">
         Your fourth medical condition</label>
         
-           <input type="text" class="form-control" list=conditions id="drivernumber" name="housenum" placeholder="eg Diabetes">
+           <input type="text" class="form-control" list=conditions id="drivernumber" name="housenum" >
            
 
           
@@ -322,23 +324,54 @@
 <div class="column-full">
         <div class="dwp-permission-group">
             <label><input type="checkbox" id="dwpPermission" name="dwpPermission" value="1">
-                <span class="heading-small">Consent to the release of medical information</span>
+                <span class="heading-small">Important information about Consent</span>
 
-<p>IMPORTANT: Please read the following information carefully and tick the box to show you understand.</P>
+<p class="heading-small">Please read the following information carefully and tick the consent box</P>
 
-<p class="heading-small">Consent and Declaration</P>
 
-<p>I authorise relevant medical information regarding my fitness to drive to be released , to both the Secretary of State’s medical adviser and any necessary medical professionals
+
+<p>We need your consent to request the release of medical reports from your doctors as we may ask for further 
+
+information, or in some cases, we may ask you to undergo a medical examination or a practical assessment.
 <br><br>
-I understand that it is a criminal offence if I make a false declaration or fail to provide <br>
-information to obtain a driving licence and can lead to prosecution.
+In these circumstances, the personnel involved will require your background medical details to undertake an 
+
+appropriate assessment.  Such personnel might include Doctors, Orthoptists or Paramedical Staff at a Driving 
+
+Assessment centre.  Only information relevant to the assessment of your fitness to drive will be released.
 <br><br>
-I authorise the Secretary of State to :
+In addition, in exceptional circumstances, the relevant medical information may need to be considered by one or
+
+more of the Secretary of State’s Honorary Medical Advisory Panels.                                                                                                                    
+
+The membership of these Panels conforms strictly to the principle of confidentiality.
 <br><br>
+Data held by DVLA is used for internal evaluation of the quality of our services.
+</P>
+<p class="heading-small"> Consent</p>
+
+<p class="heading-small"> I authorise my Doctor(s) and Specialist(s) to:</p>
+<p>Release reports/medical information about my condition, relevant to my fitness to drive, to the Secretary of State’s 
+
+medical advisers.</p>
+
+
+
+<p class="heading-small"> 
+
+I authorise the Secretary of State to:
+</p>
+<p>
+Disclose such relevant medical information as may be necessary to the enquiry into my fitness to drive, to Doctors, 
+
+Paramedical staff and Panel members 
+
 Inform my Doctor(s) of the outcome of my case
-<br><br>
-Release medical information, discovered during the investigation into 
-my fitness to drive, to my Doctor(s)</p>
+
+Release medical information, discovered during the investigation into my fitness to drive, to Doctor(s)
+
+
+</p>
             </label>
         </div>
     </div>

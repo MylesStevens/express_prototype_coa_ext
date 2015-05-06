@@ -763,6 +763,7 @@ fieldset {
 .block-label {
   display: block;
   float: none;
+  clear: left;
   position: relative;
   background: #dee0e2;
   border: 1px solid #dee0e2;
@@ -787,6 +788,9 @@ fieldset {
 .inline .block-label {
   clear: none;
   margin-right: 15px; }
+
+.vert .block-label {
+  clear: left; }
 
 .js-enabled label.selected {
   background: #fff;
@@ -1174,6 +1178,9 @@ ul, ol {
 
 .validation-summary-input {
   border: 5px solid #df3034; }
+
+.highlightfix {
+  color: #2E8ACA; }
 
 #content {
   max-width: 960px;

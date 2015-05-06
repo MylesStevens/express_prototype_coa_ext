@@ -26,7 +26,7 @@ if (housenumV =="" && postcodeV=="" ){
 
 houseerrordiv.style.display = "block";
 document.getElementById("housefield").className = "validation-summary-field-div";
-document.getElementById("housenum").className += "validation-summary-input";
+document.getElementById("housenum").className += "validation-summary-input form-control";
  
 postcodeerrordiv.style.display = "block";
 document.getElementById("postcodefield").className = "validation-summary-field-div";
@@ -37,7 +37,7 @@ document.getElementById("postcodeinput").className = "validation-summary-input f
 
 houseerrordiv.style.display = "block";
 document.getElementById("housefield").className = "validation-summary-field-div";
-document.getElementById("housenum").className += "validation-summary-input";
+document.getElementById("housenum").className += "validation-summary-input form-control";
 
 
 }else if (housenumV !="" && postcodeV=="" ){
@@ -74,35 +74,38 @@ else
 <body>
  <form id="form1" action="" method="get" class="form">
    
-    <div class="" id ="housefield">
+  
        <label class="form-label" for="postcode">
         House name or number
         <span class="form-hint">
           For example, '244', 'Flat 2 244' or 'Rivendell' 
            </span>
+           <div class="" id ="housefield">
            <input type="text" class="form-control " id="housenum" name="housenum" maxlength="30">
+           </div>
           <br>
       </label>
-    </div>
-<div class="validation-summary-field-div starthidden" id ="houseerrordiv"> <p class ="heading-validation-message" id="houseerror"> House name or number required </p> </div>
-<div class="collumn-full"><br></div>
+    
 
 
-    <div class="" id ="postcodefield">
+
       <label class="form-label" for="postcode">
         Postcode
         <span class="form-hint">
           For example, 'SA5 8ET'
           </span>
+          <div class="" id ="postcodefield">
            <input type="text" class="form-control" id="postcodeinput" name="postcode" maxlength="8">
+            </div>
         </label>
+
       
-    </div>
+   
 <div class="collumn-full"><br></div>
 
+<div class="validation-summary-field-div  heading-validation-message starthidden" id ="houseerrordiv"> House name or number required </div>
 
-
-<div class="validation-summary-field-div starthidden"id ="postcodeerrordiv"> <p class ="heading-validation-message" id="postcodeerror"> Postcode required</p></div>
+<div class="validation-summary-field-div heading-validation-message starthidden "id ="postcodeerrordiv"> Postcode required</div>
    </form>
 
    <input name="Findaddress4" type="button" class="button" value="Continue" onclick="showerrors()">  

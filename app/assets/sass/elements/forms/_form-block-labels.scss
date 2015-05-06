@@ -10,7 +10,7 @@
 
   display: block;
   float: none;
-  
+  clear: left;
   position: relative;
 
   background: $panel-colour;
@@ -47,6 +47,12 @@
 .inline .block-label {
   clear: none;
   margin-right: $gutter-half;
+}
+
+.vert .block-label {
+  clear: left;
+ 
+  
 }
 
 // Selected and focused states

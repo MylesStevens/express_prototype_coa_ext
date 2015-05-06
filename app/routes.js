@@ -230,6 +230,213 @@ module.exports = {
     
     });
 
+  
+/*-----------------------Notify Diab------------------*/
+/*---comes form eyesight1alt-------------------------------------------*/
+
+
+app.get('/NotifyDiab/YourCAREcheck', function (req, res) {
+
+    var yin10 = req.query.eye1;
+
+    res.render('NotifyDiab/YourCARE', {'assetPath' : assetPath, 'ROUTECHOICE' : yin10})
+ 
+    });
+  
+
+
+    
+/*---comes form YourCARE----------------------------------------------------*/
+app.get('/NotifyDiab/hypocheck', function (req, res) {
+
+    var yin11 = req.query.care1;
+
+if (yin11 == "happy"|| yin11 == "sad"){
+    res.render('NotifyDiab/hypoglycaemia', {'assetPath' : assetPath, 'ROUTECHOICE' : yin11})
+
+} else if (yin11 == "MOREINFOhappy")
+{
+    res.render('NotifyDiab/extrainfo', {'assetPath' : assetPath, 'ROUTECHOICE2' : 'happy', 'MOREINFOCHECK' :"YES"})
+
+} 
+
+else if (yin11 == "MOREINFOsad") 
+{
+    res.render('NotifyDiab/extrainfo', {'assetPath' : assetPath, 'ROUTECHOICE2' : 'sad', 'MOREINFOCHECK' :"YES"})
+    
+}
+ 
+    });
+
+/*---comes form extrainfo----------------------------------------------------*/
+
+app.get('/NotifyDiab/conadd1', function (req, res) {
+
+    var yin12 = req.query.exinfo1;
+
+
+    res.render('NotifyDiab/consultantAddress', {'assetPath' : assetPath, 'ROUTECHOICE' : yin12})
+
+ 
+    });
+
+/*---comes form consultantAddress----------------------------------------------------*/
+
+app.get('/NotifyDiab/confirmadd1', function (req, res) {
+
+     var yin13 = req.query.sub;
+
+
+    res.render('NotifyDiab/confirmaddress', {'assetPath' : assetPath, 'ROUTECHOICE' : yin13})
+
+ 
+    });
+
+/*---comes form confirmAddress----------------------------------------------------*/
+
+app.get('/NotifyDiab/hypocheck2', function (req, res) {
+
+     var yin13 = req.query.sub;
+
+
+    res.render('NotifyDiab/hypoglycaemia', {'assetPath' : assetPath, 'ROUTECHOICE' : yin13})
+
+ 
+    });
+
+
+
+/*---comes form confirmAddress----------------------------------------------------*/
+
+ app.get('/NotifyDiab/hypocheck2a', function (req, res) {
+
+    var yin16 = req.query.hypogroup1;
+
+    var yin17 = req.query.hypogroup2;
+
+    
+
+   if (yin17== "sad"){
+
+    res.render('NotifyDiab/hypoglycaemia2', {'assetPath' : assetPath, 'ROUTECHOICE' : 'sad'})
+
+  } else
+  { 
+    res.render('NotifyDiab/hypoglycaemia2', {'assetPath' : assetPath, 'ROUTECHOICE' : 'happy'})
+}
+    
+    });
+
+ /*---comes form hypoglycaemia2----------------------------------------------------*/
+    
+ 
+
+ app.get('/NotifyDiab/Lasereyes', function (req, res) {
+
+    var yin18 = req.query.hypo1a;
+
+    var yin19 = req.query.hypo2a;
+
+    
+
+   if (yin18== "sad" || yin19== "sad"){
+
+    res.render('NotifyDiab/Lasereyes', {'assetPath' : assetPath, 'ROUTECHOICE' : 'sad'})
+
+  } else
+  { 
+    res.render('NotifyDiab/Lasereyes', {'assetPath' : assetPath, 'ROUTECHOICE' : 'happy'})
+}
+    
+    });
+
+
+  /*---comes form lasereyes----------------------------------------------------*/
+app.get('/NotifyDiab/specialcarcheck', function (req, res) {
+
+    var yin18a = req.query.eye1;
+
+   res.render('NotifyDiab/specialcar', {'assetPath' : assetPath, 'ROUTECHOICE' : yin18a})
+
+ 
+    });
+
+
+
+  /*---comes form specialcar----------------------------------------------------*/
+    
+ 
+
+ app.get('/NotifyDiab/D497check', function (req, res) {
+
+    var yin20 = req.query.specialgroup1;
+
+  
+
+   if (yin20== "yessad"){
+
+    res.render('NotifyDiab/D497', {'assetPath' : assetPath, 'ROUTECHOICE' : 'sad'})
+
+  } else if (yin20== "yeshappy")
+  { 
+    res.render('NotifyDiab/D497', {'assetPath' : assetPath, 'ROUTECHOICE' : 'happy'})
+} 
+else if (yin20== "nohappy")
+  { 
+    res.render('NotifyDiab/summary', {'assetPath' : assetPath, 'ROUTECHOICE' : 'happy'})
+
+    } else if (yin20== "nosad")
+  { 
+    res.render('NotifyDiab/summary', {'assetPath' : assetPath, 'ROUTECHOICE' : 'happy'})
+
+    }else 
+  { 
+    res.render('NotifyDiab/summary', {'assetPath' : assetPath, 'ROUTECHOICE' : 'happy'})
+
+    }
+    
+    });
+ /*---comes form D497 ----------------------------------------------------*/
+
+app.get('/NotifyDiab/summary', function (req, res) {
+
+     var yin21 = req.query.sub;
+
+
+    res.render('NotifyDiab/summary', {'assetPath' : assetPath, 'ROUTECHOICE' : yin21})
+
+ 
+    });
+
+/*---comes form Summary----------------------------------------------------*/
+    
+ 
+
+ app.get('/NotifyDiab/finish', function (req, res) {
+
+    var yin18b = req.query.sub;
+
+
+    
+
+   if (yin18b== "happy" ){
+
+    res.render('NotifyDiab/FinishHAPPY', {'assetPath' : assetPath, 'ROUTECHOICE' : 'sad'})
+
+  } else
+  { 
+    res.render('NotifyDiab/FinishSAD', {'assetPath' : assetPath, 'ROUTECHOICE' : 'happy'})
+}
+    
+    });
+
+
   }
 };
 
+
+/* for getting lots of variables out of a string...
+String[] str_array = "name:score".split(":");
+String stringa = str_array[0]; 
+String stringb = str_array[1];
+*/
