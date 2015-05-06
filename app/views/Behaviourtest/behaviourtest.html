@@ -2,6 +2,7 @@
 
 {{$head}}
   {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
 {{/head}}
 
 {{$propositionHeader}}
@@ -12,11 +13,6 @@
 
 {{$content}}
 <header class="page-header">
-
-
-<!--     form2.style.display = "block";
- -->
-</script>
 
 </header>
 
@@ -130,16 +126,15 @@
     
 
     <label class="block-label" for="checkbox-1">
-      <input id="checkbox-1" type="checkbox" name="q3_a" value="car" onclick="answer(this)">
+      <input id="q3_a1" type="checkbox" name="q3_a" value="car" onclick="answer(this)">
       Car, bus or lorry
-
     </label>
     <label class="block-label" for="checkbox-2">
-      <input id="checkbox-2" type="checkbox" name="q3_a" value="motorcyle" onclick="answer(this)">
+      <input id="q3_a2" type="checkbox" name="q3_a" value="motorcyle" onclick="answer(this)">
       Motorcycle 
     </label>
     <label class="block-label" for="checkbox-3">
-      <input id="checkbox-3" type="checkbox" name="q3_a" value="trike" onclick="answer(this)">
+      <input id="q3_a3" type="checkbox" name="q3_a" value="trike" onclick="answer(this)">
      Moped or trike
     </label>
   </fieldset>
@@ -213,13 +208,15 @@
 </div>
 
 
+<script>
+initialise();
+</script>
 
 </main>
 
 {{/content}}
 
 {{$bodyEnd}}
-  {{>includes/elements_scripts}}
 {{/bodyEnd}}
 
 {{/govuk_template}}
