@@ -294,6 +294,18 @@ app.get('/NotifyDiab/confirmadd1', function (req, res) {
 
 /*---comes form confirmAddress----------------------------------------------------*/
 
+app.get('/NotifyDiab/consultancontact', function (req, res) {
+
+     var yin13 = req.query.sub;
+
+
+    res.render('NotifyDiab/consultancontact', {'assetPath' : assetPath, 'ROUTECHOICE' : yin13})
+
+ 
+    });
+
+/*---comes form consultancontact----------------------------------------------------*/
+
 app.get('/NotifyDiab/hypocheck2', function (req, res) {
 
      var yin13 = req.query.sub;
