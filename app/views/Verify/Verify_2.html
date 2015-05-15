@@ -10,12 +10,12 @@
     <script type="text/javascript">
       (function(){if(navigator.userAgent.match(/IEMobile\/10\.0/)){var d=document,c="appendChild",a=d.createElement("style");a[c](d.createTextNode("@-ms-viewport{width:auto!important}"));d.getElementsByTagName("head")[0][c](a);}})();
     </script>
-    <!--[if gt IE 8]><!--><link href="http://govuk-verify-test.herokuapp.com/public/stylesheets/govuk-template.css?0.6.2" media="screen" rel="stylesheet" type="text/css"><!--<![endif]-->
+    <!--[if gt IE 8]><!--><link href="/public/stylesheets/verify_template.css" media="screen" rel="stylesheet" type="text/css"><!--<![endif]-->
     <!--[if IE 6]><link href="/public/stylesheets/govuk-template-ie6.css?0.6.2" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
     <!--[if IE 7]><link href="/public/stylesheets/govuk-template-ie7.css?0.6.2" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
     <!--[if IE 8]><link href="/public/stylesheets/govuk-template-ie8.css?0.6.2" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
 
-    <link href="http://govuk-verify-test.herokuapp.com/public/stylesheets/govuk-template-print.css?0.6.2" media="print" rel="stylesheet" type="text/css">
+    <link href="/public/stylesheets/verify_print.css" media="print" rel="stylesheet" type="text/css">
 
     <!--[if IE 8]>
     <script type="text/javascript">
@@ -30,7 +30,7 @@
     </script>
     <![endif]-->
     <!--[if gte IE 9]><!-->
-      <link href="http://govuk-verify-test.herokuapp.com/public/stylesheets/fonts.css?0.6.2" media="all" rel="stylesheet" type="text/css">
+      <link href="/public/stylesheets/verify_fonts.css" media="all" rel="stylesheet" type="text/css">
     <!--<![endif]-->
 
 
@@ -38,7 +38,7 @@
       <script src="/public/javascripts/ie.js?0.6.2" type="text/javascript"></script>
     <![endif]-->
 
-    <link rel="shortcut icon" href="http://govuk-verify-test.herokuapp.com/public/images/favicon.ico?0.6.2" type="image/x-icon">
+    <link rel="shortcut icon" href="/public/images/favicon.ico" type="image/x-icon">
 
     <!-- For third-generation iPad with high-resolution Retina display: -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://govuk-verify-test.herokuapp.com/public/images/apple-touch-icon-144x144.png?0.6.2">
@@ -52,9 +52,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:image" content="/public/images/opengraph-image.png?0.6.2">
 
-    <link href="http://govuk-verify-test.herokuapp.com/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css">
-    <script src="http://govuk-verify-test.herokuapp.com/public/Renew your driving licence_files/jquery.min.js"></script>
-    <script src="http://govuk-verify-test.herokuapp.com/public/Renew your driving licence_files/common.js"></script>
+    <link href="/public/stylesheets/verify_application.css" media="screen" rel="stylesheet" type="text/css">
+      <!-- <script src="http://govuk-verify-test.herokuapp.com/public/Renew your driving licence_files/jquery.min.js"></script>
+    <script src="http://govuk-verify-test.herokuapp.com/public/Renew your driving licence_files/common.js"></script>-->
   <style type="text/css"></style></head>
 
   <body class="js-enabled">
@@ -72,7 +72,7 @@
         <div class="header-global">
           <div class="header-logo">
             <a href="https://www.gov.uk/" title="Go to the GOV.UK homepage" id="logo" class="content">
-              <img src="http://govuk-verify-test.herokuapp.com/public/images/gov.uk_logotype_crown.png?0.6.2" alt=""> GOV.UK
+              <img src="/public/images/gov.uk_logotype_crown.png" alt=""> GOV.UK
             </a>
           </div>
         </div>
@@ -111,7 +111,7 @@
 			<section class="step step-1">
 
 				<div class="verify-icon-wrap">
-					<img class="verify-icon" src="http://govuk-verify-test.herokuapp.com/public/images/icon-crown-shield-2.png">
+					<img class="verify-icon" src="/public/images/icon-crown-shield-2.png">
 				</div>
 
 				<div class="text-wrap">
@@ -119,18 +119,36 @@
 					<h4>To renew or update your driving licence</h4>
 					<h3>sign in with GOV.UK Verify</h3>
 
-					<div class="form-group">
-						
-						<label class="selectable" style="margin-bottom: 10px;background: none;">
-							<input type="radio" name="beenVerified" value="false">
-							This is my first time using GOV.UK Verify
-						</label>
-						
-						<label class="selectable" style="margin-bottom: 10px;background: none;">
-							<input type="radio" name="beenVerified" value="true">
-							I've used GOV.UK Verify before
-						</label>
-					</div>
+					
+
+          <div class="form-group inline">
+  <label class="block-label" for="eye11">
+    <input id="eye11" type="radio" name="eye1" value="happy">
+    This is my first time using GOV.UK Verify
+  </label>
+<br><p></P>
+<label class="block-label" for="eye11a">
+    <input id="eye11a" type="radio" name="eye1" value="happy">
+I've used GOV.UK Verify before  </label>
+
+  
+
+
+</div>
+
+<!-- <div class="form-group">
+            
+            <label class="selectable binary selected" style="margin-bottom: 10px;background: none;">
+              <input type="radio" name="beenVerified" value="false">
+              Yes
+            </label>
+            
+            <label class="selectable binary" style="margin-bottom: 10px;background: none;">
+              <input type="radio" name="beenVerified" value="true">
+              No
+            </label>
+          </div> -->
+
 
 					<div class="actions">
 						<a class="button next" href="Verify_3">
@@ -149,7 +167,7 @@
 </div>
 
 
-<script src="http://govuk-verify-test.herokuapp.com/public/javascript/intro.js"></script>
+<script src="/public/javascript/verify_intro.js"></script>
 
 <script type="text/javascript">
 	
