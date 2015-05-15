@@ -16,6 +16,13 @@
 
 <script>
 
+try {
+  show(QueryString.code);
+} catch(e) {
+  // Absorb the exception of not finding the correct wording.
+  alert('Error: '+e.message);
+}
+
 </script>
 
 </header>
@@ -36,53 +43,55 @@
 
     <br/><br/>
 
-    <div id="revoke">
+    <div id="revoke" class="starthidden">
       <p>Thank you for telling us about your medical condition. The information you have provided tells us that you are unable to meet the 
       current medical standards for driving. This means that your licence has been revoked and you must not drive.</p>
     </div>
 
-    <div id="refuse">
+    <div id="refuse" class="starthidden">
       <p>Thank you for applying for the renewal of your short period driving licence. The information you have provided tells us that you are 
       unable to meet the current medical standards for driving. This means that your application has been refused and you must not drive.</p>
     </div>
 
-    <div id="retain">
+    <div id="retain" class="starthidden">
       <p>Thank you for telling us about your medical condition. The information you have provided tells us that you are able to meet the 
       current medical standards for driving and you may continue driving using your current driving licence.</p>
     </div>
 
-    <div id="reissue">
+    <div id="reissue" class="starthidden">
       <p>Thank you for applying for the renewal of your short period driving licence. The information you have provided tells us that you are 
       able to meet the current medical standards for driving. A short period licence, subject to medical review in 3 years, has been issued to you.</p>
     </div>
 
-    <div id="til-70">
+    <div id="issue-70" class="starthidden">
       <p>Thank you for applying for the renewal of your short period driving licence. The information you have provided tells us that you are 
       able to meet the current medical standards for driving without the need for medical review . A licence valid until your 70th birthday 
       has been issued to you.</p>
     </div>
 
-    <div id="non-notify">
+    <div id="non-notify" class="starthidden">
       <p>Thank you for telling us about your medical condition. The condition you have declared does not require medical investigation by the DVLA. 
       Please consult your doctor who can inform you on the current standards of fitness to drive.</p>
     </div>
 
-Further Info
+    <div id="further-thanks" class="starthidden">
+      <p>Thank you for telling us about your medical condition.</p>
+    </div>
 
-Thank you for telling us about your medical condition.
+    <div id="further-doctor" class="starthidden">
+      <p>Thank you for applying for the renewal of your short period driving licence.</p>
 
-or
+      <p>We have asked Dr Davies to provide further information about your medical condition. We will inform you of the outcome when we receive a 
+      reply. You may wish to contact the doctor directly if we have not received a reply within 2 weeks of this notice.</p>
+    </div>
 
-Thank you for applying for the renewal of your short period driving licence.
-
-We have asked Dr Davies to provide further information about your medical condition. We will inform you of the outcome when we receive a reply. You may wish to contact the doctor directly if we have not received a reply within 2 weeks of this notice.
+    <br/><br/>
 
     <div>
       <p><a href="/alpha/start">Back to the Start!</a></p>
     </div>
 
   </form>
-
 
 </main>
 

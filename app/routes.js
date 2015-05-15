@@ -230,6 +230,26 @@ module.exports = {
         res.render('NotifyDiab/Surrender_1', {'assetPath' : assetPath, 'EXTERNAL_CHOICE' : 'surrender'})
     });
     
+    /*-----------------------------------------------------*/
+    app.get('/alpha/start', function (req, res) {
+        res.render('alpha/start', {'assetPath' : assetPath, 'DRIVER' : 'JB12345'})
+    });
+
+    app.get('/alpha/page-1', function (req, res) {
+        res.render('alpha/page-1', {'assetPath' : assetPath, 'DRIVER' : 'JB12345'})
+    });
+
+    app.get('/alpha/page-2', function (req, res) {
+        res.render('alpha/page-2', {'assetPath' : assetPath, 'DRIVER' : 'JB12345'})
+    });
+    
+    app.get('/alpha/page-3', function (req, res) {
+        res.render('alpha/page-3', {'assetPath' : assetPath, 'DRIVER' : 'JB12345'})
+    });
+    
+    app.get('/alpha/finish', function (req, res) {
+        res.render('alpha/finish', {'assetPath' : assetPath, 'DRIVER' : 'JB12345'})
+    });
   }
 
 };
