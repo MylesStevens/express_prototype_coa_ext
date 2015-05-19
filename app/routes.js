@@ -229,6 +229,35 @@ module.exports = {
     app.get('/NotifyDiab/Surrender_1', function (req, res) {
         res.render('NotifyDiab/Surrender_1', {'assetPath' : assetPath, 'EXTERNAL_CHOICE' : 'surrender'})
     });
+
+    /*-----------------------------------------------------*/
+    app.get('/Verify/Verify_1', function (req, res) {
+        res.render('Verify/Verify_1', {'assetPath' : assetPath, 'auth' : req.query.auth})
+    });
+
+    app.get('/Verify/Verify_2', function (req, res) {
+        res.render('Verify/Verify_2', {'assetPath' : assetPath, 'auth' : req.query.auth})
+    });
+
+    app.get('/Verify/Verify_3', function (req, res) {
+        res.render('Verify/Verify_3', {'assetPath' : assetPath, 'auth' : req.query.auth})
+    });
+
+    app.get('/Verify/Verify_4', function (req, res) {
+        res.render('Verify/Verify_4', {'assetPath' : assetPath, 'auth' : req.query.auth})
+    });
+
+    app.get('/Verify/Verify_5', function (req, res) {
+        res.render('Verify/Verify_5', {'assetPath' : assetPath, 'auth' : req.query.auth})
+    });
+
+    app.get('/Verify/Verify_6', function (req, res) {
+        res.render('Verify/Verify_6', {'assetPath' : assetPath, 'auth' : req.query.auth})
+    });
+
+    app.get('/Verify/Verify_7', function (req, res) {
+        res.render('Verify/Verify_7', {'assetPath' : assetPath, 'auth' : req.query.auth})
+    });
     
     /*-----------------------------------------------------*/
     app.get('/alpha/start', function (req, res) {
