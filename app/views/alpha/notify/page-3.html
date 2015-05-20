@@ -83,7 +83,7 @@
     <div class="grid-row" id="decision">
       <div class="column-full">
         <div id="decision-message">Than you for answering all the questions provided in this section.</div><br/>
-        <button type="button" id="continue" class="button" onclick="decision(this)">Continue</button>
+        <button type="button" id="continue" class="button" onclick="decision(this)" disabled="true">Continue</button>
       </div>
     </div>
 
@@ -92,23 +92,21 @@
 <script>
 
   var data = {
-    show: ["q5"],
-    hide: ["q6","q7","decision"],
     state: "",
     questions: [
-      {id: "q5", type: "radio", active: "false", answers: [
-          {id: "q5_a1", value: "", show: ["decision"], hide: ["q6"], decision: "1"},
-          {id: "q5_a2", value: "", show: ["q6"], hide: ["decision"], decision: ""}
+      {id: "q5", type: "radio", active: "true", answers: [
+          {id: "q5_a1", value: "", show: [], hide: ["q6"], decision: "1"},
+          {id: "q5_a2", value: "", show: ["q6"], hide: [], decision: ""}
         ]
       },
       {id: "q6", type: "radio", active: "false", answers: [
-          {id: "q6_a1", value: "", show: ["q7"], hide: ["decision"], decision: ""},
-          {id: "q6_a2", value: "", show: ["decision"], hide: ["q7"], decision: "2"}
+          {id: "q6_a1", value: "", show: ["q7"], hide: [], decision: ""},
+          {id: "q6_a2", value: "", show: [], hide: ["q7"], decision: "2"}
         ]
       },
       {id: "q7", type: "radio", active: "false", answers: [
-          {id: "q7_a1", value: "", show: ["decision"], hide: [], decision: "3"},
-          {id: "q7_a2", value: "", show: ["decision"], hide: [], decision: "4"}
+          {id: "q7_a1", value: "", show: [], hide: [], decision: "3"},
+          {id: "q7_a2", value: "", show: [], hide: [], decision: "4"}
         ]
       }
     ],

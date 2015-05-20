@@ -13,63 +13,16 @@ function initialise(data) {
 	}
 }
 
-// This is now deprecated.
-function init() {
-	try {
-		var data = {
-			show: ["q1","q5"],
-			hide: ["q2","q3","q4","q6","q7","q8"],
-			questions: [
-				{id: "q1", type: "text", active: "true", answers: [
-						{id: "q1_a1", value: "Diabetes", show: ["q2"], hide: []}
-					]
-				}, 
-				{id: "q2", type: "text", active: "true", answers: [
-						{id: "q2_a1", value: "Epilepsy", show: ["q3"], hide: []}
-					]
-				}, 
-				{id: "q3", type: "text", active: "false", answers: [
-						{id: "q3_a1", value: "", show: ["q4"], hide: []}
-					]
-				}, 
-				{id: "q4", type: "text", active: "false", answers: [
-						{id: "q4_a1", value: "", show: [], hide: []}
-					]
-				}, 
-				{id: "q5", type: "radio", active: "false", answers: [
-						{id: "q5_a1", value: "", show: ["q6"], hide: []},
-						{id: "q5_a2", value: "", show: ["q7"], hide: ["q6"]}
-					]
-				},
-				{id: "q6", type: "checkbox", active: "false", answers: [
-						{id: "q6_a1", value: "car", show: ["q7"], hide: ["q8"]},
-						{id: "q6_a2", value: "", show: ["q8"], hide: ["q7"]},
-						{id: "q6_a3", value: "trike", show: [], hide: []}
-					]
-				},
-				{id: "q7", type: "", active: "false", answers: []},
-				{id: "q8", type: "", active: "false", answers: []}
-			]
-		};
-
-		page = JSON.parse(JSON.stringify(data));
-
-		execute();
-
-	} catch(e) {
-		alert(e.message);
-	}
-}
-
 // Page instruction
 function execute() {
-	// Show visible elements from the initial setup.
-	for(var i=0; i < page.show.length; i++) {
-		show(page.show[i]);
-	}
-	// Hide hidden elements from the initial setup.
-	for(var i=0; i < page.hide.length; i++) {
-		hide(page.hide[i]);
+	// Startup, display elements from the initial setup.
+	for(var i=0; i < page.questions.length; i++) {
+		var question = page.questions[i];
+		if(question.active == "true") {
+			show_question(question.id);
+		} else {
+			hide_question(question.id);
+		}
 	}
 	
 	// Pre-populate any answers we have already given, as
@@ -85,12 +38,30 @@ function execute() {
 				eval("set_"+question.type+"(answer)");
 			}
 		}
+	}
+}
 
-		// If we have already answered questions, then
-		// we should check if they were relevant and show.
+// Page completion.
+function finalise() {
+	//alert(JSON.stringify(page.questions));
+
+	var active = 0, answered = 0;
+	for(var q=0; q < page.questions.length; q++) {
+		var question = page.questions[q];
 		if(question.active == "true") {
-			show(question.id);
+			for(var a=0; a < question.answers.length; a++) {
+				var answer = question.answers[a];
+				if(answer.value.length > 0) {
+					answered++;
+				}
+			}
+			active++;
 		}
+	}
+
+	disable('continue');
+	if(answered == active) {
+		enable('continue');
 	}
 }
 
@@ -120,15 +91,17 @@ function answer(element) {
 					page.state = page.questions[i].answers[x].decision;
 
 					for(var s=0; s < page.questions[i].answers[x].show.length; s++) {
-						show(page.questions[i].answers[x].show[s]);
+						show_question(page.questions[i].answers[x].show[s]);
 					}
 					for(var h=0; h < page.questions[i].answers[x].hide.length; h++) {
-						hide(page.questions[i].answers[x].hide[h]);
+						hide_question(page.questions[i].answers[x].hide[h]);
 					}
 				}
 			}
 		}
 	}
+
+	finalise();
 }
 
 function decision(element) {
@@ -151,16 +124,64 @@ function decision(element) {
 }
 
 // JSON helper functions
-function find(answer) {
+function find_question(question_id) {
+	for(var q=0; q < page.questions.length; q++) {
+		var question = page.questions[q];
+		if(question.id == question_id) {
+			return question;
+		}
+	}
+	return null;
+}
+
+function find_answer(answer_id) {
 	for(var q=0; q < page.questions.length; q++) {
 		var question = page.questions[q];
 		for(var a=0; a < question.answers.length; a++) {
-			if(question.answers[a].id == answer.id) {
+			var answer = question.answers[a];
+			if(answer.id == answer_id) {
+				return answer;
+			}
+		}
+	}
+	return null;
+}
+
+function find_both(answer_id) {
+	for(var q=0; q < page.questions.length; q++) {
+		var question = page.questions[q];
+		for(var a=0; a < question.answers.length; a++) {
+			var answer = question.answers[a];
+			if(answer.id == answer_id) {
 				return [question, answer];
 			}
 		}
 	}
 	return null;
+}
+
+function set(answer_id, new_value) {
+	var items = find_both(answer_id);
+	for(var a=0; a < items[0].answers.length; a++) {
+		var answer = items[0].answers[a];
+		if(answer.id == answer_id) {
+			answer.value = new_value;
+		} else {
+			answer.value = '';
+		}
+	}
+}
+
+function show_question(question_id) {
+	var question = find_question(question_id);
+	question.active = 'true';
+	show(question_id);
+}
+
+function hide_question(question_id) {
+	var question = find_question(question_id);
+	question.active = 'false';
+	hide(question_id);
 }
 
 function click_text(element) {
@@ -172,7 +193,7 @@ function set_text(answer) {
 }
 
 function click_radio(element) {
-	//alert('Click Radio: '+element.id+', Checked: '+element.checked);
+	set(element.id, element.value);
 }
 
 function set_radio(answer) {

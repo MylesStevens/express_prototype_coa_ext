@@ -90,7 +90,7 @@
     <div class="grid-row" id="decision">
       <div class="column-full">
         <div id="decision-message">Than you for answering all the questions provided in this section.</div><br/>
-        <button type="button" id="continue" class="button" onclick="decision(this)">Continue</button>
+        <button type="button" id="continue" class="button" onclick="decision(this)" disabled="true">Continue</button>
       </div>
     </div>
 
@@ -99,25 +99,23 @@
 <script>
 
   var data = {
-    show: ["q2"],
-    hide: ["q3","q4","decision"],
     state: "",
     questions: [
-      {id: "q2", type: "radio", active: "false", answers: [
-          {id: "q2_a1", value: "", show: ["q3"], hide: ["decision"], decision: "1"},
-          {id: "q2_a2", value: "", show: ["q3"], hide: ["decision"], decision: ""},
-          {id: "q2_a3", value: "", show: ["decision"], hide: ["q3"], decision: "2"}
+      {id: "q2", type: "radio", active: "true", answers: [
+          {id: "q2_a1", value: "", show: ["q3"], hide: [], decision: "1"},
+          {id: "q2_a2", value: "", show: ["q3"], hide: [], decision: ""},
+          {id: "q2_a3", value: "", show: [], hide: ["q3","q4"], decision: "2"}
         ]
       },
       {id: "q3", type: "radio", active: "false", answers: [
-          {id: "q3_a1", value: "", show: ["decision"], hide: ["q4"], decision: "3"},
-          {id: "q3_a2", value: "", show: ["q4"], hide: ["decision"], decision: ""},
-          {id: "q3_a3", value: "", show: ["decision"], hide: ["q4"], decision: "4"}
+          {id: "q3_a1", value: "", show: [], hide: ["q4"], decision: "3"},
+          {id: "q3_a2", value: "", show: ["q4"], hide: [], decision: ""},
+          {id: "q3_a3", value: "", show: [], hide: ["q4"], decision: "4"}
         ]
       },
       {id: "q4", type: "radio", active: "false", answers: [
-          {id: "q4_a1", value: "", show: ["decision"], hide: [], decision: "5"},
-          {id: "q4_a2", value: "", show: ["decision"], hide: [], decision: "6"}
+          {id: "q4_a1", value: "", show: [], hide: [], decision: "5"},
+          {id: "q4_a2", value: "", show: [], hide: [], decision: "6"}
         ]
       }
     ],

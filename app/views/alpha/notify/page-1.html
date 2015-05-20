@@ -49,8 +49,8 @@
 
     <div class="grid-row" id="decision">
       <div class="column-full">
-        <div id="decision-message">Than you for answering all the questions provided in this section.</div><br/>
-        <button type="button" id="continue" class="button" onclick="decision(this)">Continue</button>
+        <div id="decision-message">Click 'Continue' when you have answered all the questions in this section.</div><br/>
+        <button type="button" id="continue" class="button" onclick="decision(this)" disabled="true">Continue</button>
       </div>
     </div>
 
@@ -59,14 +59,12 @@
 <script>
 
   var data = {
-    show: ["q1"],
-    hide: ["decision"],
     state: "",
     questions: [
-      {id: "q1", type: "radio", active: "false", answers: [
-          {id: "q1_a1", value: "", show: ["decision"], hide: [], decision: "1"},
-          {id: "q1_a2", value: "", show: ["decision"], hide: [], decision: "2"},
-          {id: "q1_a3", value: "", show: ["decision"], hide: [], decision: "3"}
+      {id: "q1", type: "radio", active: "true", answers: [
+          {id: "q1_a1", value: "", show: [], hide: [], decision: "1"},
+          {id: "q1_a2", value: "", show: [], hide: [], decision: "2"},
+          {id: "q1_a3", value: "", show: [], hide: [], decision: "3"}
         ]
       }
     ],

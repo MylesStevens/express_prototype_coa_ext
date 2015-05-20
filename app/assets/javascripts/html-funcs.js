@@ -29,3 +29,23 @@ function show(id) {
 function hide(id) {
 	document.getElementById(id).style.display = 'none';
 }
+
+function enable(id) {
+  document.getElementById(id).disabled = false;
+}
+
+function disable(id) {
+  document.getElementById(id).disabled = true;
+}
+
+function radio_valid(id) {
+  return document.getElementById(id).checked;
+}
+
+function checkbox_valid(id) {
+  alert('Checkbox Valid: '+id);
+}
+
+function text_valid(id) {
+  alert('Text Valid: '+id);
+}
