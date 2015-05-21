@@ -2,6 +2,7 @@
 
 {{$head}}
   {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
 {{/head}}
 
 {{$propositionHeader}}
@@ -11,60 +12,72 @@
 {{$headerClass}}with-proposition{{/headerClass}}
 
 {{$content}}
+
 <header>
-
-
-
 
 </header>
 
-
 <main id="page-container" role="main">
 
+  <form id="medical-form" class="form inline">     
   
- <div class="grid-row">
-   <div class="column-full">
+    <div class="grid-row" id="q14">
+      <div class="column-full">
 
-    <h1 class="form-title heading-medium">
-     Have you had laser treatment or injections into both eyes (or remaining eye) for diabetic eye disease or other eye condition? 
-    </h1>
-     <span class="form-hint">Do not include corrective surgery for short sightedness.</span>
+        <h1 class="form-title heading-medium">
+          Have you had laser treatment or injections into both eyes (or remaining eye) for diabetic eye disease or other eye condition?
+        </h1>
+
+        <span class="form-hint">Do not include corrective surgery for short sightedness.</span>
      
- <form action="specialcarcheck" method="get" class="form inline">     
- 
-<div class="form-group">
-  <label class="block-label" for="radio-3">
-    <input id="radio-3" type="radio" name="eye1" value="sad" >
-    Yes
-  </label>
-  <label class="block-label" for="radio-4">
-    <input id="radio-4" type="radio" name="eye1" value="{{ROUTECHOICE}}" >
-    No
-  </label>
-  <div class="grid-row"> <br> </div>
-  <div class="grid-row"> <br> </div>
+        <div class="form-group">
+          <label class="block-label" for="q14-a1" id="q14-a1-label">
+            <input id="q14-a1" type="radio" name="q14-answer" value="Y" onclick="answer(this)">Yes
+          </label>
+          <label class="block-label" for="q14-a2" id="q14-a2-label">
+            <input id="q14-a2" type="radio" name="q14-answer" value="N" onclick="answer(this)">No
+          </label>
 
+          <div class="grid-row"> <br> </div>
+          <div class="grid-row"> <br> </div>
+        </div>
 
-   
-      <button type="submit" id="continue" class="button" >
-        Continue
-    </button>
-    
-    </form>  
-    
-      <ul>
-    
-       
-        <li><a href="/">Back</a></li>
-      </ul>
+      </div>
     </div>
 
+    <div class="form-group">
+      <input id="continue" type="button" class="button" value="Continue" onclick="decision(this)"/> 
+    </div>
+
+    <ul>
+      <li><a href="/">Back</a></li>
+    </ul>
     
-
+  </form>  
     
+<script>
 
+  var data = {
+    state: "",
+    validate: "true",
+    questions: [
+      {id: "q14", type: "radio", active: "true", answers: [
+          {id: "q14-a1", value: "", show: [], hide: [], decision: "{{path}}1"},
+          {id: "q14-a2", value: "", show: [], hide: [], decision: "{{path}}2"}
+        ]
+      }
+    ],
+    decisions: [
+      {id: "d1", description: "Q14: (Direct Path) Yes", message: "Send SPECG1", redirect: "finish.html?code=further-thanks"},
+      {id: "d2", description: "Q14: (Direct Path) No", message: "", redirect: "diabetes-6.html"},
+      {id: "g1", description: "Q14: (GpCnst Path) Yes", message: "Send SPECG1 & DIAB3", redirect: "finish.html?code=specg1,diab3"},
+      {id: "g2", description: "Q14: (GpCnst Path) No", message: "Send DIAB3", redirect: "finish.html?code=diab3"},
+    ]
+  };
 
-</form>
+  initialise(data);
+
+</script>
 
 </main>
 
@@ -72,7 +85,6 @@
 {{/content}}
 
 {{$bodyEnd}}
-  {{>includes/elements_scripts}}
 {{/bodyEnd}}
 
 {{/govuk_template}}

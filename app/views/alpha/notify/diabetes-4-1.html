@@ -54,7 +54,7 @@
     </div>
 
     <div class="form-group">
-      <input id="continue" type="button" class="button" value="Continue" onclick="decision(this)" disabled="true"/> 
+      <input id="continue" type="button" class="button" value="Continue" onclick="decision(this)"/> 
     </div>
 
     <ul>
@@ -67,6 +67,7 @@
 
   var data = {
     state: "",
+    validate: "true",
     questions: [
       {id: "q7", type: "checkbox", active: "true", answers: [
           {id: "q7-a1", value: "", show: [], hide: [], decision: "1"},
@@ -77,7 +78,7 @@
       }
     ],
     decisions: [
-      {id: "1", description: "Q7: All", message: "Redirect -> Laser Treatment", redirect: ""}
+      {id: "1", description: "Q7: All", message: "", redirect: "diabetes-4-2?path={{path}}"}
     ]
   };
 

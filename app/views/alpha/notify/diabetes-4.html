@@ -60,6 +60,7 @@
 
   var data = {
     state: "",
+    validate: "true",
     questions: [
       {id: "q6", type: "radio", active: "true", answers: [
           {id: "q6-a1", value: "", show: [], hide: [], decision: "1"},
@@ -68,8 +69,8 @@
       }
     ],
     decisions: [
-      {id: "1", description: "Q6: Yes", message: "Redirect -> Laser Treatment", redirect: ""},
-      {id: "2", description: "Q6: No", message: "", redirect: "diabetes-4-1.html"}
+      {id: "1", description: "Q6: Yes", message: "", redirect: "diabetes-5?path=d"},
+      {id: "2", description: "Q6: No", message: "", redirect: "diabetes-4-1?path=g"}
     ]
   };
 
