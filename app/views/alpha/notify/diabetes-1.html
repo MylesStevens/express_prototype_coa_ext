@@ -3,6 +3,7 @@
 
 {{$head}}
   {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
 {{/head}}
 
 {{$propositionHeader}}
@@ -12,189 +13,118 @@
 {{$headerClass}}with-proposition{{/headerClass}}
 
 {{$content}}
+
 <header class="page-header">
 
-<script>
-  function FindAddress2() { 
-
-// var postcodeV = document.forms["form1"]["postcode"].value;
-
-// if (postcodeV ==""){
-// document.getElementById("postcodeerror").innerHTML = "Please complete all the fields";
-// }
-// else{
-
-
-    window.location.href ="Epilepsy1.html";
-  // }
-  
-  }
-  //document.getElementById("MyElement").className = "MyClass";
-  </script>
-
-<script>
-  function shownext() { 
-    question3.style.display = "block";
-
-  }
-</script>
-
-<script>
-  function hidenext() { 
-    question3.style.display = "none";
-
-  }
-</script>
-
-<script>
-  function shownext2() { 
-    question4.style.display = "block";
-
-  }
-</script>
-
-<script>
-  function hidenext2() { 
-    // question4.style.display = "none";
-
-  }
-</script>
-
-<script>
-  function shownext3() { 
-    form4.style.display = "block";
-
-  }
-</script>
-
-<script>
-  function showhypo() { 
-    hypoinfo.style.display = "block";
-    hypoinfo2.style.display = "block";
-
-  }
-</script>
-
-<script>
-  function nextscreen() { 
-
-
-    window.location.href ="summary.html";
-  // }
-  
-  }
-  //document.getElementById("MyElement").className = "MyClass";
-  </script>
 </header>
-
-
 
 <main id="page-container" role="main">
 
-<!-- <h2 class="form-title heading-medium">
-      Your <em class="highlight">diabetes</em>
-    </h2>  -->
+  <form action="medical-form" method="get" class="form inline">
 
-<form action="hypocheck2a" method="get" class="form inline">
- <div class="grid-row">
-    <div class="column-full">
+    <div class="grid-row" id="q1">
+      <div class="column-full">
 
-      <h4 class="heading-medium">Do you treat your diabetes with insulin?</h4>
+        <h4 class="heading-medium">Do you treat your diabetes with insulin?</h4>
 
-      <!-- <span class="form-hint">e.g. sweating, shakiness, hungry, palpitations, tingling lips</span> -->
-      
-<div class="form-group">
-  <label class="block-label" for="radio-1">
-    <input id="radio-1" type="radio" name="hypogroup1" value="{{ROUTECHOICE}}">
-    Yes
-  </label>
-  <label class="block-label" for="radio-2">
-    <input id="radio-2" type="radio" name="hypogroup1" value="No" onclick="showhypo()">
-    No
-  </label>
-
-</div>
-</div>
-
-</div>
+        <div class="form-group">
+          <label class="block-label" for="q1-a1" id="q1-a1-label">
+            <input id="q1-a1" type="radio" name="q1-answer" value="Y" onclick="answer(this)">Yes
+          </label>
+          <label class="block-label" for="q1-a2" id="q1-a2-label">
+            <input id="q1-a2" type="radio" name="q1-answer" value="N" onclick="answer(this)">No
+          </label>
+        </div>
+      </div>
+    </div>
   
-
-    
-    <div class="panel-indent starthidden" id="hypoinfo">
+    <div class="panel-indent starthidden" id="q1-info">
 
       <h3 class="heading-small">Hypoglycaemia causes symptoms such as</h3>
       
-  <ul class="list-bullet">
-    <li>hunger</li>
-    <li>shakiness</li>
-    <li>nervousness</li>
-    <li>sweating</li>
-    <li>dizziness or light-headedness</li>
-    <li>sleepiness</li>
-    <li>confusion</li>
-    <li>difficulty speaking</li>
-    <li>anxiety</li>
-    <li>weakness</li>
-  </ul>
+      <ul class="list-bullet">
+        <li>hunger</li>
+        <li>shakiness</li>
+        <li>nervousness</li>
+        <li>sweating</li>
+        <li>dizziness or light-headedness</li>
+        <li>sleepiness</li>
+        <li>confusion</li>
+        <li>difficulty speaking</li>
+        <li>anxiety</li>
+        <li>weakness</li>
+      </ul>
   
-  <p>Hypoglycaemia can also happen during sleep. Some signs of hypoglycaemia during sleep include</p>
-  <ul class="list-bullet">
-    <li>crying out or having nightmares</li>
-    <li>finding pyjamas or sheets damp from perspiration</li>
-    <li>feeling tired, irritable, or confused after waking up</li>
-  </ul>
-</div>
-   <div class="grid-row starthidden" id="hypoinfo2">
-    <div class="column-full">
+      <p>Hypoglycaemia can also happen during sleep. Some signs of hypoglycaemia during sleep include</p>
 
-      <h4 class="heading-medium">Have you had an episode of hypogycaemia?</h4>
+      <ul class="list-bullet">
+        <li>crying out or having nightmares</li>
+        <li>finding pyjamas or sheets damp from perspiration</li>
+        <li>feeling tired, irritable, or confused after waking up</li>
+      </ul>
+    </div>
 
-      
-<div class="form-group">
-  <label class="block-label" for="radio-1a">
-    <input id="radio-1a" type="radio" name="hypogroup2" value="{{ROUTECHOICE}}">
-    Yes
-  </label>
-  <label class="block-label" for="radio-2a">
-    <input id="radio-2a" type="radio" name="hypogroup2" value="sad">
-    No
-  </label>
+    <div class="grid-row starthidden" id="q2">
+      <div class="column-full">
 
-</div>
-</div>
+        <h4 class="heading-medium">Have you had an episode of hypogycaemia?</h4>
 
-</div>
+        <div class="form-group">
+          <label class="block-label" for="q2-a1" id="q2-a1-label">
+            <input id="q2-a1" type="radio" name="q2-answer" value="Y" onclick="answer(this)">Yes
+          </label>
+          <label class="block-label" for="q2-a2" id="q2-a2-label">
+            <input id="q2-a2" type="radio" name="q2-answer" value="N" onclick="answer(this)">No
+          </label>
+        </div>
+      </div>
+    </div>
 
+    <div class="form-group">
+      <input id="continue" name="continue" type="button" class="button" value="Continue" onclick="decision(this)" disabled="true"> 
+    </div>
 
-    
-    
+  </form>
 
+  <form action="{{next}}">
+    <a class="back-to-previous" href="/drivers-details">
+      <i class="fa fa-angle-left"></i>
+      Back <span class="visuallyhidden"> to the previous question</span>
+    </a> 
+  </form>
 
-<div class="form-group">
- 
- 
-    
-   <input name="Findaddress4" type="Submit" class="button" value="Continue"> 
+<script>
 
-</div>
-</form>
+  var data = {
+    state: "",
+    questions: [
+      {id: "q1", type: "radio", active: "true", answers: [
+          {id: "q1-a1", value: "", show: [], hide: ["q2","q1-info"], decision: "1"},
+          {id: "q1-a2", value: "", show: ["q2","q1-info"], hide: [], decision: ""}
+        ]
+      },
+      {id: "q2", type: "radio", active: "false", answers: [
+          {id: "q2-a1", value: "", show: [], hide: [], decision: "2"},
+          {id: "q2-a2", value: "", show: [], hide: [], decision: "3"}
+        ]
+      }
+    ],
+    decisions: [
+      {id: "1", description: "Q1: Yes (Insulin)", message: "", redirect: "diabetes-2.html"},
+      {id: "2", description: "Q2: Yes (Hypo)", message: "", redirect: "diabetes-2.html"},
+      {id: "3", description: "Q2: No (Hypo)", message: "Not-Notifiable", redirect: "finish.html?code=non-notify"}
+    ]
+  };
 
-<form action="{{next}}">
+  initialise(data);
 
- <a class="back-to-previous" href="/drivers-details">
-    <i class="fa fa-angle-left"></i>
-    Back <span class="visuallyhidden"> to the previous question</span>
-</a> 
+</script>
 
-</form>
+</main>
 
- </main>
-
- {{/content}}
+{{/content}}
 
 {{$bodyEnd}}
-  {{>includes/elements_scripts}}
 {{/bodyEnd}}
 
 {{/govuk_template}}
-

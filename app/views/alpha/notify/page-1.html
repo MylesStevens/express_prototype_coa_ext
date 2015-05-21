@@ -1,0 +1,89 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation3}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+<header class="page-header">
+
+</header>
+
+<main id="page-container" role="main">
+
+  <h1 class="form-title heading-medium">
+      Notify the DVLA of a medical condition
+  </h1> 
+
+  <h2>Section 1: Please answer the questions given below to the best of your knowledge.</h2>
+
+  <form id="medical-form" class="form">
+   
+    <!-- Question: 1 -->
+    <div class="grid-row starthidden" id="q1">
+      <div class="column-full">
+
+        <h4 class="heading-medium" id ="q1_label">How is your diabetes treated?</h4>
+
+        <div class="form-group">
+          <label class="block-label" for="q1_a1" id="q1_a1_label">
+            <input id="q1_a1" type="radio" name="q1_a" onclick="answer(this)" value="T">Tablets
+          </label>
+          <label class="block-label" for="q1_a2" id="q1_a2_label">
+            <input id="q1_a2" type="radio" name="q1_a" onclick="answer(this)" value="I">Insulin
+          </label>
+          <label class="block-label" for="q1_a3" id="q1_a3_label">
+            <input id="q1_a3" type="radio" name="q1_a" onclick="answer(this)" value="N">Non-Insulin Injectable
+          </label>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="grid-row" id="decision">
+      <div class="column-full">
+        <div id="decision-message">Click 'Continue' when you have answered all the questions in this section.</div><br/>
+        <button type="button" id="continue" class="button" onclick="decision(this)" disabled="true">Continue</button>
+      </div>
+    </div>
+
+</form>
+
+<script>
+
+  var data = {
+    state: "",
+    questions: [
+      {id: "q1", type: "radio", active: "true", answers: [
+          {id: "q1_a1", value: "", show: [], hide: [], decision: "1"},
+          {id: "q1_a2", value: "", show: [], hide: [], decision: "2"},
+          {id: "q1_a3", value: "", show: [], hide: [], decision: "3"}
+        ]
+      }
+    ],
+    decisions: [
+      {id: "1", description: "Q1: Tablets", message: "Non-Notifiable", redirect: "finish.html?code=non-notify"},
+      {id: "2", description: "Q1: Insulin", message: "", redirect: "page-2.html"},
+      {id: "3", description: "Q1: Injectable", message: "Issue Full 70", redirect: "finish.html?code=issue-70"}
+    ]
+  };
+
+  initialise(data);
+
+</script>
+
+</main>
+
+{{/content}}
+
+{{$bodyEnd}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

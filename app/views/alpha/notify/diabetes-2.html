@@ -3,6 +3,7 @@
 
 {{$head}}
   {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
 {{/head}}
 
 {{$propositionHeader}}
@@ -12,150 +13,60 @@
 {{$headerClass}}with-proposition{{/headerClass}}
 
 {{$content}}
+
 <header class="page-header">
 
-<script>
-  function FindAddress2() { 
-
-// var postcodeV = document.forms["form1"]["postcode"].value;
-
-// if (postcodeV ==""){
-// document.getElementById("postcodeerror").innerHTML = "Please complete all the fields";
-// }
-// else{
-
-
-    window.location.href ="Epilepsy1.html";
-  // }
-  
-  }
-  //document.getElementById("MyElement").className = "MyClass";
-  </script>
-
-<script>
-  function shownext() { 
-    question3.style.display = "block";
-
-  }
-</script>
-
-<script>
-  function hidenext() { 
-    question3.style.display = "none";
-
-  }
-</script>
-
-<script>
-  function shownext2() { 
-    question4.style.display = "block";
-
-  }
-</script>
-
-<script>
-  function hidenext2() { 
-    // question4.style.display = "none";
-
-  }
-</script>
-
-<script>
-  function shownext3() { 
-    form4.style.display = "block";
-
-  }
-</script>
-
-<script>
-  function showhypo() { 
-    hypoinfo.style.display = "block";
-
-  }
-</script>
-
-<script>
-  function nextscreen() { 
-
-
-    window.location.href ="summary.html";
-  // }
-  
-  }
-  //document.getElementById("MyElement").className = "MyClass";
-  </script>
 </header>
 
-
-
 <main id="page-container" role="main">
-
-
     
+  <form class="inline">
 
-    
-<form class="inline">
-  <div class="grid-row">
-    <div class="column-full">
+    <div class="grid-row" id="q3">
+      <div class="column-full">
 
-      <h4 class="heading-medium">Have you had more than one episode of <span class="highlightfix">severe</span> hypoglycaemia in the last 12 months? </h4> 
+        <h4 class="heading-medium">Have you had more than one episode of <span class="highlightfix">severe</span> hypoglycaemia in the last 12 months? </h4> 
         <span class="form-hint">Severe Hypoglycaemia requires help from another person. Episodes where you were given help but could have helped yourself do not count.</span>
 
-<div class="form-group">
-  <label class="block-label" for="radio-3">
-    <input id="radio-3" type="radio" name="hypo3a" value="{{ROUTECHOICE}}" onclick="hidenext()">
-    Yes
-  </label>
-  <label class="block-label" for="radio-4">
-    <input id="radio-4" type="radio" name="hypo3a" value="{{ROUTECHOICE}}" onclick="shownext()">
-    No
-  </label>
+        <div class="form-group">
+          <label class="block-label" for="q3-a1" id="q3-a1-label">
+            <input id="q3-a1" type="radio" name="hypo3a" value="Y" onclick="answer(this)">Yes
+          </label>
+          <label class="block-label" for="q3-a2" id="q3-a2-label">
+            <input id="q3-a2" type="radio" name="hypo3a" value="N" onclick="answer(this)">No
+          </label>
+        </div>
 
-</div>
-</div>
+      </div>
+    </div>
+  </form>
 
-</div>
-</form>
+  <form class="form inline">  
 
- <form action="Lasereyes" method="get" class="form inline">  
-<div class="starthidden" id="question3">
-  <div class="grid-row">
+    <div class="starthidden" id="q4">
+      <div class="grid-row">
+        <div class="column-full">
 
-    <div class="column-full">
+          <h4 class="heading-medium">Do you <span class="highlightfix">always</span> have warning symptoms of hypoglycaemia?</h4>
 
-      <h4 class="heading-medium">Do you <span class="highlightfix">always</span> have warning symptoms of hypoglycaemia?</h4>
+          <div class="form-group">
+            <label class="block-label" for="q4-a1" id="q4-a1-label">
+              <input id="q4-a1" type="radio" name="hypo1a" value="Y" onclick="answer(this)">Yes
+            </label>
 
-     
+            <label class="block-label" for="q4-a2" id="q4-a2-label">
+              <input id="q4-a2" type="radio" name="hypo1a" value="N" onclick="answer(this)">No
+            </label>
+          </div>
 
+        </div>
+      </div>
+    </div>
+  </div>
 
-<div class="form-group">
-  <label class="block-label" for="radio-5">
-
-    <input id="radio-5" type="radio" name="hypo1a" value="{{ROUTECHOICE}}" >
-    Yes
-  </label>
-
-  <label class="block-label" for="radio-6">
-    <input id="radio-6" type="radio" name="hypo1a" value="sad" >
-    No
-  </label>
-
-</div>
-</div>
-</div>
-
-
-
-</div>
-</div>
-
-<div class="form-group">
- 
- 
-    
-   <input name="Findaddress4" type="Submit" class="button" value="Continue"> 
-
-</div>
+  <div class="form-group">
+    <input id="continue" type="button" class="button" value="Continue" onclick="decision(this)" disabled="true"/> 
+  </div>
 </form>
 
 <form action="{{next}}">
@@ -167,12 +78,37 @@
 
 </form>
 
+<script>
+
+  var data = {
+    state: "",
+    questions: [
+      {id: "q3", type: "radio", active: "true", answers: [
+          {id: "q3-a1", value: "", show: [], hide: [], decision: "1"},
+          {id: "q3-a2", value: "", show: ["q4"], hide: [], decision: ""}
+        ]
+      },
+      {id: "q4", type: "radio", active: "false", answers: [
+          {id: "q4-a1", value: "", show: [], hide: [], decision: "3"},
+          {id: "q4-a2", value: "", show: [], hide: [], decision: "2"}
+        ]
+      }
+    ],
+    decisions: [
+      {id: "1", description: "Q3: Yes (> 1 Episode)", message: "Revoke 12 Months", redirect: "finish.html?code=revoke"},
+      {id: "2", description: "Q4: No (Symptoms)", message: "Revoke 12 Months", redirect: "finish.html?code=revoke"},
+      {id: "3", description: "Q4: Yes (Symptoms)", message: "", redirect: "diabetes-3.html"}
+    ]
+  };
+
+  initialise(data);
+
+</script>
  </main>
 
- {{/content}}
+{{/content}}
 
 {{$bodyEnd}}
-  {{>includes/elements_scripts}}
 {{/bodyEnd}}
 
 {{/govuk_template}}
