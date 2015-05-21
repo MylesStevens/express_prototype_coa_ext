@@ -2,6 +2,7 @@
 
 {{$head}}
   {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
 {{/head}}
 
 {{$propositionHeader}}
@@ -11,109 +12,84 @@
 {{$headerClass}}with-proposition{{/headerClass}}
 
 {{$content}}
+
 <header>
-
-
 
 </header>
 
-
 <main id="page-container" role="main">
 
-  
-
-<!--   <a href="/" class="example-back-link">Back</a>
-<h1 class="form-title heading-medium">
-      Current details
-    </h1>
+  <form action="medical-form" class="form">     
  
-        
-<div>
-          <h3>Address</h3>
-          <div class="data-wrap">
-            <p>142 Mapledene Road<br>London<br>E8 3LL</p>
-          </div>
-        </div>
-        <div>
-    
-</div>  -->
+    <div class="grid-row" id="q5">
+      <div class="column-full">
 
+        <h1 class="form-title heading-medium">
+          The legal eyesight standard for driving
+        </h1>
 
-  
- <div class="grid-row">
-   <div class="column-full">
-
-    <h1 class="form-title heading-medium">
-      The legal eyesight standard for driving
-
-    </h1>
-      <p class="lede"><li>The legal eyesight standard means that you must be able to read a car number plate from 20 metres.</li><br><li>Also, you must not have been told by a doctor or optician that your eyesight is currently worse than 6/12 (decimal 0.5) on the Snellen scale.</li><br><li> If you are in any doubt, you should discuss with your optician or doctor.</li><br><span class="highlightfix"> <li >If required, you may wear glasses or corrective lenses to meet both of these standards.</li></span></p> 
+        <p class="lede"><li>The legal eyesight standard means that you must be able to read a car number plate from 20 metres.</li><br><li>Also, you must not have been told by a doctor or optician that your eyesight is currently worse than 6/12 (decimal 0.5) on the Snellen scale.</li><br><li> If you are in any doubt, you should discuss with your optician or doctor.</li><br><span class="highlightfix"> <li >If required, you may wear glasses or corrective lenses to meet both of these standards.</li></span></p> 
      
- <form action="YourCAREcheck" method="get" class="form ">     
- 
- <h1 class="form-title heading-medium">
-      Can you meet this legal eyesight standard for driving?
-
-    </h1>
+        <h1 class="form-title heading-medium">
+          Can you meet this legal eyesight standard for driving?
+        </h1>
    
+        <div class="form-group">
 
-     <!--  <label class="form-label">Have you ever had an episode of hypoglycaemia?</label> -->
-
-<div class="form-group">
-  <label class="block-label" for="eye11">
-    <input id="eye11" type="radio" name="eye1" value="happy">
-    Yes
-  </label>
-
-<label class="block-label" for="eye11a">
-    <input id="eye11a" type="radio" name="eye1" value="happy">
-Yes - With glasses or corrective lenses   </label>
-
-  <label class="block-label" for="eye12">
-    <input id="eye12" type="radio" name="eye1" value="sad">
-    No
-  </label>
-
+          <label class="block-label" for="q5-a1" id="q5-a1-label">
+            <input id="q5-a1" type="radio" name="q5-answer" value="Y" onclick="answer(this)">Yes
+          </label>
+          <label class="block-label" for="q5-a2" id="q5-a2-label">
+            <input id="q5-a2" type="radio" name="q5-answer" value="G" onclick="answer(this)">Yes - With glasses or corrective lenses
+          </label>
+          <label class="block-label" for="q5-a3" id="q5-a3-label">
+            <input id="q5-a3" type="radio" name="q5-answer" value="N" onclick="answer(this)">No
+          </label>
   
-  <div class="grid-row"> <br> </div>
-  <div class="grid-row"> <br> </div>
+          <div class="grid-row"> <br> </div>
+          <div class="grid-row"> <br> </div>
 
-</div>
-</div>
-
-</div>
-
-
- 
-
-   
-      <button type="submit" id="continue" class="button" >
-        Continue
-    </button>
-    
-    </form>  
-    
-      <ul>
-    
-       
-        <li><a href="/">Back</a></li>
-      </ul>
+        </div>
+      </div>
     </div>
 
+    <div class="form-group">
+      <input id="continue" type="button" class="button" value="Continue" onclick="decision(this)" disabled="true"/> 
+    </div>
+
+    <ul>
+      <li><a href="/">Back</a></li>
+    </ul>
+
+  </form>  
     
+<script>
 
-    
+  var data = {
+    state: "",
+    questions: [
+      {id: "q5", type: "radio", active: "true", answers: [
+          {id: "q5-a1", value: "", show: [], hide: [], decision: "1"},
+          {id: "q5-a2", value: "", show: [], hide: [], decision: "2"},
+          {id: "q5-a3", value: "", show: [], hide: [], decision: "3"}
+        ]
+      }
+    ],
+    decisions: [
+      {id: "1", description: "Q5: Yes", message: "Revoke 12 Months", redirect: "diabetes-4.html"},
+      {id: "2", description: "Q5: Yes (WG)", message: "Add (XX) Restriction Code", redirect: "diabetes-4.html"},
+      {id: "3", description: "Q5: No", message: "Revoke Licence", redirect: "finish.html?code=revoke"}
+    ]
+  };
 
+  initialise(data);
 
-</form>
-
+</script>
 </main>
-
 
 {{/content}}
 
 {{$bodyEnd}}
-  {{>includes/elements_scripts}}
 {{/bodyEnd}}
 
 {{/govuk_template}}
