@@ -11,6 +11,9 @@
 
 {{$headerClass}}with-proposition{{/headerClass}}
 
+<script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+<script type="text/javascript" src="/public/javascripts/application_evl.js"></script>
+
 {{$content}}
 <header class="page-header">
 
@@ -18,11 +21,11 @@
 
 <main id="page-container" role="main">
 
-  <h1 class="form-title heading-medium">
+  <!-- <h1 class="form-title heading-medium">
       Notify the DVLA of a medical condition
   </h1> 
 
-  <h2>Section 1: Please answer the questions given below to the best of your knowledge.</h2>
+  <h2>Section 1: Please answer the questions given below to the best of your knowledge.</h2> -->
 
   <form id="medical-form" class="form">
    
@@ -30,27 +33,32 @@
     <div class="grid-row starthidden" id="q1">
       <div class="column-full">
 
-        <h4 class="heading-medium" id ="q1_label">How is your diabetes treated?</h4>
+        <h4 class="heading-medium" id ="q1_label">Do you treat your diabetes with insulin?</h4>
 
-        <div class="form-group">
+     
+
+        <div class="form-group inline">
           <label class="block-label" for="q1_a1" id="q1_a1_label">
-            <input id="q1_a1" type="radio" name="q1_a" onclick="answer(this)" value="T">Tablets
+            <input id="q1_a1" type="radio" name="q1_a" onclick="answer(this)" value="T">Yes
           </label>
           <label class="block-label" for="q1_a2" id="q1_a2_label">
-            <input id="q1_a2" type="radio" name="q1_a" onclick="answer(this)" value="I">Insulin
+            <input id="q1_a2" type="radio" name="q1_a" onclick="answer(this)" value="I">No
           </label>
-          <label class="block-label" for="q1_a3" id="q1_a3_label">
-            <input id="q1_a3" type="radio" name="q1_a" onclick="answer(this)" value="N">Non-Insulin Injectable
-          </label>
+        
         </div>
 
       </div>
     </div>
 
     <div class="grid-row" id="decision">
+<<<<<<< HEAD:app/views/alpha/notify/page-1.html
       <div class="column-full">
         <div id="decision-message">Click 'Continue' when you have answered all the questions in this section.</div><br/>
         <button type="button" id="continue" class="button" onclick="decision(this)" disabled="true">Continue</button>
+=======
+      <div class="column-half">
+        <button type="button" id="continue" class="button" onclick="decision(this)">Continue</button>
+>>>>>>> 75d2aa8bae0299d0a8b5671c2808488c72d357eb:app/views/alpha/notify/options.html
       </div>
     </div>
 
@@ -61,17 +69,24 @@
   var data = {
     state: "",
     questions: [
+<<<<<<< HEAD:app/views/alpha/notify/page-1.html
       {id: "q1", type: "radio", active: "true", answers: [
           {id: "q1_a1", value: "", show: [], hide: [], decision: "1"},
           {id: "q1_a2", value: "", show: [], hide: [], decision: "2"},
           {id: "q1_a3", value: "", show: [], hide: [], decision: "3"}
+=======
+      {id: "q1", type: "radio", active: "false", answers: [
+          {id: "q1_a1", value: "", show: ["decision"], hide: [], decision: "1"},
+          {id: "q1_a2", value: "", show: ["decision"], hide: [], decision: "2"},
+          
+>>>>>>> 75d2aa8bae0299d0a8b5671c2808488c72d357eb:app/views/alpha/notify/options.html
         ]
       }
     ],
     decisions: [
-      {id: "1", description: "Q1: Tablets", message: "Non-Notifiable", redirect: "finish.html?code=non-notify"},
-      {id: "2", description: "Q1: Insulin", message: "", redirect: "page-2.html"},
-      {id: "3", description: "Q1: Injectable", message: "Issue Full 70", redirect: "finish.html?code=issue-70"}
+      {id: "1", description: "Q1: Tablets", message: "Notifiable", redirect: "page-2.html"},
+      {id: "2", description: "Q1: Insulin", message: "", redirect: "finish.html?code=non-notify"},
+      
     ]
   };
 

@@ -767,7 +767,6 @@ fieldset {
   padding: 18px 30px 15px 45px;
   margin-top: 10px;
   margin-bottom: 10px;
-  margin-right: 30px;
   cursor: pointer; }
   @media (min-width: 641px) {
     .block-label {
@@ -785,9 +784,6 @@ fieldset {
 .inline .block-label {
   clear: none;
   margin-right: 15px; }
-
-.vert .block-label {
-  clear: left; }
 
 .js-enabled label.selected {
   background: #fff;

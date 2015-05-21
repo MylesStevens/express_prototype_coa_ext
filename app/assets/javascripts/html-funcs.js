@@ -39,7 +39,7 @@ function disable(id) {
 }
 
 function radio_valid(id) {
-  return document.getElementById(id).checked;
+  var element = document.getElementById(id).checked;
 }
 
 function checkbox_valid(id) {
