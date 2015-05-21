@@ -6,112 +6,90 @@
 
 {{$propositionHeader}}
   {{>includes/propositional_navigation3}}
+  {{>includes/elements_scripts}}
 {{/propositionHeader}}
 
 {{$headerClass}}with-proposition{{/headerClass}}
 
 {{$content}}
+
 <header class="page-header">
-
-<script>
-  function FindAddress2() { 
-
-var postcodeV = document.forms["form1"]["postcode"].value;
-
-if (postcodeV ==""){
-document.getElementById("postcodeerror").innerHTML = "Please complete all the fields";
-}
-else{
-
-
-    window.location.href ="Notify_5.html";
-  }
-  
-  }
-  //document.getElementById("MyElement").className = "MyClass";
-  </script>
 
 </header>
 
-
 <main id="page-container" role="main">
 
-
-
-
-
-  
+  <form action="medical-form" class="form">
 
     <h1 class="form-title heading-medium">
       Who do you regularly see for your diabetes care? 
-{{ROUTECHOICE2}}
     </h1>
 
-        <span class="form-hint"></span>
+    <span class="form-hint"></span>
 
-
-<div class="grid-row">
-   <div class="column-half ">
-<form action="conadd1" method="get" class="form">
- <fieldset >
-    
-    
-
-    <label class="block-label " for="checkbox-1">
-      <input id="checkbox-1" type="checkbox" onclick="" name="exinfo1" value="{{ROUTECHOICE2}}">
-      Consultant
-
-    </label>
-    
-    <label class="block-label" for="checkbox-2">
-      <input id="checkbox-2" type="checkbox" onclick="" name="exinfo1" value="{{ROUTECHOICE2}}">
-      GP 
-    </label>
-    <label class="block-label" for="checkbox-3">
-      <input id="checkbox-3" type="checkbox" onclick="" name="exinfo1" value="{{ROUTECHOICE2}}">
-     Nurse Specialist at hospital clinic
-    </label>
-    <label class="block-label" for="checkbox-4">
-      <input id="checkbox-4" type="checkbox" onclick="" name="exinfo1" value="{{ROUTECHOICE2}}">
-     GP Nurse
-    </label>
-  </fieldset>
-</div>
-</div>
-
-
+    <div class="grid-row" id="q7">
+      <div class="column-half ">
  
-    
- 
-    
-     <div class="grid-row">
-   <div class="column-full">
-   <br>
-      <button type="submit" id="continue" class="button" name="exinfo2" value="fish">
-        Continue
-    </button>
-    
-    </form>  
-    
-      <ul>
-    
-       
-        <li><a href="/">Back</a></li>
-      </ul>
-    </div>
+        <fieldset>
+
+          <label class="block-label" for="q7-a1" id="q7-a1-label">
+            <input id="q7-a1" type="checkbox" name="q7-answer" value="CN" onclick="answer(this)">Consultant
+          </label>
+          <label class="block-label" for="q7-a2" id="q7-a2-label">
+            <input id="q7-a2" type="checkbox" name="q7-answer" value="GP" onclick="answer(this)">GP 
+          </label>
+          <label class="block-label" for="q7-a3" id="q7-a3-label">
+            <input id="q7-a3" type="checkbox" name="q7-answer" value="NS" onclick="answer(this)">Nurse Specialist at hospital clinic
+          </label>
+          <label class="block-label" for="q7-a4" id="q7-a4-label">
+            <input id="q7-a4" type="checkbox" name="q7-answer" value="GN" onclick="answer(this)">GP Nurse
+          </label>
+
+        </fieldset>
+
+        <div class="grid-row"> <br> </div>
+        <div class="grid-row"> <br> </div>
+
+      </div>
     </div>
 
-   
+    <div class="form-group">
+      <input id="continue" type="button" class="button" value="Continue" onclick="decision(this)" disabled="true"/> 
+    </div>
 
+    <ul>
+      <li><a href="/">Back</a></li>
+    </ul>
+    
+  </form>  
 
+<script>
+
+  var data = {
+    state: "",
+    questions: [
+      {id: "q7", type: "checkbox", active: "true", answers: [
+          {id: "q7-a1", value: "", show: [], hide: [], decision: "1"},
+          {id: "q7-a2", value: "", show: [], hide: [], decision: "1"},
+          {id: "q7-a3", value: "", show: [], hide: [], decision: "1"},
+          {id: "q7-a4", value: "", show: [], hide: [], decision: "1"}
+        ]
+      }
+    ],
+    decisions: [
+      {id: "1", description: "Q7: All", message: "Redirect -> Laser Treatment", redirect: ""}
+    ]
+  };
+
+  initialise(data);
+
+</script>
 
 </main>
-
 
 {{/content}}
 
 {{$bodyEnd}}
-  {{>includes/elements_scripts}}
 {{/bodyEnd}}
 
 {{/govuk_template}}

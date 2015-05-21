@@ -2,6 +2,7 @@
 
 {{$head}}
   {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
 {{/head}}
 
 {{$propositionHeader}}
@@ -11,67 +12,76 @@
 {{$headerClass}}with-proposition{{/headerClass}}
 
 {{$content}}
+
 <header>
-
-
-
 
 </header>
 
 
 <main id="page-container" role="main">
 
-  
- <div class="grid-row">
-   <div class="column-full">
+  <form action="hypocheck" method="get" class="form inline">     
 
-    <h1 class="form-title heading-medium">
-      Have you been seen within the last 12 months for your diabetic care?  
-         
+    <div class="grid-row" id="q6">
+      <div class="column-full">
+
+        <h1 class="form-title heading-medium">
+          Have you been seen within the last 12 months for your diabetic care?  
+        </h1>
      
- <form action="hypocheck" method="get" class="form inline">     
- 
-<div class="form-group">
-  <label class="block-label" for="radio-3">
-    <input id="radio-3" type="radio" name="care1" value="{{ROUTECHOICE}}" >
-    Yes
-  </label>
-  <label class="block-label" for="radio-4">
-    <input id="radio-4" type="radio" name="care1" value="MOREINFO{{ROUTECHOICE}}">
-    No
-  </label>
-  <div class="grid-row"> <br> </div>
-  <div class="grid-row"> <br> </div>
+        <div class="form-group">
 
+          <label class="block-label" for="q6-a1" id="q6-a1-label">
+            <input id="q6-a1" type="radio" name="q6-answer" value="Y" onclick="answer(this)">Yes
+          </label>
+          <label class="block-label" for="q6-a2" id="q6-a1-label">
+            <input id="q6-a2" type="radio" name="q6-answer" value="N" onclick="answer(this)">No
+          </label>
 
-   
-      <button type="submit" id="continue" class="button" >
-        Continue
-    </button>
+          <div class="grid-row"> <br> </div>
+          <div class="grid-row"> <br> </div>
+
+        </div>
+
+      </div>
+    </div>
     
-    </form>  
-    
-      <ul>
-    
-       
-        <li><a href="/">Back</a></li>
-      </ul>
+    <div class="form-group">
+      <input id="continue" type="button" class="button" value="Continue" onclick="decision(this)" disabled="true"/> 
     </div>
 
-    
+    <ul>
+      <li><a href="/">Back</a></li>
+    </ul>
 
-    
+  </form>  
 
+<script>
 
-</form>
+  var data = {
+    state: "",
+    questions: [
+      {id: "q6", type: "radio", active: "true", answers: [
+          {id: "q6-a1", value: "", show: [], hide: [], decision: "1"},
+          {id: "q6-a2", value: "", show: [], hide: [], decision: "2"}
+        ]
+      }
+    ],
+    decisions: [
+      {id: "1", description: "Q6: Yes", message: "Redirect -> Laser Treatment", redirect: ""},
+      {id: "2", description: "Q6: No", message: "", redirect: "diabetes-4-1.html"}
+    ]
+  };
+
+  initialise(data);
+
+</script>
 
 </main>
-
 
 {{/content}}
 
 {{$bodyEnd}}
-  {{>includes/elements_scripts}}
 {{/bodyEnd}}
 
 {{/govuk_template}}
