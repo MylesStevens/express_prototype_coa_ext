@@ -2,6 +2,7 @@
 
 {{$head}}
   {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
 {{/head}}
 
 {{$propositionHeader}}
@@ -11,78 +12,85 @@
 {{$headerClass}}with-proposition{{/headerClass}}
 
 {{$content}}
+
 <main id="page-container" role="main">
 
-  
+  <form action="D497check" method="get" class="form inline">     
 
     <h1 class="form-title heading-medium">
       As a result of your medical condition do you <em class="highlight">need</em> to drive a vehicle where the following has been fitted? {{ROUTECHOICE}}
     </h1>
          
-     
- <form action="D497check" method="get" class="form inline">     
- 
-  <div class="grid-row">
-    <div class="column-full">
+    <div class="grid-row" id="q15">
+      <div class="column-full">
 
-      <label class="form-label">Automatic transmission</label>
+        <label class="form-label">Automatic Transmission</label>
 
-<div class="form-group">
-  <label class="block-label" for="radio-3">
-    <input id="radio-3" type="radio" name="autogroup" value="{{ROUTECHOICE}}" >
-    Yes
-  </label>
-  <label class="block-label" for="radio-4">
-    <input id="radio-4" type="radio" name="autogroup" value="{{ROUTECHOICE}}" >
-    No
-  </label>
+        <div class="form-group">
+          <label class="block-label" for="q15-a1" id="q15-a1-label">
+            <input id="q15-a1" type="radio" name="q15-answer" value="Y">Yes
+          </label>
+          <label class="block-label" for="q15-a2" id="q15-a2-label">
+            <input id="q15-a2" type="radio" name="q15-answer" value="N">No
+          </label>
+        </div>
 
-</div>
-</div>
-
-</div>
-
-  
-  </div>
-
-  <div class="form-group">
-    <label class="form-label">Special adaptations  </label>
-  <label class="block-label" for="radio-5">
-    <input id="radio-5" type="radio" name="specialgroup1" value="yes{{ROUTECHOICE}}" >
-    Yes
-  </label>
-  <label class="block-label" for="radio-6">
-    <input id="radio-6" type="radio" name="specialgroup1" value="no{{ROUTECHOICE}}" >
-    No
-  </label>
-
-</div>
-</div>
-
-</div>
-
-  
-  </div>
-   
-      <button type="submit" id="continue" class="button next validation-submit">
-        Continue
-    </button>
-    
-    </form>  
-    
-      <ul>
-        
-       
-        <li><a href="/">Back</a></li>
-      </ul>
+      </div>
     </div>
 
-    
+    <div class="grid-row" id="q16">
+      <div class="column-full">
 
-    
+        <label class="form-label">Special Adaptations</label>
 
+        <div class="form-group">
+          <label class="block-label" for="q16-a1" id="q16-a1-label">
+            <input id="q16-a1" type="radio" name="q16-answer" value="Y" >Yes
+          </label>
+          <label class="block-label" for="q16-a2" id="q16-a2-label">
+            <input id="q16-a2" type="radio" name="q16-answer" value="N" >No
+          </label>
+        </div>
 
-</form>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <input id="continue" type="button" class="button" value="Continue" onclick="decision(this)"/> 
+    </div>
+
+    <ul>
+      <li><a href="/">Back</a></li>
+    </ul>
+
+  </form>
+
+<script>
+
+  var data = {
+    state: "",
+    validate: "true",
+    questions: [
+      {id: "q15", type: "radio", active: "true", answers: [
+          {id: "q15-a1", value: "", show: ["q16"], hide: [], decision: ""},
+          {id: "q15-a2", value: "", show: ["q16"], hide: [], decision: ""}
+        ]
+      },
+      {id: "q16", type: "radio", active: "false", answers: [
+          {id: "q16-a1", value: "", show: [], hide: [], decision: "1"},
+          {id: "q16-a2", value: "", show: [], hide: [], decision: "2"}
+        ]
+      }
+    ],
+    decisions: [
+      {id: "1", description: "Q16: Yes", message: "Add (XX) Restriction Code", redirect: "summary.html"},
+      {id: "2", description: "Q16: No", message: "", redirect: "summary.html"}
+    ]
+  };
+
+  initialise(data);
+
+</script>
 
 </main>
 
@@ -90,7 +98,6 @@
 {{/content}}
 
 {{$bodyEnd}}
-  {{>includes/elements_scripts}}
 {{/bodyEnd}}
 
 {{/govuk_template}}
