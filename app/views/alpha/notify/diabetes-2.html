@@ -22,7 +22,7 @@
     
   <form class="inline">
 
-    <div class="grid-row" id="q3">
+    <div class="grid-row starthidden" id="q3">
       <div class="column-full">
 
         <h4 class="heading-medium">Have you had more than one episode of <span class="highlightfix">severe</span> hypoglycaemia in the last 12 months? </h4> 
@@ -30,53 +30,62 @@
 
         <div class="form-group">
           <label class="block-label" for="q3-a1" id="q3-a1-label">
-            <input id="q3-a1" type="radio" name="hypo3a" value="Y" onclick="answer(this)">Yes
+            <input id="q3-a1" type="radio" name="q3-answer" value="0" onclick="answer(this)">No, never had one
           </label>
           <label class="block-label" for="q3-a2" id="q3-a2-label">
-            <input id="q3-a2" type="radio" name="hypo3a" value="N" onclick="answer(this)">No
+            <input id="q3-a2" type="radio" name="q3-answer" value="1" onclick="answer(this)">No, only had one
+          </label>
+          <label class="block-label" for="q3-a3" id="q3-a3-label">
+            <input id="q3-a3" type="radio" name="q3-answer" value="2" onclick="answer(this)">Yes, two or more
           </label>
         </div>
 
       </div>
     </div>
-  </form>
 
-  <form class="form inline">  
+    <div class="grid-row starthidden" id="q4">
+      <div class="column-full">
 
-    <div class="starthidden" id="q4">
-      <div class="grid-row">
-        <div class="column-full">
+        <h4 class="heading-medium">Do you <span class="highlightfix">know</span> the warning symptoms of hypoglycaemia?</h4>
 
-          <h4 class="heading-medium">Do you <span class="highlightfix">always</span> have warning symptoms of hypoglycaemia?</h4>
-
-          <div class="form-group">
-            <label class="block-label" for="q4-a1" id="q4-a1-label">
-              <input id="q4-a1" type="radio" name="hypo1a" value="Y" onclick="answer(this)">Yes
-            </label>
-
-            <label class="block-label" for="q4-a2" id="q4-a2-label">
-              <input id="q4-a2" type="radio" name="hypo1a" value="N" onclick="answer(this)">No
-            </label>
-          </div>
-
+        <div class="form-group">
+          <label class="block-label" for="q4-a1" id="q4-a1-label">
+            <input id="q4-a1" type="radio" name="q4-answer" value="Y" onclick="answer(this)">Yes
+          </label>
+          <label class="block-label" for="q4-a2" id="q4-a2-label">
+            <input id="q4-a2" type="radio" name="q4-answer" value="N" onclick="answer(this)">No
+          </label>
         </div>
+
       </div>
     </div>
-  </div>
 
-  <div class="form-group">
-    <input id="continue" type="button" class="button" value="Continue" onclick="decision(this)" disabled="true"/> 
-  </div>
-</form>
+    <div class="grid-row starthidden" id="q5">
+      <div class="column-full">
 
-<form action="{{next}}">
+        <h4 class="heading-medium">Do you <span class="highlightfix">get</span> the warning symptoms of hypoglycaemia?</h4>
 
- <a class="back-to-previous" href="/drivers-details">
-    <i class="fa fa-angle-left"></i>
-    Back <span class="visuallyhidden"> to the previous question</span>
-</a> 
+        <div class="form-group">
+          <label class="block-label" for="q5-a1" id="q5-a1-label">
+            <input id="q5-a1" type="radio" name="q5-answer" value="Y" onclick="answer(this)">Yes
+          </label>
+          <label class="block-label" for="q5-a2" id="q5-a2-label">
+            <input id="q5-a2" type="radio" name="q5-answer" value="N" onclick="answer(this)">No
+          </label>
+        </div>
 
-</form>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <input id="continue" type="button" class="button" value="Continue" onclick="decision(this)" disabled="true"/> 
+    </div>
+
+    <ul>
+      <li><a href="/">Back</a></li>
+    </ul>
+
+  </form>
 
 <script>
 
@@ -85,20 +94,28 @@
     validate: "true",
     questions: [
       {id: "q3", type: "radio", active: "true", answers: [
-          {id: "q3-a1", value: "", show: [], hide: [], decision: "1"},
-          {id: "q3-a2", value: "", show: ["q4"], hide: [], decision: ""}
+          {id: "q3-a1", value: "", show: ["q4"], hide: ["q5"], decision: ""},
+          {id: "q3-a2", value: "", show: ["q5"], hide: ["q4"], decision: ""},
+          {id: "q3-a3", value: "", show: [], hide: ["q4","q5"], decision: "1"}
         ]
       },
       {id: "q4", type: "radio", active: "false", answers: [
-          {id: "q4-a1", value: "", show: [], hide: [], decision: "3"},
-          {id: "q4-a2", value: "", show: [], hide: [], decision: "2"}
+          {id: "q4-a1", value: "", show: [], hide: [], decision: "2"},
+          {id: "q4-a2", value: "", show: [], hide: [], decision: "3"}
+        ]
+      },
+      {id: "q5", type: "radio", active: "false", answers: [
+          {id: "q5-a1", value: "", show: [], hide: [], decision: "4"},
+          {id: "q5-a2", value: "", show: [], hide: [], decision: "5"}
         ]
       }
     ],
     decisions: [
       {id: "1", description: "Q3: Yes (> 1 Episode)", message: "Revoke 12 Months", redirect: "finish.html?code=revoke"},
-      {id: "2", description: "Q4: No (Symptoms)", message: "Revoke 12 Months", redirect: "finish.html?code=revoke"},
-      {id: "3", description: "Q4: Yes (Symptoms)", message: "", redirect: "diabetes-3.html"}
+      {id: "2", description: "Q4: Yes (Know Symptoms)", message: "", redirect: "diabetes-3.html"},
+      {id: "3", description: "Q4: No (Know Symptoms)", message: "Revoke Licence", redirect: "finish.html?code=revoke"},
+      {id: "4", description: "Q5: Yes (Get Symptoms)", message: "", redirect: "diabetes-3.html"},
+      {id: "5", description: "Q5: No (Get Symptoms)", message: "Revoke 12 Months", redirect: "finish.html?code=revoke"}
     ]
   };
 

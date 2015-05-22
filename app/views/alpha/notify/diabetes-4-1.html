@@ -33,16 +33,16 @@
         <fieldset>
 
           <label class="block-label" for="q7-a1" id="q7-a1-label">
-            <input id="q7-a1" type="checkbox" name="q7-answer" value="CN" onclick="answer(this)">Consultant
+            <input id="q7-a1" type="radio" name="q7-answer" value="CN" onclick="answer(this)">Consultant
           </label>
           <label class="block-label" for="q7-a2" id="q7-a2-label">
-            <input id="q7-a2" type="checkbox" name="q7-answer" value="GP" onclick="answer(this)">GP 
+            <input id="q7-a2" type="radio" name="q7-answer" value="GP" onclick="answer(this)">GP 
           </label>
           <label class="block-label" for="q7-a3" id="q7-a3-label">
-            <input id="q7-a3" type="checkbox" name="q7-answer" value="NS" onclick="answer(this)">Nurse Specialist at hospital clinic
+            <input id="q7-a3" type="radio" name="q7-answer" value="NS" onclick="answer(this)">Nurse Specialist at hospital clinic
           </label>
           <label class="block-label" for="q7-a4" id="q7-a4-label">
-            <input id="q7-a4" type="checkbox" name="q7-answer" value="GN" onclick="answer(this)">GP Nurse
+            <input id="q7-a4" type="radio" name="q7-answer" value="GN" onclick="answer(this)">GP Nurse
           </label>
 
         </fieldset>
@@ -69,7 +69,7 @@
     state: "",
     validate: "true",
     questions: [
-      {id: "q7", type: "checkbox", active: "true", answers: [
+      {id: "q7", type: "radio", active: "true", answers: [
           {id: "q7-a1", value: "", show: [], hide: [], decision: "1"},
           {id: "q7-a2", value: "", show: [], hide: [], decision: "1"},
           {id: "q7-a3", value: "", show: [], hide: [], decision: "1"},
