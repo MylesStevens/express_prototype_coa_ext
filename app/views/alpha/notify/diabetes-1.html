@@ -64,22 +64,6 @@
       </ul>
     </div>
 
-    <div class="grid-row starthidden" id="q2">
-      <div class="column-full">
-
-        <h4 class="heading-medium">Have you had an episode of hypogycaemia?</h4>
-
-        <div class="form-group">
-          <label class="block-label" for="q2-a1" id="q2-a1-label">
-            <input id="q2-a1" type="radio" name="q2-answer" value="Y" onclick="answer(this)">Yes
-          </label>
-          <label class="block-label" for="q2-a2" id="q2-a2-label">
-            <input id="q2-a2" type="radio" name="q2-answer" value="N" onclick="answer(this)">No
-          </label>
-        </div>
-      </div>
-    </div>
-
     <div class="form-group">
       <input id="continue" name="continue" type="button" class="button" value="Continue" onclick="decision(this)" disabled="true"> 
     </div>
@@ -100,20 +84,14 @@
     validate: "true",
     questions: [
       {id: "q1", type: "radio", active: "true", answers: [
-          {id: "q1-a1", value: "", show: [], hide: ["q2","q1-info"], decision: "1"},
-          {id: "q1-a2", value: "", show: ["q2","q1-info"], hide: [], decision: ""}
-        ]
-      },
-      {id: "q2", type: "radio", active: "false", answers: [
-          {id: "q2-a1", value: "", show: [], hide: [], decision: "2"},
-          {id: "q2-a2", value: "", show: [], hide: [], decision: "3"}
+          {id: "q1-a1", value: "", show: [], hide: ["q1-info"], decision: "1"},
+          {id: "q1-a2", value: "", show: ["q1-info"], hide: [], decision: "2"}
         ]
       }
     ],
     decisions: [
       {id: "1", description: "Q1: Yes (Insulin)", message: "", redirect: "diabetes-2.html"},
-      {id: "2", description: "Q2: Yes (Hypo)", message: "", redirect: "diabetes-2.html"},
-      {id: "3", description: "Q2: No (Hypo)", message: "Not-Notifiable", redirect: "finish.html?code=non-notify"}
+      {id: "2", description: "Q1: No (Insulin)", message: "", redirect: "diabetes-1-1.html"}
     ]
   };
 
