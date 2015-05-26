@@ -21,34 +21,34 @@
       As a result of your medical condition do you <em class="highlight">need</em> to drive a vehicle where the following has been fitted? {{ROUTECHOICE}}
     </h1>
          
-    <div class="grid-row" id="q15">
+    <div class="grid-row starthidden" id="q15">
       <div class="column-full">
 
         <label class="form-label">Automatic Transmission</label>
 
         <div class="form-group">
           <label class="block-label" for="q15-a1" id="q15-a1-label">
-            <input id="q15-a1" type="radio" name="q15-answer" value="Y">Yes
+            <input id="q15-a1" type="radio" name="q15-answer" value="Y" onclick="answer(this)">Yes
           </label>
           <label class="block-label" for="q15-a2" id="q15-a2-label">
-            <input id="q15-a2" type="radio" name="q15-answer" value="N">No
+            <input id="q15-a2" type="radio" name="q15-answer" value="N" onclick="answer(this)">No
           </label>
         </div>
 
       </div>
     </div>
 
-    <div class="grid-row" id="q16">
+    <div class="grid-row starthidden" id="q16">
       <div class="column-full">
 
         <label class="form-label">Special Adaptations</label>
 
         <div class="form-group">
           <label class="block-label" for="q16-a1" id="q16-a1-label">
-            <input id="q16-a1" type="radio" name="q16-answer" value="Y" >Yes
+            <input id="q16-a1" type="radio" name="q16-answer" value="Y" onclick="answer(this)">Yes
           </label>
           <label class="block-label" for="q16-a2" id="q16-a2-label">
-            <input id="q16-a2" type="radio" name="q16-answer" value="N" >No
+            <input id="q16-a2" type="radio" name="q16-answer" value="N" onclick="answer(this)">No
           </label>
         </div>
 
@@ -83,7 +83,7 @@
       }
     ],
     decisions: [
-      {id: "1", description: "Q16: Yes", message: "", redirect: "summary.html"},
+      {id: "1", description: "Q16: Yes", message: "", redirect: "summary.html?code=restrict"},
       {id: "2", description: "Q16: No", message: "", redirect: "summary.html"}
     ]
   };
