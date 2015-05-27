@@ -37,32 +37,6 @@
         </div>
       </div>
     </div>
-  <!-- 
-    <div class="panel-indent starthidden" id="q1-info">
-
-      <h3 class="heading-small">Hypoglycaemia causes symptoms such as</h3>
-      
-      <ul class="list-bullet">
-        <li>hunger</li>
-        <li>shakiness</li>
-        <li>nervousness</li>
-        <li>sweating</li>
-        <li>dizziness or light-headedness</li>
-        <li>sleepiness</li>
-        <li>confusion</li>
-        <li>difficulty speaking</li>
-        <li>anxiety</li>
-        <li>weakness</li>
-      </ul>
-  
-      <p>Hypoglycaemia can also happen during sleep. Some signs of hypoglycaemia during sleep include</p>
-
-      <ul class="list-bullet">
-        <li>crying out or having nightmares</li>
-        <li>finding pyjamas or sheets damp from perspiration</li>
-        <li>feeling tired, irritable, or confused after waking up</li>
-      </ul>
-    </div> -->
 
     <div class="form-group">
       <input id="continue" name="continue" type="button" class="button" value="Continue" onclick="decision(this)" disabled="true"> 
@@ -71,7 +45,7 @@
   </form>
 
   <form action="{{next}}">
-    <a class="back-to-previous" href="/drivers-details">
+    <a class="back-to-previous" href="javascript:history.go(-1);">
       <i class="fa fa-angle-left"></i>
       Back <span class="visuallyhidden"> to the previous question</span>
     </a> 
@@ -84,14 +58,14 @@
     validate: "true",
     questions: [
       {id: "q1", type: "radio", active: "true", answers: [
-          {id: "q1-a1", value: "", show: [], hide: ["q1-info"], decision: "1"},
-          {id: "q1-a2", value: "", show: ["q1-info"], hide: [], decision: "2"}
+          {id: "q1-a1", value: "", show: [], hide: [], decision: "1"},
+          {id: "q1-a2", value: "", show: [], hide: [], decision: "2"}
         ]
       }
     ],
     decisions: [
-      {id: "1", description: "Q1: Yes (Insulin)", message: "", redirect: "diabetes-2.html"},
-      {id: "2", description: "Q1: No (Insulin)", message: "", redirect: "diabetes-1-1.html"}
+      {id: "1", description: "Q1: Yes (Insulin)", message: "", redirect: "your-details.html"},
+      {id: "2", description: "Q1: No (Insulin)", message: "", redirect: "your-details.html"}
     ]
   };
 
