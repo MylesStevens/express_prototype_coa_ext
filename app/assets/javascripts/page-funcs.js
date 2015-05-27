@@ -39,11 +39,18 @@ function execute() {
 			}
 		}
 	}
+
+	disable('continue');
+	if(page.validate == "false") {
+		enable('continue');
+	}
 }
 
 // Page completion.
 function finalise() {
 	//alert(JSON.stringify(page.questions));
+
+	disable('continue');
 
 	var active = 0, answered = 0;
 	for(var q=0; q < page.questions.length; q++) {
@@ -59,7 +66,6 @@ function finalise() {
 		}
 	}
 
-	disable('continue');
 	if(answered == active) {
 		enable('continue');
 	}
@@ -67,12 +73,12 @@ function finalise() {
 
 // Page interaction
 function answer(element) {
-	var items = element.id.split("_");
+	var items = element.id.split("-");
 	var question = items[0];
 	var answer = items[1];
 	var extend = (items.length == 3) ? items[2] : null;
 
-	var lookup = (question+'_'+answer);
+	var lookup = (question+'-'+answer);
 
 	for(var i=0; i < page.questions.length; i++) {
 		if(page.questions[i].id == question) {
@@ -101,10 +107,16 @@ function answer(element) {
 		}
 	}
 
-	finalise();
+	if(page.validate == "true") {
+		finalise();
+	}
 }
 
 function decision(element) {
+	if((page.validate == "false") && (page.state.length == 0)) {
+		page.state = '1';
+	}
+
 	for(var i=0; i < page.decisions.length; i++) {
 		var decision = page.decisions[i];
 		if(decision.id == page.state) {
@@ -173,37 +185,47 @@ function set(answer_id, new_value) {
 }
 
 function show_question(question_id) {
-	var question = find_question(question_id);
-	question.active = 'true';
+	if(question_id.split("-").length < 2) {
+		var question = find_question(question_id);
+		question.active = 'true';
+	}
 	show(question_id);
 }
 
 function hide_question(question_id) {
-	var question = find_question(question_id);
-	question.active = 'false';
+	if(question_id.split("-").length < 2) {
+		var question = find_question(question_id);
+		question.active = 'false';
+	}
 	hide(question_id);
 }
 
 function click_text(element) {
-	//alert('Click Text: '+element.id+', Checked: '+element.checked);
+	//alert('Click Text: '+element.id+', Value: '+element.value);
+	//return ((event.charCode >= 48) && (event.charCode <= 57));
+	set(element.id, element.value);
+}
+
+function click_radio(element) {
+	//alert('Click Radio: '+element.id+', Checked: '+element.checked);
+	var value = (element.checked) ? element.value : '';
+	set(element.id, value);
+}
+
+function click_checkbox(element) {
+	//alert('Click Checkbox: '+element.id+', Checked: '+element.checked);
+	var value = (element.checked) ? element.value : '';
+	set(element.id, value);
 }
 
 function set_text(answer) {
 	document.getElementById(answer.id).value = answer.value;
 }
 
-function click_radio(element) {
-	set(element.id, element.value);
-}
-
 function set_radio(answer) {
 	var element = document.getElementById(answer.id);
 	element.value = answer.value;
 	element.checked = true;
-}
-
-function click_checkbox(element) {
-	//alert('Click Checkbox: '+element.id+', Checked: '+element.checked);
 }
 
 function set_checkbox(answer) {

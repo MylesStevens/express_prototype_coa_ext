@@ -260,29 +260,30 @@ module.exports = {
     });
     
     /*-----------------------------------------------------*/
-    app.get('/alpha/start', function (req, res) {
-        res.render('alpha/start', {'assetPath' : assetPath, 'DRIVER' : 'JB12345'})
-    });
-
-    app.get('/alpha/landing', function (req, res) {
-        res.render('alpha/landing', {'assetPath' : assetPath, 'DRIVER' : 'JB12345'})
-    });
-
-    app.get('/alpha/notify/page-1', function (req, res) {
-        res.render('alpha/notify/page-1', {'assetPath' : assetPath, 'DRIVER' : 'JB12345'})
-    });
-
-    app.get('/alpha/notify/page-2', function (req, res) {
-        res.render('alpha/notify/page-2', {'assetPath' : assetPath, 'DRIVER' : 'JB12345'})
+    app.get('/alpha/notify/consent', function (req, res) {
+        res.render('alpha/notify/consent', {'assetPath' : assetPath, 'path' : req.query.path})
     });
     
-    app.get('/alpha/notify/page-3', function (req, res) {
-        res.render('alpha/notify/page-3', {'assetPath' : assetPath, 'DRIVER' : 'JB12345'})
+    app.get('/alpha/notify/diabetes-4-1', function (req, res) {
+        res.render('alpha/notify/diabetes-4-1', {'assetPath' : assetPath, 'path' : req.query.path})
     });
-    
-    app.get('/alpha/notify/finish', function (req, res) {
-        res.render('alpha/notify/finish', {'assetPath' : assetPath, 'DRIVER' : 'JB12345'})
+
+    app.get('/alpha/notify/diabetes-4-2', function (req, res) {
+        res.render('alpha/notify/diabetes-4-2', {'assetPath' : assetPath, 'path' : req.query.path})
     });
+
+    app.get('/alpha/notify/diabetes-4-3', function (req, res) {
+        res.render('alpha/notify/diabetes-4-3', {'assetPath' : assetPath, 'path' : req.query.path})
+    });
+
+    app.get('/alpha/notify/diabetes-4-4', function (req, res) {
+        res.render('alpha/notify/diabetes-4-4', {'assetPath' : assetPath, 'path' : req.query.path})
+    });
+
+    app.get('/alpha/notify/diabetes-5', function (req, res) {
+        res.render('alpha/notify/diabetes-5', {'assetPath' : assetPath, 'path' : req.query.path})
+    });
+
   }
 
 };
