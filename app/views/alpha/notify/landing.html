@@ -21,7 +21,22 @@
     
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="/public/javascripts/verify_common.js"></script>
-  <style type="text/css"></style></head>
+    <style type="text/css"></style>
+
+    <script>
+    function start() {
+      var verify = '{{verify}}';
+      var auth = '{{auth}}';
+
+      var target = 'new-or-renew.html';
+      if((verify.length > 0) && (auth.length > 0)) {
+        target = verify+'?auth='+auth+target;
+      }
+      window.location.href = target;
+    }
+    </script>
+
+  </head>
 
   <body class="js-enabled">
     <script type="text/javascript">document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
@@ -150,7 +165,7 @@
   <div class="sign-in-wrap">
 
         <div class="button-wrap">
-          <a class="button" href="/Verify/Verify_2?auth=/alpha/notify/neworrenew.html&requestId=dvla">
+          <a class="button" href="javascript:start();">
             <strong>Start now</strong>
           </a>
         </div>
