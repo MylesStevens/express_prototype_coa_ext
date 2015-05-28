@@ -231,6 +231,13 @@ module.exports = {
     });
 
     /*-----------------------------------------------------*/
+    app.get('/alpha/notify/landing', function (req, res) {
+        var verify = req.query.verify;
+        var auth = req.query.auth;
+        res.render('alpha/notify/landing', {'assetPath' : assetPath, 'verify' : verify, 'auth' : auth})
+    });
+
+    /*-----------------------------------------------------*/
     app.get('/Verify/Verify_1', function (req, res) {
         res.render('Verify/Verify_1', {'assetPath' : assetPath, 'auth' : req.query.auth})
     });
