@@ -1,14 +1,19 @@
 #!/bin/ksh
 
 clear
-echo Preparing to deploy prototype to Heroku ...
+echo Building prototype ...
+rm -rf public/images/*
+rm -rf public/javascripts/*
+rm -rf public/stylesheets/*
+
+cp -R app/assets/images/ public/images/
+cp -R app/assets/javascripts/ public/javascripts/
+cp -R app/assets/sass/*.css public/stylesheets/
+
+echo Deploying prototype ...
 git checkout master
 git add *
 git commit -m "Latest build"
 git push origin master
-
-git push heroku master
-
-heroku open
 
  
