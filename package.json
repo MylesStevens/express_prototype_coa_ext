@@ -17,6 +17,7 @@
   }, 
   "devDependencies": {
     "node-sass": "3.x",
+    "grunt-cli": "0.1.13",
     "grunt": "*",
     "grunt-contrib-clean": "0.6.0",
     "grunt-contrib-copy": "0.8.0",
