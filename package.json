@@ -13,6 +13,9 @@
     "minimist": "0.0.8",
     "hogan.js": "3.0.2",
     "govuk_template_mustache": "^0.9.1"
+  },
+  "devDependencies": {
+    "node-sass": "3.x"
   }
 
 }
