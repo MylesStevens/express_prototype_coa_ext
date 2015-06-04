@@ -26,14 +26,16 @@ var list = '{{conditions}}'.split(",");
 
 var next = 'summary?flow={{flow}}&conditions={{conditions}}';
 
+/*
 var found = false;
 for(var i=0; i < (list.length - 1); i++) {
   if((flow == list[i]) && (i <= (list.length - 2))) {
     next = list[i+1]+'-start?flow='+list[i+1]+'&conditions={{conditions}}';
   }
 }
+*/
 
-alert('Next: '+next);
+//alert('Next: '+next);
 
 window.location.href = next;
 
