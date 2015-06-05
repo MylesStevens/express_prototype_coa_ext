@@ -37,7 +37,7 @@
     </div>
 
     <div class="form-group">
-      <input id="continue" name="continue" type="button" class="button" value="Confirm Address" onclick="decision(this)"/> 
+      <input id="continue" name="continue" type="button" class="button" value="Confirm Address" onclick="decision(this,'{{flow}}','{{conditions}}')"/> 
     </div>
 
     <ul>
@@ -53,17 +53,18 @@
     validate: "false",
     questions: [
       {id: "q13", type: "text", active: "true", answers: [
-          {id: "q13-a1", value: "", show: [], hide: [], decision: "1"},
-          {id: "q13-a2", value: "", show: [], hide: [], decision: "1"},
-          {id: "q13-a3", value: "", show: [], hide: [], decision: "1"},
-          {id: "q13-a4", value: "", show: [], hide: [], decision: "1"},
-          {id: "q13-a5", value: "", show: [], hide: [], decision: "1"},
-          {id: "q13-a6", value: "", show: [], hide: [], decision: "1"}
+          {id: "q13-a1", value: "", show: [], hide: [], decision: "{{flow}}-1"},
+          {id: "q13-a2", value: "", show: [], hide: [], decision: "{{flow}}-1"},
+          {id: "q13-a3", value: "", show: [], hide: [], decision: "{{flow}}-1"},
+          {id: "q13-a4", value: "", show: [], hide: [], decision: "{{flow}}-1"},
+          {id: "q13-a5", value: "", show: [], hide: [], decision: "{{flow}}-1"},
+          {id: "q13-a6", value: "", show: [], hide: [], decision: "{{flow}}-1"}
         ]
       }
     ],
     decisions: [
-      {id: "1", description: "q13: All", message: "", redirect: "eyesight-treatment?flow={{flow}}&conditions={{conditions}}&path={{path}}"}
+      {id: "diabetes-1", description: "q13: All", message: "", redirect: "eyesight-treatment?flow={{flow}}&conditions={{conditions}}&path={{path}}"},
+      {id: "glaucoma-1", description: "q13: All", message: "", redirect: "another-condition?flow={{flow}}&conditions={{conditions}}&path={{path}}"}
     ]
   };
 
