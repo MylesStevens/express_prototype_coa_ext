@@ -32,7 +32,7 @@
           For example, '01792 123456'
         </span>
         <!--input id="q8-a1" name="q8-a1" type="text" maxlength="11" class="form-control" onkeypress='return event.charCode >= 48 && event.charCode <= 57' onclick="answer(this)"-->
-        <input id="q8-a1" name="q8-a1" type="text" maxlength="11" class="form-control" onkeyup="answer(this)">
+        <input id="q8-a1" name="q8-a1" type="text" maxlength="11" class="form-control" onkeyup="answer(this,'{{flow}}','{{conditions}}')">
         <br/>
       </label>
     </div>
@@ -43,7 +43,7 @@
         <span class="form-hint">
           For example, 'doc@hospital.com'
         </span>
-        <input id="q9-a1" name="q9-a1" type="text" class="form-control" onkeyup="answer(this)">
+        <input id="q9-a1" name="q9-a1" type="text" class="form-control" onkeyup="answer(this,'{{flow}}','{{conditions}}')">
         <br/>
       </label>
     </div>
