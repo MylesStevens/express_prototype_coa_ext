@@ -22,7 +22,7 @@
   <form action="medical-form" class="form">
 
     <h1 class="form-title heading-medium">
-      Who did you last see for your diabetic care? 
+      Who did you last see for your {{flow}} care? 
     </h1>
 
     <span class="form-hint"></span>
@@ -54,7 +54,7 @@
     </div>
 
     <div class="form-group">
-      <input id="continue" type="button" class="button" value="Continue" onclick="decision(this)"/> 
+      <input id="continue" type="button" class="button" value="Continue" onclick="decision(this,'{{flow}}','{{conditions}}')"/> 
     </div>
 
     <ul>
