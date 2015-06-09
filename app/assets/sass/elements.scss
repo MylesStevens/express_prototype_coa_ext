@@ -108,10 +108,20 @@
 .dwp-permission-group {
 background-color: #D5E8F3;
 padding: 19px;
-border-radius: 4px;
-border-width: 1px;
-border-color: #CBCBCB;
-border-style: solid;
+//border-radius: 4px;
+//border-width: 1px;
+//border-color: #CBCBCB;
+//border-style: solid;
+margin: 0.5em 0 0 0;
+}
+
+.success-group {
+background-color: #249285;
+padding: 19px;
+//border-radius: 4px;
+//border-width: 1px;
+//border-color: #CBCBCB;
+//border-style: solid;
 margin: 0.5em 0 0 0;
 }
 
@@ -212,4 +222,52 @@ margin: 0.5em 0 0 0;
   
   color: #2E8ACA
 }
+
+
+    .declarationheading{
+  font-family: "nta", Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+
+
+  }
+
+      .finishheading{
+  font-family: "nta", Arial, sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #fff;
+  vertical-align: middle;
+
+  }
+
+      .finishtick{
+  vertical-align: middle; 
+  margin-top: -10px; 
+  margin-right: 10px;
+  }
+
+  .searchBox{
+  background-image: url("../images/icons/tick.png");
+  background-repeat: no-repeat;
+  background-position: 105% 50%;
+  padding: em(7) em(41) em(4) em(16);
+}
+
+  .double {
+  zoom:2;
+  transform:scale(2);
+  -ms-transform:scale(2);
+  -webkit-transform:scale(2);
+  -o-transform:scale(2);
+  -moz-transform:scale(2);
+  transform-origin:0 0;
+  -ms-transform-origin:0 0;
+  -webkit-transform-origin:0 0;
+  -o-transform-origin:0 0;
+  -moz-transform-origin:0 0;
+  -webkit-transform-origin:0 0;
+}
+
+
      
