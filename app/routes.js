@@ -1,7 +1,7 @@
 module.exports = {
   bind : function (app, assetPath) {
 
-    var version = 'sprint-5';
+    var version = 'sprint-6';
 
     /*-----------------------------------------------------*/
     app.get('/', function (req, res) {
@@ -45,6 +45,10 @@ module.exports = {
     /*-----------------------------------------------------*/
     app.get('/alpha/'+version+'/diabetes-start', function (req, res) {
         res.render('alpha/'+version+'/diabetes-start', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions})
+    });
+
+    app.get('/alpha/'+version+'/diabetes-symptoms', function (req, res) {
+        res.render('alpha/'+version+'/diabetes-symptoms', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions})
     });
 
     app.get('/alpha/'+version+'/hypoglycaemia-episodes', function (req, res) {
