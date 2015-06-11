@@ -2,6 +2,7 @@
 
 {{$head}}
   {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
 {{/head}}
 
 {{$propositionHeader}}
@@ -11,7 +12,17 @@
 {{$headerClass}}with-proposition{{/headerClass}}
 
 {{$content}}
+
 <header class="page-header">
+
+<script>
+
+function next() {
+  window.location.href = 'medical-conditions';
+}
+
+</script>
+
 </header>
 
 <main id="page-container" role="main">
@@ -21,7 +32,7 @@
 
     </h1>
 
- <form id="form1" action="medical-conditions.html" method="get" class="form">
+ <form id="form1" action="medical-conditions" method="get" class="form">
    
     
 
@@ -116,9 +127,7 @@
 <div class="grid-row">
    <div class="column-full">
    <br>
-      <button type="submit" id="sub" class="button" name = "sub" value="" >
-        Confirm
-    </button>
+      <input type="button" id="continue" name="continue" class="button" value="Confirm" onclick="next(this);"/>
     
     </form>  
     
@@ -139,7 +148,6 @@
 {{/content}}
 
 {{$bodyEnd}}
-  {{>includes/elements_scripts}}
 {{/bodyEnd}}
 
 {{/govuk_template}}

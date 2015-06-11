@@ -6,6 +6,7 @@
 
 {{$propositionHeader}}
   {{>includes/propositional_navigation3}}
+  {{>includes/elements_scripts}}
 {{/propositionHeader}}
 
 {{$headerClass}}with-proposition{{/headerClass}}
@@ -17,7 +18,7 @@
 <script>
 
 function next() {
-  window.location.href = 'medical-conditions.html';
+  window.location.href = 'medical-conditions';
 }
 
 </script>
@@ -31,7 +32,7 @@ function next() {
  -->
     </h1>
 
- <form id="medical-form" action="medical-conditions.html" class="form">
+ <form id="medical-form" action="medical-conditions" class="form">
    
     <div class="form-group">
        <label class="form-title heading-medium" for="drivernum">
@@ -58,7 +59,7 @@ function next() {
      </details>
 
      <p></p>
-       <a href="your-details-nodrivernumber.html">I don't know my driver number</a>
+       <a href="your-details-nodrivernumber">I don't know my driver number</a>
 
 <div class="grid-row">
    <div class="column-full">
@@ -84,7 +85,6 @@ function next() {
 {{/content}}
 
 {{$bodyEnd}}
-  {{>includes/elements_scripts}}
 {{/bodyEnd}}
 
 {{/govuk_template}}
