@@ -29,6 +29,10 @@ module.exports = {
         res.render('alpha/'+version+'/medical-conditions', {'assetPath' : assetPath})
     });
     
+    app.get('/alpha/summary', function (req, res) {
+        res.render('alpha/'+version+'/summary', {'assetPath' : assetPath})
+    });
+    
     app.get('/alpha/finish', function (req, res) {
         res.render('alpha/'+version+'/finish', {'assetPath' : assetPath})
     });
