@@ -29,10 +29,10 @@
 
         <div class="form-group">
           <label class="block-label" for="q1-a1" id="q1-a1-label">
-            <input id="q1-a1" type="radio" name="q1-answer" value="Y" onclick="answer(this)">Yes
+            <input id="q1-a1" type="radio" name="q1-answer" value="Y" onclick="answer(this,'{{flow}}','{{conditions}}')">Yes
           </label>
           <label class="block-label" for="q1-a2" id="q1-a2-label">
-            <input id="q1-a2" type="radio" name="q1-answer" value="N" onclick="answer(this)">No
+            <input id="q1-a2" type="radio" name="q1-answer" value="N" onclick="answer(this,'{{flow}}','{{conditions}}')">No
           </label>
         </div>
       </div>

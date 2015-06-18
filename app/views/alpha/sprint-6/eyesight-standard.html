@@ -22,13 +22,19 @@
   <form action="medical-form" class="form">     
  
     <div class="grid-row" id="q5">
-      <div class="column-full">
+      <div class="column-two-thirds">
 
         <h1 class="form-title heading-medium">
           The legal eyesight standard for driving
         </h1>
 
-        <p class="lede"><li>The legal eyesight standard means that you must be able to read a car number plate from 20 metres.</li><br><li>Also, you must not have been told by a doctor or optician that your eyesight is currently worse than 6/12 (decimal 0.5) on the Snellen scale.</li><br><li> If you are in any doubt, you should discuss with your optician or doctor.</li><br><span class="highlightfix"> <li >If required, you may wear glasses or corrective lenses to meet both of these standards.</li></span></p> 
+        <h2 class="heading-small">The legal eyesight standard means that:</h2>
+        <ul class="list-bullet text">
+          <li>you must be able to read a car number plate from 20 metres</li>
+          <li>you must not have been told by a doctor or optician that your eyesight is currently worse than 6/12 (decimal 0.5) on the Snellen scale</li>
+        </ul>
+
+        <p>If you are in any doubt, you should discuss with your optician or doctor. If required, you may wear glasses or corrective lenses to meet both of these standards.</p> 
      
         <h1 class="form-title heading-medium">
           Can you meet this legal eyesight standard for driving?
@@ -37,13 +43,13 @@
         <div class="form-group">
 
           <label class="block-label" for="q5-a1" id="q5-a1-label">
-            <input id="q5-a1" type="radio" name="q5-answer" value="Y" onclick="answer(this)">Yes
+            <input id="q5-a1" type="radio" name="q5-answer" value="Y" onclick="answer(this,'{{flow}}','{{conditions}}')">Yes
           </label>
           <label class="block-label" for="q5-a2" id="q5-a2-label">
-            <input id="q5-a2" type="radio" name="q5-answer" value="G" onclick="answer(this)">Yes - with glasses or corrective lenses
+            <input id="q5-a2" type="radio" name="q5-answer" value="G" onclick="answer(this,'{{flow}}','{{conditions}}')">Yes, with glasses or corrective lenses
           </label>
           <label class="block-label" for="q5-a3" id="q5-a3-label">
-            <input id="q5-a3" type="radio" name="q5-answer" value="N" onclick="answer(this)">No
+            <input id="q5-a3" type="radio" name="q5-answer" value="N" onclick="answer(this,'{{flow}}','{{conditions}}')">No
           </label>
   
           <div class="grid-row"> <br> </div>

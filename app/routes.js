@@ -30,7 +30,7 @@ module.exports = {
     });
     
     app.get('/alpha/summary', function (req, res) {
-        res.render('alpha/'+version+'/summary', {'assetPath' : assetPath})
+        res.render('alpha/'+version+'/summary', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions})
     });
     
     app.get('/alpha/finish', function (req, res) {
