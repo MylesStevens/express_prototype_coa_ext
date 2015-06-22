@@ -2,11 +2,11 @@
 
 {{$head}}
   {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
 {{/head}}
 
 {{$propositionHeader}}
   {{>includes/propositional_navigation3}}
-  {{>includes/elements_scripts}}
 {{/propositionHeader}}
 
 {{$headerClass}}with-proposition{{/headerClass}}
@@ -27,57 +27,52 @@ function next() {
 
 <main id="page-container" role="main">
 
-    <h1 class="form-title heading-medium">
-<!--       Your driver number      
- -->
-    </h1>
+  <!--h1 class="form-title heading-medium">&nbsp;</h1-->
+  <br/><br/>
 
- <form id="medical-form" action="medical-conditions" class="form">
+  <form id="medical-form" action="medical-conditions" class="form">
    
     <div class="form-group">
-       <label class="form-title heading-medium" for="drivernum">
-        
-        Your driver number </label>
-        <span class="form-hint">
-          For example, 'MORGA753116SM9IJ'
-           </span>
-           <input type="text" maxlength="16" class="form-control" id="drivernumber"  >
-          <br>
+      <label class="form-title heading-medium" for="drivernum">
+        Your driving licence number
+      </label>
       
+      <span class="form-hint">
+        For example, 'MORGA753116SM9IJ'
+      </span>
+      
+      <input type="text" maxlength="16" class="form-control" id="drivernumber" />
+      <br/>
     </div>
+
     <details>
-        <summary><span class="summary">Where to find your driver number</span></summary>
+      <summary>
+        <span class="summary">Where to find your driving licence number</span>
+      </summary>
 
- 
-        <div class="panel-indent">
-          <p>Your driving licence number can be found in section 5 of your driving licence photocard</p>
-          <img id="whatLicenceImg" src="/public/images/driving_licence.png" alt="">
+      <div class="panel-indent">
+        <p>Your driving licence number can be found in section 5 of your driving licence photocard</p>
+        <img id="whatLicenceImg" src="/public/images/driving_licence.png" alt="">
+      </div>    
+    </details>
 
-          
-        </div>    
-   
-     </details>
+    <p></p>
 
-     <p></p>
-       <a href="your-details-nodrivernumber">I don't know my driver number</a>
+    <a href="your-details-nodrivernumber">I don't know my driving licence number</a>
 
-<div class="grid-row">
-   <div class="column-full">
-   <br>
-      <input type="button" id="continue" class="button" name="continue" value="Confirm" onclick="next();">
+    <div class="grid-row">
+      <div class="column-full">
+        <br/>
+        <input type="button" id="continue" class="button" name="continue" value="Confirm" onclick="next();">
     
-    </form>  
-    
-      <ul>
-    
-       
-        <li><a href="javascript:history.go(-1);">Back</a></li>
-      </ul>
-    </div>
+        <ul>
+          <li><a href="javascript:history.go(-1);">Back</a></li>
+        </ul>
+
+      </div>
     </div>
 
-    
-
+  </form>  
     
 </main>
 

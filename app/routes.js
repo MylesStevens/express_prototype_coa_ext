@@ -30,7 +30,7 @@ module.exports = {
     });
     
     app.get('/alpha/summary', function (req, res) {
-        res.render('alpha/'+version+'/summary', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions})
+        res.render('alpha/'+version+'/summary', {'assetPath' : assetPath, 'flow' : req.query.flow, 'conditions' : req.query.conditions})
     });
     
     app.get('/alpha/finish', function (req, res) {
@@ -38,32 +38,32 @@ module.exports = {
     });
     
     /*-----------------------------------------------------*/
-    app.get('/Verify/Verify_1', function (req, res) {
-        res.render('Verify/Verify_1', {'assetPath' : assetPath, 'auth' : req.query.auth})
+    app.get('/verify/verify-1', function (req, res) {
+        res.render('verify/verify-1', {'assetPath' : assetPath, 'auth' : req.query.auth})
     });
 
-    app.get('/Verify/Verify_2', function (req, res) {
-        res.render('Verify/Verify_2', {'assetPath' : assetPath, 'auth' : req.query.auth})
+    app.get('/verify/verify-2', function (req, res) {
+        res.render('verify/verify-2', {'assetPath' : assetPath, 'auth' : req.query.auth})
     });
 
-    app.get('/Verify/Verify_3', function (req, res) {
-        res.render('Verify/Verify_3', {'assetPath' : assetPath, 'auth' : req.query.auth})
+    app.get('/verify/verify-3', function (req, res) {
+        res.render('verify/verify-3', {'assetPath' : assetPath, 'auth' : req.query.auth})
     });
 
-    app.get('/Verify/Verify_4', function (req, res) {
-        res.render('Verify/Verify_4', {'assetPath' : assetPath, 'auth' : req.query.auth})
+    app.get('/verify/verify-4', function (req, res) {
+        res.render('verify/verify-4', {'assetPath' : assetPath, 'auth' : req.query.auth})
     });
 
-    app.get('/Verify/Verify_5', function (req, res) {
-        res.render('Verify/Verify_5', {'assetPath' : assetPath, 'auth' : req.query.auth})
+    app.get('/verify/verify-5', function (req, res) {
+        res.render('verify/verify-5', {'assetPath' : assetPath, 'auth' : req.query.auth})
     });
 
-    app.get('/Verify/Verify_6', function (req, res) {
-        res.render('Verify/Verify_6', {'assetPath' : assetPath, 'auth' : req.query.auth})
+    app.get('/verify/verify-6', function (req, res) {
+        res.render('verify/verify-6', {'assetPath' : assetPath, 'auth' : req.query.auth})
     });
 
-    app.get('/Verify/Verify_7', function (req, res) {
-        res.render('Verify/Verify_7', {'assetPath' : assetPath, 'auth' : req.query.auth})
+    app.get('/verify/verify-7', function (req, res) {
+        res.render('Verify/Verify-7', {'assetPath' : assetPath, 'auth' : req.query.auth})
     });
 
     /*-----------------------------------------------------*/
