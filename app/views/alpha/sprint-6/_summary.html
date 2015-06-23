@@ -2,6 +2,7 @@
 
 {{$head}}
   {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
 {{/head}}
 
 {{$propositionHeader}}
@@ -11,60 +12,46 @@
 {{$headerClass}}with-proposition{{/headerClass}}
 
 {{$content}}
-<header class="page-header">
 
+<header class="page-header">
 
 </header>
 
 
 <main id="page-container" role="main">
 
+  <div id="wrapper" class="transaction service">
+    <div id="blueBar"></div>
 
-
-<div id="wrapper" class="transaction service">
-    <main id="content" role="main" class="group">
-        <article>
-            
-<div id="blueBar"></div>
-
-    </header>
-
-
-
-    <h2 class="visuallyhidden">Personal Details </h2>
-
-   
-
-    <dl>
-        <dt class="visually hidden">Name</dt>
-       <div><h2 class="heading-medium">Summary </h2></div>
-       <div><h2 class="heading-small border-bottom">Mr MYLES GORDON  STEVENS {{ROUTECHOICE}}</h2></div>
-       <div class="grid-row border-bottom">
+      <dl>
+        <div><h2 class="heading-medium border-bottom">Summary</h2></div>
+        <div><h2 class="heading-small">Your personal details  <a href="your-details-nodrivernumber">(Change)</a></h2></div>
+        <div class="grid-row border-bottom">
         <div class="column-quarter"> 
+          <dt class="light-small">Full Name</dt>
           <dt class="light-small">Date of birth</dt>
           <dt class="light-small">Gender</dt>
-          <dt class="light-small">Address</dt></div>
-
+          <dt class="light-small">Address</dt>
+        </div>
         <div class="column-half"> 
-          
+          <dd class="bold-small">Mr Myles Gordon Stevens</dd>
           <dd class="bold-small">9 Jun 1971</dd>
           <dd class="bold-small">Male</dd>
-          <dd class="bold-small">86 Tanylan Road  Morriston SWANSEA <span class="postcode">SA6 7DU</span>
-        </dd></div>
-        
-    </dl>
+          <dd class="bold-small">86 Tanylan Road, Morriston, SWANSEA, <span class="postcode">SA6 7DU</span></dd>
+        </div>
+      </dl>
+
+    </div>
   </div>
+
+  <dl>
+    
+    <div>
+      <h2 class="heading-small">Your medical condition(s)</h2> 
     </div>
 
-<dl>
-    
-    <div><h2 class="heading-small">Medical condition you are notifying us about</h2> </div>
-
-    
-   
-
-<div class="grid-row border-bottom">
-   <div class="column-third"> <dl>
+    <div class="grid-row border-bottom">
+      <div class="column-third"> <dl>
         <dt class="light-small">Medical condition</dt> 
         <dt class="light-small">GP's Address</dt>
         <dt class="light-small">The last time you visited your GP</dt>
@@ -74,34 +61,42 @@
 
       </div>
 
-<div class="column-two-thirds">
-          <dd class="bold-small">Diabetes</dd>
+      <div class="column-two-thirds">
+        <dd class="bold-small">Diabetes <a href="medical-conditions?flow={{flow}}&conditions={{conditions}}">(Change)</a></dd>
         <dd class="bold-small">Sway Road Surgery, 65 Sway Road, Morriston SWANSEA, SA6 6JA</dd>
         <dd class="bold-small">23 Feb 2015</dd>
-        <dd class="bold-small">Professor Stephen Bain</dd>
+        <dd class="bold-small">Professor Stephen Bain <a href="medical-care-3?flow={{flow}}&conditions={{conditions}}">(Change)</a></dd>
         <dd class="bold-small">Singleton Hospital,Sketty Lane, Sketty, SWANSEA, SA2 8QA</dd>
         <dd class="bold-small">04 Mar 2015</dd> 
-         </div></div>
+      </div>
+    </div>
         
-    </dl>
+  </dl>
 </div>
-<div><h2 class="heading-small">Confirmations</h2> </div>
+
+<div>
+  <h2 class="heading-small">Confirmations</h2> 
+</div>
+
 <div class="grid-row border-bottom">
   <div class ="column-full">
     <p>You have confirmed that your condition does not affect your ability to drive safely</P>
-    <p>You have confirmed that you can read a number plate that is 20 meters away</P>
-    <p>As a result of your condition you do not drive a vehicle with special adaptions</P>
-    <p>As a result of your condition you do not drive a vehicle fitted with an automatic transmition</P>
-     <p>You know what the symptoms of hypoglycaemia are</P>
- </div></div>
+    <p>You have confirmed that you can read a number plate that is 20 meters away <a href="eyesight-standard?flow={{flow}}&conditions={{conditions}}">(Change)</a></P>
+    <p>You have confirmed that you do not drive a vehicle with special adaptations <a href="special-adaptations?flow={{flow}}&conditions={{conditions}}">(Change)</a></P>
+    <p>You have confirmed that you do not drive a vehicle fitted with an automatic transmition <a href="special-adaptations?flow={{flow}}&conditions={{conditions}}">(Change)</a></P>
+    <p>You have confirmed that you know what the symptoms of hypoglycaemia are <a href="hypoglycaemia-episodes?flow={{flow}}&conditions={{conditions}}">(Change)</a></P>
+  </div>
+</div>
 
+<div>
+  <h2 class="heading-small">Hypoglycaemia</h2> 
+</div>
 
-<div><h2 class="heading-small">Hypoglycaemia</h2> </div>
 <div class="grid-row border-bottom">
   <div class ="column-full">
-    <p>You have not had more than one episode of severe hypoglycaemia (requiring assistance from another person) in the last 12 months</P>
-    
- </div></div>
+    <p>You have not had more than one episode of severe hypoglycaemia (requiring assistance from another person) in the last 12 months <a href="hypoglycaemia-episodes">(Change)</a></P>
+  </div>
+</div>
 
 
       <div class="grid-row"> </div>
@@ -109,7 +104,7 @@
     
     <div class="dwp-permission-group">
             <label><input type="checkbox" id="dwpPermission" name="dwpPermission" value="1">
-                By ticking this box I declare that I have checked the details I have given and that, to the best of my knowledge and belief they are correct.
+                I confirm that the answers I have given are correct to the best of my knowledge and I am aware that it is a criminal offence to make a false declaration and that this could lead to imprisonment.
 
 
             </label>
@@ -139,7 +134,6 @@
 {{/content}}
 
 {{$bodyEnd}}
-  {{>includes/elements_scripts}}
 {{/bodyEnd}}
 
 {{/govuk_template}}
