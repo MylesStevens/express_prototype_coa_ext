@@ -8,3 +8,5 @@ node_modules/*
 .start.pid
 
 npm-debug.log
+
+*.pid
