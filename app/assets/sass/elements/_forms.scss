@@ -138,6 +138,54 @@ fieldset {
 }
 
 
+
+
+/*radio buttons*/
+.radio-label {
+  background: #dee0e2;
+  /*padding: 18px 30px 15px 45px; */
+  border: 1px solid #dee0e2;
+  clear: left;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  float: left;
+  display: block;
+  position: relative;
+  cursor: pointer;
+  width: 100%; }
+
+@media all and (min-width: 641px) {
+  .radio-label {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    float: left;
+    width: auto; } }
+.radio-label label {
+  padding: 18px 30px 15px 45px;
+  display: block; }
+
+.radio-label input {
+  left: 15px;
+  top: 18px;
+  position: absolute;
+  cursor: pointer;
+  outline: none;
+  padding: 0 !important; }
+
+.radio-label:hover {
+  border-color: #0b0c0c; }
+
+.radio-label input[type="radio"]:checked + label {
+  background: white;
+  border-color: #0b0c0c;
+  outline: #ffbf47 solid 3px; }
+
+.inline .radio-label {
+  clear: none;
+  margin-right: 10px; }
+
+
+
 // Checkboxes
 .form-checkbox {
   display: block;
