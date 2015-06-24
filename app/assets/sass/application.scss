@@ -142,22 +142,39 @@ margin: 0.5em 0 0 0;
   -webkit-transform-origin:0 0;
 }
 
-// Landing page icons 
+// Typography
 
+.heading-xlarge {
+  margin: 1em 0 .5em;
+}
 
+// Landing
+
+.need {
+  margin: 2em 0;
+}
+
+.need img {
+  margin-right: 1em;
+}
 
 // Panel and help notice styles
 
 .panel-indent .heading-medium {
   margin:0;
-  }
+}
 
 .help-notice {
-  background: url("/public/images/icon-information.png") no-repeat scroll 0 0.5em;
+    background: url("/public/images/icon-information.png") no-repeat scroll;
 }
 
 .help-notice h2 {
-  padding: 0.4em 0px 0px 1.5em;
+  padding: 0.4em 0px 0px 2em;
+}
+
+@media (min-width: 640px) {
+  .help-notice {background-position: 0 0.5em;}
+  .help-notice h2 {padding-left: 1.5em;}
 }
 
 // More (tabbed section) styles
@@ -165,11 +182,6 @@ margin: 0.5em 0 0 0;
 .more {
   margin-top: 2em;
 }
-
-#surrender-your-licence  {
-
-}
-
 
 .nav-tabs {
     zoom: 1;
@@ -436,7 +448,4 @@ only screen and (min-resolution: 2dppx) {
 .transaction .js-tab-content {
     overflow: hidden
 }
-
- 
-
 
