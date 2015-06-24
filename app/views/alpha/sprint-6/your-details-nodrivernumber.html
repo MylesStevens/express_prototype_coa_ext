@@ -27,27 +27,37 @@ function next() {
 
 <main id="page-container" role="main">
 
-    <h1 class="form-title heading-medium">
-      Your personal details       
+  <h1 class="form-title heading-medium">
+    Your personal details       
+  </h1>
 
-    </h1>
-
- <form id="form1" action="medical-conditions" method="get" class="form">
+  <form id="form1" action="medical-conditions" method="get" class="form">
    
-    
+    <h4 class="heading-small">Enter details below as shown on your driving licence</h4>
 
-     <p></p>
-        <h4 class="heading-small">Enter details below as shown on your driving licence</h4>
-        <p></p>
-<div class="form-group">
-       <label class="form-label" >
+    <br/>
+
+    <div class="form-group">
+      <label class="form-label" for="drivernumber">
+        Your driving licence number
+      </label>
+      
+      <span class="form-hint">
+        For example, 'MORGA753116SM9IJ'
+      </span>
+      
+      <input type="text" maxlength="16" class="form-control" id="drivernumber" />
+    </div>
+
+    <div class="form-group">
+       <label class="form-label">
         <label for="forename">First name(s)
             <span class="form-hint">For example, Sarah Meredyth</span>
            <input type="text" class="form-control" id="first" >
           <br>
       </label>
     
-<p></p>
+      <p></p>
      <label class="form-label" >
         <label for="forename">Surname
             <span class="form-hint">For example, Smith</span>
@@ -55,7 +65,7 @@ function next() {
           <br>
       </label>
     
-<p></p>
+    <p></p>
     <label class="form-label" >
         <label for="forename">Postcode
             <span class="form-hint">For example, EH1 9SP</span>
@@ -66,31 +76,13 @@ function next() {
 </div>
 <p></p>
 
-<div class="grid-row">
-  <div class="column-full inline">
-
-      <label class="form-label">Gender</lable>
-
-    <div class="form-group">
-      <label class="block-label" for="radio-F">
-      <input id="radio-F" type="radio" name="gender" value="F" >
-     Female
-    </label>
-    <label class="block-label" for="radio-M">
-    <input id="radio-M" type="radio" name="gender" value="M" >
-      Male
-      </label>
-
-    </div>
-  </div>
-</div>
 
 <div class="grid-row">
 <div id="dob-control-group" class="column-third inline ">
    
     <fieldset>
         <legend><span id="dobLabel">Date of birth</span>
-            <span class="form-hint">Example: 31 3 1970</span>
+            <span class="form-hint">Example: 31 12 1975</span>
         </legend>
       <div class="grid-row">  
         <div class="column-quarter">
