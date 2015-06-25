@@ -2,12 +2,15 @@ module.exports = {
   bind : function (app, assetPath) {
 
     var p1 = 'sprint-6';
+    var p2 = 'sprint-7';
 
     /*-----------------------------------------------------*/
     app.get('/', function (req, res) {
       res.render('index', {'assetPath' : assetPath});
     });
 
+    /*-----------------------------------------------------*/
+    /* PROTOTYPE 1 - DO NOT REMOVE/MODIFY THIS AREA!       */
     /*-----------------------------------------------------*/
     app.get('/alpha/'+p1+'/landing', function (req, res) {
         res.render('alpha/'+p1+'/landing', {'assetPath' : assetPath, 'verify' : req.query.verify, 'auth' : req.query.auth})
@@ -21,10 +24,6 @@ module.exports = {
         res.render('alpha/'+p1+'/your-details', {'assetPath' : assetPath})
     });
 
-    app.get('/alpha/'+p1+'/your-details-nodrivernumber', function (req, res) {
-        res.render('alpha/'+p1+'/your-details-nodrivernumber', {'assetPath' : assetPath})
-    });
-    
     app.get('/alpha/'+p1+'/medical-conditions', function (req, res) {
         res.render('alpha/'+p1+'/medical-conditions', {'assetPath' : assetPath})
     });
@@ -155,6 +154,33 @@ module.exports = {
 
     app.get('/alpha/'+p1+'/D497', function (req, res) {
         res.render('alpha/'+p1+'/D497', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions, 'path' : req.query.path})
+    });
+
+    /*-----------------------------------------------------*/
+    /* PROTOTYPE 1 - DO NOT REMOVE/MODIFY THIS AREA!       */
+    /*-----------------------------------------------------*/
+    app.get('/alpha/'+p2+'/landing', function (req, res) {
+        res.render('alpha/'+p2+'/landing', {'assetPath' : assetPath, 'verify' : req.query.verify, 'auth' : req.query.auth})
+    });
+
+    app.get('/alpha/'+p2+'/new-or-renew', function (req, res) {
+        res.render('alpha/'+p2+'/new-or-renew', {'assetPath' : assetPath})
+    });
+
+    app.get('/alpha/'+p2+'/your-details', function (req, res) {
+        res.render('alpha/'+p2+'/your-details', {'assetPath' : assetPath})
+    });
+
+    app.get('/alpha/'+p2+'/medical-conditions', function (req, res) {
+        res.render('alpha/'+p2+'/medical-conditions', {'assetPath' : assetPath})
+    });
+    
+    app.get('/alpha/'+p2+'/summary', function (req, res) {
+        res.render('alpha/'+p2+'/summary', {'assetPath' : assetPath, 'flow' : req.query.flow, 'conditions' : req.query.conditions})
+    });
+    
+    app.get('/alpha/'+p2+'/finish', function (req, res) {
+        res.render('alpha/'+p2+'/finish', {'assetPath' : assetPath})
     });
 
   }
