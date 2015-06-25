@@ -20,20 +20,18 @@
 var conditions = [];
 
 function next() { 
-  var tokens = [];
-  var supported = ['Diabetes','Glaucoma'];
+  var supported = ['diabetes','glaucoma'];
 
   conditions.sort();
 
+  var tokens = [];
   for(var s=0; s < supported.length; s++) {
     for(var i=0; i < conditions.length; i++) {
-      if(conditions[i] == supported[s]) {
-        tokens.push(conditions[i].toLowerCase());
+      if(conditions[i].toLowerCase() == supported[s]) {
+        tokens.push(supported[s]);
       }
     }
   }
-
-  //alert('Tokens: ['+tokens+']');
 
   // Now we have our conditions, we next to progress onwarrds.
   if(tokens.length > 0) {
@@ -46,6 +44,7 @@ function next() {
 function checkLayout() {
   if(conditions.length > 0) {
     document.getElementById('none').style.display = 'none';
+    document.getElementById('term').style.display = 'none';
     document.getElementById('some').style.display = 'block';
     document.getElementById('continue').disabled = false;
   } else {
@@ -57,27 +56,33 @@ function checkLayout() {
 
 function addCondition(condition) {
   conditions.push(condition);
+  try {
+    document.getElementById('Remove_'+condition).style.display = 'block';
+    document.getElementById('Add_'+condition).style.display = 'none';
+  } catch(e) {
+    document.getElementById('Remove_unknown').style.display = 'block';
+  }
   checkLayout();
-  document.getElementById('Remove_'+condition).style.display = 'block';
-  document.getElementById('Add_'+condition).style.display = 'none';
 }
 
 function removeCondition(condition) {
-  //alert('Remove: '+condition);
   for(var i=0; i < conditions.length; i++) {
     if(conditions[i] == condition) {
       conditions[i] = '\0';
       break;
     }
   }
-  conditions.sort().reverse().pop();;
-
-  document.getElementById('Remove_'+condition).style.display = 'none';
-  document.getElementById('Add_'+condition).style.display = 'block';
+  
+  conditions.sort().reverse().pop();
+  
+  try {
+    document.getElementById('Remove_'+condition).style.display = 'none';
+    document.getElementById('Add_'+condition).style.display = 'block';
+  } catch(e) {
+    
+  }
 
   checkLayout();
-
-  //alert(conditions+' -> '+conditions.length);
 }
 
 </script>
@@ -86,7 +91,7 @@ function removeCondition(condition) {
 
 <main id="page-container" role="main">
 
-  <h2 class="heading-medium">
+  <h2 class="heading-medium process-step">
     Step 2 of 7
   </h2>
 
@@ -94,32 +99,43 @@ function removeCondition(condition) {
     Your medical conditions
   </h1> 
 
-  <form id="medical-form" class="form">
+  <form id="medical-form" action="medical-conditions" method="get" class="form">
 
     <div class="grid-row">
       <div class="column-half">
         <h2 class="heading-medium">Search for your condition</h2>
-          Query <input type="text" id="conditions" name="conditions" list="medical-conditions" value="" size="30" />
-          <datalist id="medical-conditions">
-            <option>Diabetes</option>
-            <option>Diabetes (Type 1)</option>
-            <option>Diabetes (Type 2)</option>
-            <option>DIAB1 (Online Form)</option>
+
+          <input type="text" id="conditions" name="conditions" list="conditions-list" value="{{conditions}}" size="40" placeholder="eg. diabetes" />
+
+          <datalist id="conditions-list">
+            <option value="Diabetes" />
+            <option value="Diabetes (Type 1)"/>
+            <option value="Diabetes (Type 2)"/>
+            <option value="&raquo; DIAB1 (Online Form)"/>
           </datalist>
+
           <br/><br/>
           <div id="my-conditions">
             <div id="none">
-              <span class="form-hint">(For example, Diabetes, Glaucoma or Epilepsy etc)</span>
+              <span class="form-hint">You have not selected a medical condition.</span>
             </div>
+            <div id="term" class="starthidden">
+              <span class="form-hint">You searched for: <a id="Add_{{conditions}}" href="javascript:addCondition('{{conditions}}');">{{conditions}}</a></span>
+            </div>
+
             <div id="some" class="starthidden"><p>You have selected these conditions:</p></div>
-            <a id="Remove_Diabetes" class="starthidden" href="javascript:removeCondition('Diabetes');">- Diabetes</a>
-            <a id="Remove_Epilepsy" class="starthidden" href="javascript:removeCondition('Epilepsy');">- Epilepsy</a>
-            <a id="Remove_Glaucoma" class="starthidden" href="javascript:removeCondition('Glaucoma');">- Glaucoma</a>
-            <a id="Remove_Dementia" class="starthidden" href="javascript:removeCondition('Dementia');">- Dementia</a>
-            <a id="Remove_Pacemaker" class="starthidden" href="javascript:removeCondition('Pacemaker');">- Pacemaker</a>
-            <a id="Remove_Stroke" class="starthidden" href="javascript:removeCondition('Stroke');">- Stroke</a>
-            <a id="Remove_SleepApnoea" class="starthidden" href="javascript:removeCondition('SleepApnoea');">- Sleep Apnoea</a>
-            <a id="Remove_Hypertension" class="starthidden" href="javascript:removeCondition('Hypertension');">- Hypertension</a>
+
+            <a id="Remove_unknown" class="starthidden" href="javascript:removeCondition('unknown');">- {{conditions}}</a>
+
+            <a id="Remove_diabetes" class="starthidden" href="javascript:removeCondition('diabetes');">- Diabetes</a>
+            <a id="Remove_epilepsy" class="starthidden" href="javascript:removeCondition('epilepsy');">- Epilepsy</a>
+            <a id="Remove_glaucoma" class="starthidden" href="javascript:removeCondition('glaucoma');">- Glaucoma</a>
+            <a id="Remove_dementia" class="starthidden" href="javascript:removeCondition('dementia');">- Dementia</a>
+            <a id="Remove_pacemaker" class="starthidden" href="javascript:removeCondition('pacemaker');">- Pacemaker</a>
+            <a id="Remove_stroke" class="starthidden" href="javascript:removeCondition('stroke');">- Stroke</a>
+            <a id="Remove_sleepapnoea" class="starthidden" href="javascript:removeCondition('sleepapnoea');">- Sleep Apnoea</a>
+            <a id="Remove_hypertension" class="starthidden" href="javascript:removeCondition('hypertension');">- Hypertension</a>
+
           </div>
       </div>
 
@@ -127,16 +143,16 @@ function removeCondition(condition) {
         <div class="">
           <h2 class="heading-medium">Or, add a common one:</h2>
           <div class="column-half">
-            <p id="Add_Diabetes"><a href="javascript:addCondition('Diabetes');">+ Diabetes</a></p>
-            <p id="Add_Epilepsy"><a href="javascript:addCondition('Epilepsy');">+ Epilepsy</a></p>
-            <p id="Add_Glaucoma"><a href="javascript:addCondition('Glaucoma');">+ Glaucoma</a></p>
-            <p id="Add_Dementia"><a href="javascript:addCondition('Dementia');">+ Dementia</a></p>
+            <p id="Add_diabetes"><a href="javascript:addCondition('diabetes');">+ Diabetes</a></p>
+            <p id="Add_epilepsy"><a href="javascript:addCondition('epilepsy');">+ Epilepsy</a></p>
+            <p id="Add_glaucoma"><a href="javascript:addCondition('glaucoma');">+ Glaucoma</a></p>
+            <p id="Add_dementia"><a href="javascript:addCondition('dementia');">+ Dementia</a></p>
           </div>
           <div class="column-half">
-            <p id="Add_Pacemaker"><a href="javascript:addCondition('Pacemaker');">+ Pacemaker</a></p>
-            <p id="Add_Stroke"><a href="javascript:addCondition('Stroke');">+ Stroke</a></p>
-            <p id="Add_SleepApnoea"><a href="javascript:addCondition('SleepApnoea');">+ Sleep Apnoea</a></p>
-            <p id="Add_Hypertension"><a href="javascript:addCondition('Hypertension');">+ Hypertension</a></p>
+            <p id="Add_pacemaker"><a href="javascript:addCondition('pacemaker');">+ Pacemaker</a></p>
+            <p id="Add_stroke"><a href="javascript:addCondition('stroke');">+ Stroke</a></p>
+            <p id="Add_sleepapnoea"><a href="javascript:addCondition('sleepapnoea');">+ Sleep Apnoea</a></p>
+            <p id="Add_hypertension"><a href="javascript:addCondition('hypertension');">+ Hypertension</a></p>
           </div>
         </div>
       </div>
@@ -144,8 +160,12 @@ function removeCondition(condition) {
     
     <br/><br/>
 
+    <div style="background-image: url(/public/images/icons/icon-gp.png') no-repeat scroll; padding-left: 30px;" >
+      <br/><br/><br/>
+    </div>
+
     <div class="form-group">
-      <input id="continue" type="button" class="button" value="Save and continue" onclick="next()" disabled="true"/> 
+      <input id="continue" type="button" class="button" value="Save and continue" onclick="next()" disabled="true" /> 
     </div>
 
     <ul>
@@ -153,6 +173,16 @@ function removeCondition(condition) {
     </ul>
 
   </form>
+
+<script>
+
+document.getElementById("conditions").focus();
+if("{{conditions}}".length > 0) {
+  document.getElementById('term').style.display = 'block';
+  document.getElementById('none').style.display = 'none';
+}
+
+</script>
 
 </main>
 

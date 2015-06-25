@@ -172,7 +172,7 @@ module.exports = {
     });
 
     app.get('/alpha/'+p2+'/medical-conditions', function (req, res) {
-        res.render('alpha/'+p2+'/medical-conditions', {'assetPath' : assetPath})
+        res.render('alpha/'+p2+'/medical-conditions', {'assetPath' : assetPath, 'conditions': req.query.conditions})
     });
     
     app.get('/alpha/'+p2+'/summary', function (req, res) {

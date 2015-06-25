@@ -445,7 +445,26 @@ only screen and (min-resolution: 2dppx) {
         border-top: solid 1px #bfc1c3
     }
 }
+
 .transaction .js-tab-content {
     overflow: hidden
 }
 
+.process-step {
+  color: #a0a0a0;
+}
+
+#conditions {
+  background-image: url('/public/images/icons/search-icon.png');
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-position: 5px 1px;
+  background-color: transparent;
+  padding-left: 35px;
+}
+
+#search-term {
+  color: #202020;
+  font-weight: bold;
+  display: inline;
+}
