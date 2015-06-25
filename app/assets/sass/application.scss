@@ -468,3 +468,30 @@ only screen and (min-resolution: 2dppx) {
   font-weight: bold;
   display: inline;
 }
+
+div.main-border {
+  border: 1px solid #c0c0c0;
+  text-align: left;
+  vertical-align: top;
+}
+
+div.centered {
+   text-align: center;
+   vertical-align: top;
+}
+
+div.tick {
+  background: url('/public/images/icons/tick.png');
+}
+
+div.cross {
+  background: url('/public/images/icons/cross.png');
+}
+
+div.tick, div.cross {
+  background-size: 40px 40px;
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+  background-color: transparent;
+  padding: 7px 0px 6px 45px;
+}

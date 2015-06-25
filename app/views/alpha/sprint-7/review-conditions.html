@@ -1,0 +1,126 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation3}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+
+<header class="page-header">
+
+</header>
+
+<main id="page-container" role="main">
+
+  <h2 class="heading-medium process-step">
+    Step 3 of 7
+  </h2>
+
+  <h1 class="heading-large">
+    Your medical conditions
+  </h1> 
+
+  <form id="medical-form" action="medical-conditions" method="get" class="form">
+
+
+      <!-- Glaucoma -->
+    <div id="glaucoma" class="main-border starthidden">
+      <div class="grid-row">
+
+        <div class="column-third centered">
+          <p class="heading-medium">Glaucoma</p>
+          <a href="#">(Remove Condition)</a>
+          <br/><br/>
+        </div>
+
+        <div class="column-two-thirds">
+          <div class="panel-indent">
+
+            <div class="tick">
+              <h2 class="heading-medium">Use this if you have:</h2>
+              <ul class="list-bullet text">
+                <li>Sight in both eyes with Glaucoma in both</li>
+                <li>Sight in one eye with Glaucoma</li>
+              </ul>
+            </div>
+            <div class="cross">
+              <h2 class="heading-medium">You do not need to tell us if you have:</h2>
+              <ul class="list-bullet text">
+                <li>Sight in both eyes with Glaucoma in one</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <br/>
+
+    <!-- Diabetes -->
+    <div id="diabetes" class="main-border starthidden">
+      <div class="grid-row">
+
+        <div class="column-third centered">
+          <p class="heading-medium">Diabetes</p>
+          <a href="#">(Remove Condition)</a>
+        </div>
+
+        <div class="column-two-thirds">
+          <div class="panel-indent">
+
+            <div class="tick">
+              <h2 class="heading-medium">Use this if you have:</h2>
+              <ul class="list-bullet text">
+                <li>Diabetes treated by insulin</li>
+              </ul>
+            </div>
+            <div class="cross">
+              <h2 class="heading-medium">You do not need to tell us if you have:</h2>
+              <ul class="list-bullet text">
+                <li>Diabetes treated by Sulphonylureas or Glinide tablets (or both)</li>
+                <li>Diabetes treated by any other tablets or non-insulin injections</li>
+                <li>Diabetes treated by diet</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <br/>
+    + <a href="medical-conditions">Add another condition</a>
+
+    <br/><br/>
+
+    <input id="continue" name="continue" type="button" class="button" value="Save and continue" onclick=""> 
+
+  </form>
+
+<script>
+
+var conditions = QueryString.conditions.split(",");
+for(var i=0; i < conditions.length; i++) {
+  document.getElementById(conditions[i]).style.display = 'block';
+}
+
+</script>
+
+</main>
+
+{{/content}}
+
+{{$bodyEnd}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

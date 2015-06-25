@@ -35,7 +35,8 @@ function next() {
 
   // Now we have our conditions, we next to progress onwarrds.
   if(tokens.length > 0) {
-    window.location.href = tokens[0]+'-start?flow='+tokens[0]+'&conditions='+tokens;
+    //window.location.href = tokens[0]+'-start?flow='+tokens[0]+'&conditions='+tokens;
+    window.location.href = 'review-conditions?flow='+tokens[0]+'&conditions='+tokens;
   } else {
     alert('The only conditions that are supported are: '+supported);
   }
@@ -112,6 +113,13 @@ function removeCondition(condition) {
             <option value="Diabetes (Type 1)"/>
             <option value="Diabetes (Type 2)"/>
             <option value="&raquo; DIAB1 (Online Form)"/>
+            <option value="Epilepsy" />
+            <option value="Glaucoma" />
+            <option value="Dementia" />
+            <option value="Pacemaker" />
+            <option value="Stroke" />
+            <option value="Sleep Apnoea" />
+            <option value="Hypertension" />
           </datalist>
 
           <br/><br/>
@@ -120,10 +128,10 @@ function removeCondition(condition) {
               <span class="form-hint">You have not selected a medical condition.</span>
             </div>
             <div id="term" class="starthidden">
-              <span class="form-hint">You searched for: <a id="Add_{{conditions}}" href="javascript:addCondition('{{conditions}}');">{{conditions}}</a></span>
+              <span class="form-hint">You searched for: <a id="Add_{{conditions}}" href="javascript:addCondition('{{conditions}}');" rel="external">{{conditions}}</a></span>
             </div>
 
-            <div id="some" class="starthidden"><p>You have selected these conditions:</p></div>
+            <div id="some" class="starthidden"><p>You have selected these condition(s):</p></div>
 
             <a id="Remove_unknown" class="starthidden" href="javascript:removeCondition('unknown');">- {{conditions}}</a>
 
