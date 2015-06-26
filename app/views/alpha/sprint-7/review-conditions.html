@@ -15,6 +15,14 @@
 
 <header class="page-header">
 
+<script>
+
+function next() {
+  window.location.href = '{{flow}}-start?flow={{flow}}&conditions={{conditions}}';
+}
+
+</script>
+
 </header>
 
 <main id="page-container" role="main">
@@ -23,7 +31,7 @@
     Step 3 of 7
   </h2>
 
-  <h1 class="heading-large">
+  <h1 class="heading-xlarge">
     Your medical conditions
   </h1> 
 
@@ -103,7 +111,7 @@
 
     <br/><br/>
 
-    <input id="continue" name="continue" type="button" class="button" value="Save and continue" onclick=""> 
+    <input id="continue" name="continue" type="button" class="button" value="Save and continue" onclick="next();"> 
 
   </form>
 

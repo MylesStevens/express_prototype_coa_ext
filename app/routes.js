@@ -78,10 +78,6 @@ module.exports = {
         res.render('alpha/'+p1+'/hypoglycaemia-episodes', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions})
     });
 
-    app.get('/alpha/'+p1+'/diabetes-symptoms', function (req, res) {
-        res.render('alpha/'+p1+'/diabetes-symptoms', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions})
-    });
-
     /*-----------------------------------------------------*/
     app.get('/alpha/'+p1+'/glaucoma-start', function (req, res) {
         res.render('alpha/'+p1+'/glaucoma-start', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions})
@@ -185,6 +181,28 @@ module.exports = {
     
     app.get('/alpha/'+p2+'/finish', function (req, res) {
         res.render('alpha/'+p2+'/finish', {'assetPath' : assetPath})
+    });
+
+   /*-----------------------------------------------------*/
+    app.get('/alpha/'+p2+'/diabetes-start', function (req, res) {
+        res.render('alpha/'+p2+'/diabetes-start', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions})
+    });
+
+    app.get('/alpha/'+p2+'/diabetes-symptoms', function (req, res) {
+        res.render('alpha/'+p2+'/diabetes-symptoms', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions})
+    });
+
+    app.get('/alpha/'+p2+'/hypoglycaemia-episodes', function (req, res) {
+        res.render('alpha/'+p2+'/hypoglycaemia-episodes', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions})
+    });
+
+    app.get('/alpha/'+p2+'/special-adaptations', function (req, res) {
+        res.render('alpha/'+p2+'/special-adaptations', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions, 'path' : req.query.path})
+    });
+
+    /*-----------------------------------------------------*/
+    app.get('/alpha/'+p2+'/glaucoma-start', function (req, res) {
+        res.render('alpha/'+p2+'/glaucoma-start', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions})
     });
 
   }
