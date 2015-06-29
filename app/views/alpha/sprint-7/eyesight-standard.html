@@ -1,0 +1,98 @@
+
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation3}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+
+<header class="page-header">
+
+</header>
+
+<main id="page-container" role="main">
+    
+  <h2 class="heading-medium process-step">
+    Step X of X
+  </h2>
+  
+  <h1 class="heading-xlarge">
+    Your eyesight
+  </h1>
+  
+  <form action="medical-form" method="get" class="form">
+    
+    <div class="grid-row column-full" id="qx" style="display: block;">
+      <div class="column-half">
+        <h4 class="heading-medium">Can you read a number plate from 20 metres in good light?</h4>
+        <div class="form-group">
+          <span class="radio-label">
+            <input id="qx-a1" type="radio" name="qx-answer" value="0" onclick="answer(this,'{{flow}}','{{conditions}}')">
+            <label for="qx-a1" id="qx-a1-label">Yes</label>
+          </span>
+          <span class="radio-label">
+            <input id="qx-a2" type="radio" name="qx-answer" value="1" onclick="answer(this,'{{flow}}','{{conditions}}')">
+            <label for="qx-a2" id="qx-a2-label">Yes, with glasses or corrective lenses</label>
+          </span>
+          <span class="radio-label">
+            <input id="qx-a3" type="radio" name="qx-answer" value="2" onclick="answer(this,'{{flow}}','{{conditions}}')">
+            <label for="qx-a3" id="qx-a3-label">No</label>
+          </span>
+        </div>
+      </div>
+      <div class="column-half">
+        <img src="/public/images/icons/read-number-plate-diagram.png" class="visionTestIcon" />
+      </div>
+    </div>
+    
+    <div class="grid-row column-full" id="qz" style="display: block;">
+      <div class="column-half">
+        <h4 class="heading-medium">Does your eyesight meet the minimum standard for driving?</h4>
+        <details>
+          <summary><span class="summary">More about the legal standard for driving</span></summary>
+          <div class="panel-indent">
+            <p>text</p>          
+          </div>
+        </details>
+        <div class="form-group">
+          <span class="radio-label">
+            <input id="qz-a1" type="radio" name="qz-answer" value="0" onclick="answer(this,'{{flow}}','{{conditions}}')">
+            <label for="qz-a1" id="qz-a1-label">Yes</label>
+          </span>
+          <span class="radio-label">
+            <input id="qz-a2" type="radio" name="qz-answer" value="1" onclick="answer(this,'{{flow}}','{{conditions}}')">
+            <label for="qz-a2" id="qz-a2-label">No</label>
+          </span>
+        </div>
+      </div>
+      <div class="column-half">
+        <img class="visionTestIcon" src="/public/images/icons/snellen-scale-diagram.png" />
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <input id="continue" name="continue" type="button" class="button" value="Continue" onclick="decision(this,'{{flow}}','{{conditions}}')" disabled="true"> 
+    </div>
+    
+    <ul>
+      <li><a href="javascript:history.go(-1);">Back</a></li>
+    </ul>
+    
+  </form>
+  
+ </main>
+
+{{/content}}
+
+{{$bodyEnd}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

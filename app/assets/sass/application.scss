@@ -508,3 +508,17 @@ div.tick, div.cross {
   background-color: transparent;
   padding: 3px 0px 6px 45px;
 }
+
+.visionTestIcon {
+  max-width: 100%;
+  padding-top: 7em;
+  float: left;
+  padding-bottom: 1em;
+}
+
+@media (max-width: 640px) {
+  .visionTestIcon {
+    padding-top: 0;
+    float: left;
+  }
+}
