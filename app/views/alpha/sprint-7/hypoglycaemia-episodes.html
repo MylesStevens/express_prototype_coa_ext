@@ -35,15 +35,18 @@
 
       
         <div class="form-group">
-          <label class="block-label" for="q3-a1" id="q3-a1-label">
-            <input id="q3-a1" type="radio" name="q3-answer" value="0" onclick="answer(this,'{{flow}}','{{conditions}}')">None
-          </label>
-          <label class="block-label" for="q3-a2" id="q3-a2-label">
-            <input id="q3-a2" type="radio" name="q3-answer" value="1" onclick="answer(this,'{{flow}}','{{conditions}}')">One
-          </label>
-          <label class="block-label" for="q3-a3" id="q3-a3-label">
-            <input id="q3-a3" type="radio" name="q3-answer" value="2" onclick="answer(this,'{{flow}}','{{conditions}}')">Two or more
-          </label>
+          <span class="radio-label">
+            <input id="q3-a1" type="radio" name="q3-answer" value="0" onclick="answer(this,'{{flow}}','{{conditions}}')">
+            <label for="q3-a1" id="q3-a1-label">None</label>
+          </span>
+          <span class="radio-label">
+            <input id="q3-a2" type="radio" name="q3-answer" value="1" onclick="answer(this,'{{flow}}','{{conditions}}')">
+            <label for="q3-a2" id="q3-a2-label">One</label>
+          </span>
+          <span class="radio-label">
+            <input id="q3-a3" type="radio" name="q3-answer" value="2" onclick="answer(this,'{{flow}}','{{conditions}}')">
+            <label for="q3-a3" id="q3-a3-label">Two or more</label>
+          </span>
         </div>
 
       <div class="form-group starthidden" id="q4">
@@ -76,12 +79,14 @@
           </div>
         </details>
         <div class="form-group">
-          <label class="block-label" for="q4-a1" id="q4-a1-label">
-            <input id="q4-a1" type="radio" name="q4-answer" value="Y" onclick="answer(this,'{{flow}}','{{conditions}}')">Yes
-          </label>
-          <label class="block-label" for="q4-a2" id="q4-a2-label">
-            <input id="q4-a2" type="radio" name="q4-answer" value="N" onclick="answer(this,'{{flow}}','{{conditions}}')">No
-          </label>
+          <span class="radio-label">
+            <input id="q4-a1" type="radio" name="q4-answer" value="Y" onclick="answer(this,'{{flow}}','{{conditions}}')">
+            <label for="q4-a1" id="q4-a1-label">Yes</label>
+          </span>
+          <span class="radio-label">
+            <input id="q4-a2" type="radio" name="q4-answer" value="N" onclick="answer(this,'{{flow}}','{{conditions}}')">
+            <label for="q4-a2" id="q4-a2-label">No</label>
+          </span>
         </div>
 
       </div>
@@ -91,12 +96,14 @@
         <h4 class="heading-medium">Do you know the warning symptoms of hypoglycaemia?</h4>
 
         <div class="form-group">
-          <label class="block-label" for="q5-a1" id="q5-a1-label">
-            <input id="q5-a1" type="radio" name="q5-answer" value="Y" onclick="answer(this,'{{flow}}','{{conditions}}')">Yes
-          </label>
-          <label class="block-label" for="q5-a2" id="q5-a2-label">
-            <input id="q5-a2" type="radio" name="q5-answer" value="N" onclick="answer(this,'{{flow}}','{{conditions}}')">No
-          </label>
+          <span class="radio-label">
+            <input id="q5-a1" type="radio" name="q5-answer" value="Y" onclick="answer(this,'{{flow}}','{{conditions}}')">
+            <label for="q5-a1" id="q5-a1-label">Yes</label>
+          </span>
+          <span class="radio-label">
+            <input id="q5-a2" type="radio" name="q5-answer" value="N" onclick="answer(this,'{{flow}}','{{conditions}}')">
+            <label for="q5-a2" id="q5-a2-label">No</label>
+          </span>
         </div>
 
       </div>
