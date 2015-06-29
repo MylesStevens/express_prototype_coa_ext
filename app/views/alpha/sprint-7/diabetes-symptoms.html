@@ -20,43 +20,43 @@
 
 <main id="page-container" role="main">
 
+  <h2 class="heading-medium process-step">
+    Step X of X
+  </h2>
+
   <form action="medical-form" method="get" class="form inline">
 
     <div class="grid-row" id="q1">
       <div class="column-full">
 
-        <h4 class="heading-medium">Do any of the symptoms listed below affect you?</h4>
+        <h1 class="heading-xlarge">Non-insulin treated declaration</h4>
+        <div class="important-notice">
+          <p>Please read the following information carefully and tick the consent box:</p>
+        </div>
 
       </div>
     </div>
   
-    <div class="panel-indent" id="q1-info">
-      <h3 class="heading-small"><a href="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/193489/INF188_2.pdf" target="_new">[Download more information (PDF)]</a> for drivers with diabetes treated by non insulin medication, diet, or both.</h3>
-      <p></p>
-      <ul class="list-bullet">
-        <li>You suffer more than one episode of severe hypoglycaemia within the last 12 months.</li>
-        <li>You develop impaired awareness of hypoglycaemia.</li>
-        <li>You suffer severe hypoglycaemia while driving.</li>
-        <li>You need laser treatment to both eyes or in the remaining eye if you have sight in one eye only.</li>
-        <li>You have problems with vision in both eyes, or in the remaining eye if you have sight in one eye only.</li>
-        <li>You develop any problems with the circulation, or sensation in your legs or feet.</li>
-      </ul>
+    <div class="panel" id="q1-info">
+      <span class="checkbox-label">
+        <input id="checkbox-name" type="checkbox" value="checkbox-name">
+        <label for="checkbox-name">
+          <div class="panel-indent" id="q1-info">
+            <h2 class="heading-small">I understand that I must tell the <abbr title="Driver and Vehicle Licensing Agency">DVLA</abbr> if I develop any of the following symptoms:</h2>
+            <ul class="list-bullet">
+              <li>more than one episode of severe hypoglycaemia within the last 12 months</li>
+              <li>difficulty in recognising the warning symptoms of hypoglycaemia</li><li>severe hypoglycaemia while driving</li>
+              <li>problems with the circulation, or sensation in my legs or feet</li>
+            </ul>
+          </div>
+      </span>
     </div>
 
-    <div class="grid-row" id="q1">
-      <div class="column-full">
-
-        <div class="form-group">
-          <span class="radio-label">
-            <input id="q1-a1" type="radio" name="q1-answer" value="Y" onclick="answer(this,'{{flow}}','{{conditions}}')">
-            <label for="q1-a1" id="q1-a1-label">Yes</label>
-          </span>
-          <span class="radio-label">
-            <input id="q1-a2" type="radio" name="q1-answer" value="N" onclick="answer(this,'{{flow}}','{{conditions}}')">
-            <label for="q1-a2" id="q1-a2-label">No</label>
-          </span>
-        </div>
-
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <h3 class="heading-small">More information</h3>
+        <p>Download <a href="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/193489/INF188_2.pdf">information for drivers with diabetes treated by non insulin medication, diet, or both</a> (<abbr title="Portable Document Format">PDF</abbr>, 397KB, 1 page).</p>
+        <p class="font-xsmall">This file may not be suitable for users of assistive technology. <a href="#">Request a different format</a>.</p>
       </div>
     </div>
 
