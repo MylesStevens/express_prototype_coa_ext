@@ -35,7 +35,7 @@ function next() {
     Your details   
   </h1> 
 
-  <form id="form1" action="medical-conditions" method="get" class="form">
+  <form id="form1" action="medical-conditions" method="get" class="form" name="detailsForm">
    
     <h4 class="heading-small">Enter details below as shown on your driving licence</h4>
 
@@ -110,7 +110,7 @@ function next() {
           <label class="form-label" >
           <label for="forename">Day
             <span class="form-hint"></span>
-           <input type="text" class="form-control-3-4" id="Day" >
+            <input type="text" class="form-control-3-4" id="Day" size="2" maxlength="2" tabindex="6" onkeyup="focusJump(this,this.value)" >
          </label>
         </div>
 
@@ -118,7 +118,7 @@ function next() {
           <label class="form-label" >
           <label for="forename">Month
             <span class="form-hint"></span>
-           <input type="text" class="form-control-3-4" id="Month">
+            <input type="text" class="form-control-3-4" id="Month" size="2" maxlength="2" tabindex="7" onkeyup="focusJump(this,this.value)">
          </label>
         </div>
 
@@ -126,8 +126,7 @@ function next() {
           <label class="form-label" >
           <label for="forename">Year
             <span class="form-hint"></span>
-           <input type="text" class="form-control-3-4" id="Year">
-         
+            <input type="text" class="form-control-3-4" id="Year" size="4" maxlength="4" tabindex="8" onkeyup="focusJump(this,this.value)">
           </label>
         </div>
         </div>
@@ -155,6 +154,16 @@ function next() {
     
 <script>
 document.getElementById("driver-number").focus();
+
+// Checks length of field and changes focus if maximum is reached
+function focusJump(elmnt,content) {
+  if (content.length==elmnt.maxLength) {
+	nextField=elmnt.tabIndex
+    if (nextField<document.detailsForm.elements.length) {
+      document.detailsForm.elements[nextField].focus()
+    }
+  }
+}
 </script>
     
 </main>
