@@ -467,7 +467,7 @@ only screen and (min-resolution: 2dppx) {
   color: #a0a0a0;
 }
 
-#conditions {
+#search-conditions {
   background-image: url('/public/images/icons/search-icon.png');
   background-size: 25px 25px;
   background-repeat: no-repeat;
@@ -493,15 +493,15 @@ div.centered {
    vertical-align: top;
 }
 
-div.tick {
-  background: url('/public/images/icons/tick.png');
+div.icon-tick {
+  background-image: url('../images/icons/icon-tick.png');
 }
 
-div.cross {
-  background: url('/public/images/icons/cross.png');
+div.icon-cross {
+  background-image: url('../images/icons/icon-cross.png');
 }
 
-div.tick, div.cross {
+div.icon-tick, div.icon-cross {
   background-size: 30px 30px;
   background-repeat: no-repeat;
   background-position: 0px 0px;
