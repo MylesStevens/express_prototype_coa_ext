@@ -510,15 +510,17 @@ div.icon-tick, div.icon-cross {
 }
 
 .visionTestIcon {
-  max-width: 100%;
-  padding-top: 7em;
+  max-width: 90%;
+  margin-top: 5em;
   float: left;
-  padding-bottom: 1em;
+  margin-bottom: 1em;
+  padding: 5%;
+  border: 1px solid #BFC1C3;
 }
 
 @media (max-width: 640px) {
   .visionTestIcon {
-    padding-top: 0;
+    margin-top: 0;
     float: left;
   }
 }
