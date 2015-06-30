@@ -501,7 +501,11 @@ div.icon-cross {
   background: url('../images/icons/icon-cross.png');
 }
 
-div.icon-tick, div.icon-cross {
+div.icon-question-mark {
+  background: url('../images/icons/icon-question-mark.png');
+}
+
+div.icon-tick, div.icon-cross, div.icon-question-mark {
   background-size: 30px 30px;
   background-repeat: no-repeat;
   background-position: 0px 0px;
