@@ -30,9 +30,22 @@
   
   <form action="medical-form" method="get" class="form">
     
-    <div class="grid-row column-full" id="qx" style="display: block;">
-      <div class="column-half">
-        <h4 class="heading-medium">Can you read a number plate from 20 metres in good light?</h4>
+    <div class="grid-row" id="qx" style="display: block;">
+      <div class="column-two-thirds">
+        <h4 class="heading-medium">Can you meet this legal eyesight standard for driving?</h4>
+        <details>
+          <summary><span class="summary">More about the legal standard for driving</span></summary>
+          <div class="panel-indent">
+            <h2 class="heading-small">The legal eyesight standard means that:</h2>
+            <ul class="list-bullet text">
+              <li>you must be able to read a car number plate from 20 metres</li>
+              <li>you must not have been told by a doctor or optician that your eyesight is currently worse than 6/12 (decimal 0.5) on the Snellen scale</li>
+            </ul>
+            <img src="/public/images/icons/read-number-plate-diagram.png" class="visionTestIcon" />
+            <img class="visionTestIcon" src="/public/images/icons/snellen-scale-diagram.png" />  
+            <p>If you are in any doubt, you should discuss with your optician or doctor. If required, you may wear glasses or corrective lenses to meet both of these standards.</p>
+          </div>
+        </details>
         <div class="form-group">
           <label class="block-label" for="qx-a1" id="qx-a1-label">
             <input id="qx-a1" type="radio" name="qx-answer" value="0" onclick="answer(this,'{{flow}}','{{conditions}}')">
@@ -48,34 +61,11 @@
           </label>
         </div>
       </div>
-      <div class="column-half">
-        <img src="/public/images/icons/read-number-plate-diagram.png" class="visionTestIcon" />
+      <div class="column-one-third">
       </div>
     </div>
-    
-    <div class="grid-row column-full" id="qz" style="display: block;">
-      <div class="column-half">
-        <h4 class="heading-medium">Does your eyesight meet the minimum standard for driving?</h4>
-        <details>
-          <summary><span class="summary">More about the legal standard for driving</span></summary>
-          <div class="panel-indent">
-            <p>text</p>          
-          </div>
-        </details>
-        <div class="form-group">
-          <label class="block-label" for="qz-a1" id="qz-a1-label">
-            <input id="qz-a1" type="radio" name="qz-answer" value="0" onclick="answer(this,'{{flow}}','{{conditions}}')">
-            Yes
-          </label>
-          <label class="block-label" for="qz-a2" id="qz-a2-label">
-            <input id="qz-a2" type="radio" name="qz-answer" value="1" onclick="answer(this,'{{flow}}','{{conditions}}')">
-            No
-          </label>
-        </div>
-      </div>
-      <div class="column-half">
-        <img class="visionTestIcon" src="/public/images/icons/snellen-scale-diagram.png" />
-      </div>
+  
+
     </div>
     
     <div class="form-group">
