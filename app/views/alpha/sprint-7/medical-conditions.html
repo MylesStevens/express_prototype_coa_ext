@@ -105,7 +105,7 @@ function removeCondition(condition) {
       <div class="column-half">
         <h2 class="heading-medium">Search for your condition</h2>
 
-          <input type="text" id="search-conditions" name="search-conditions" list="conditions-list" value="{{conditions}}" size="40" placeholder="eg. diabetes" />
+          <input type="text" id="search" name="search" list="conditions-list" value="{{conditions}}" size="40" placeholder="eg. diabetes" />
 
           <datalist id="conditions-list">
             <option value="Diabetes" />
@@ -127,12 +127,17 @@ function removeCondition(condition) {
               <span class="form-hint">You have not selected a medical condition.</span>
             </div>
             <div id="term" class="starthidden">
-              <span class="form-hint">You searched for: <a id="Add_{{conditions}}" href="javascript:addCondition('{{conditions}}');" rel="external">{{conditions}}</a></span>
+              <span class="form-hint">You searched for: <span class="heading-small">{{search}}</span></span> 
+              <br/>
+              Did you mean ...<br/>
+              <ul class="list-bullet text">
+                <li><a id="Add_diabetes" href="javascript:addCondition('diabetes');" rel="external">Diabetes</a></li>
+                <li><a id="Add_diabetes" href="javascript:addCondition('diabetes');" rel="external">Diabetes (Type 1)</a></li>
+                <li><a id="Add_diabetes" href="javascript:addCondition('diabetes');" rel="external">Diabetes (Type 2)</a></li>
+              </ul>
             </div>
 
             <div id="some" class="starthidden"><p>You have selected these condition(s):</p></div>
-
-            <a id="Remove_unknown" class="starthidden" href="javascript:removeCondition('unknown');">- {{conditions}}</a>
 
             <a id="Remove_diabetes" class="starthidden" href="javascript:removeCondition('diabetes');">- Diabetes</a>
             <a id="Remove_epilepsy" class="starthidden" href="javascript:removeCondition('epilepsy');">- Epilepsy</a>
@@ -183,8 +188,8 @@ function removeCondition(condition) {
 
 <script>
 
-document.getElementById("conditions").focus();
-if("{{conditions}}".length > 0) {
+document.getElementById("search").focus();
+if("{{search}}".length > 0) {
   document.getElementById('term').style.display = 'block';
   document.getElementById('none').style.display = 'none';
 }
