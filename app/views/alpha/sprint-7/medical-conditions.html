@@ -35,10 +35,9 @@ function next() {
 
   // Now we have our conditions, we next to progress onwarrds.
   if(tokens.length > 0) {
-    //window.location.href = tokens[0]+'-start?flow='+tokens[0]+'&conditions='+tokens;
     window.location.href = 'review-conditions?flow='+tokens[0]+'&conditions='+tokens;
   } else {
-    alert('The only conditions that are supported are: '+supported);
+    alert('The only conditions that are supported are: ['+supported+']');
   }
 }
   
@@ -106,7 +105,7 @@ function removeCondition(condition) {
       <div class="column-half">
         <h2 class="heading-medium">Search for your condition</h2>
 
-          <input type="text" id="conditions" name="conditions" list="conditions-list" value="{{conditions}}" size="40" placeholder="eg. diabetes" />
+          <input type="text" id="search-conditions" name="search-conditions" list="conditions-list" value="{{conditions}}" size="40" placeholder="eg. diabetes" />
 
           <datalist id="conditions-list">
             <option value="Diabetes" />

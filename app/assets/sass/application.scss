@@ -468,7 +468,7 @@ only screen and (min-resolution: 2dppx) {
 }
 
 #search-conditions {
-  background-image: url('/public/images/icons/search-icon.png');
+  background-image: url('../images/icons/search-icon.png');
   background-size: 25px 25px;
   background-repeat: no-repeat;
   background-position: 5px 1px;
@@ -494,11 +494,11 @@ div.centered {
 }
 
 div.icon-tick {
-  background-image: url('../images/icons/icon-tick.png');
+  background: url('/public/images/icons/icon-tick.png');
 }
 
 div.icon-cross {
-  background-image: url('../images/icons/icon-cross.png');
+  background: url('../images/icons/icon-cross.png');
 }
 
 div.icon-tick, div.icon-cross {
