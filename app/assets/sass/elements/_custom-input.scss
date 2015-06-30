@@ -1,0 +1,200 @@
+// Large hit area
+// Radio buttons & checkboxes
+// ==========================================================================
+
+// By default, block labels stack vertically
+.block-label {
+  display: block;
+  float: none;
+  clear: left;
+  position: relative;
+  padding: (10px $gutter 10px 37px);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  cursor: pointer; // Encourage clicking on block labels
+
+  @include media(tablet) {
+    float: left;
+    min-width: em(400,19);
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 42px;
+  }
+
+  @include ie(6) {
+    padding: ($gutter-half $gutter $gutter-half 50px);
+    background: $panel-colour;
+  }
+}
+
+// Inline block labels
+@include media (tablet) {
+  .inline .block-label {
+    clear: none;
+    margin-right: 10px;
+    min-width: 30px;
+  }
+}
+
+.block-label:hover {
+  background-color: $yellow;
+}
+
+.block-label {
+  [type="checkbox"],
+  [type="radio"] {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px; margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    right: 50px;
+    width: 1px;
+  }
+
+  [type="checkbox"] + span,
+  [type="radio"] + span {
+    position: absolute;
+    left: 4px;
+    top: 7px;
+    background: $white;
+    display: inline-block;
+    border: 2px solid $black;
+    @include border-radius(20px);
+    @include media(tablet) {
+      width: 25px;
+      height: 25px;
+      left: 7px;
+      top: 8px;
+    }
+
+    .inner {
+      display: inherit;
+      @include border-radius(20px);
+      border: 3px solid $white;
+      width: 16px;
+      height: 16px;
+      @include media(tablet) {
+        width: 19px;
+        height: 19px;
+      }
+    }
+  }
+
+  [type="checkbox"] + span {
+    @include border-radius(0);
+    .inner {
+      @include border-radius(0);
+    }
+  }
+
+  [type="radio"]:focus + span,
+  [type="checkbox"]:focus + span {
+    .inner {
+      border-color: $yellow;
+    }
+  }
+
+  &.selected [type="radio"] + span,
+  [type="radio"]:checked + span {
+    background: $black;
+  }
+
+  &.selected [type="checkbox"] + span,
+  [type="checkbox"]:checked + span {
+    .inner {
+      background: url(/assets/images/icons/checkbox-tick-mobile.png) 0 0 no-repeat;
+
+      @include media(tablet) {
+        background: url(/assets/images/icons/checkbox-tick.png) 0 0 no-repeat;
+      }
+    }
+  }
+}
+
+
+// manage images for IE 6-9 radios and checkboxes
+@include ie-lte(9) {
+  .block-label {
+
+    input {
+      position: absolute;
+      top: 16px;
+      left: -1000px;
+      cursor: pointer;
+
+      @include ie(6) {
+        position: absolute;
+        top: 7px;
+        left: 5px;
+        width: 2em;
+        height: 2em;
+        margin-right: 10px;
+        vertical-align: middle;
+      }
+
+    }
+
+    input[type="radio"] + span,
+    input[type="checkbox"] + span {
+      border: none;
+      width: 25px;
+      height: 25px;
+      .inner {
+        display: none;
+      }
+    }
+
+    [type="radio"] + span {
+      background: url(/assets/images/icons/radio-buttons.gif) 0 -50px no-repeat;
+    }
+
+    [type="checkbox"] + span {
+      background: url(/assets/images/icons/checkboxes.gif) 0 -25px no-repeat;
+    }
+
+    &.selected {
+      [type="radio"] + span {
+        background: url(/assets/images/icons/radio-buttons.gif) 0 -75px no-repeat;
+      }
+
+      [type="checkbox"] + span {
+        background: url(/assets/images/icons/checkboxes.gif) 0 0 no-repeat;
+      }
+    }
+  }
+}
+
+
+
+// Selected and focused states
+
+// Add selected state
+.js-enabled .selected {
+  @include ie(6) {
+    background: $white;
+    border: 2px solid $black;
+  }
+}
+
+.js-enabled .selected:hover {
+  background-color: $yellow;
+}
+
+//Add focus to block labels
+.js-enabled label.focused {
+  outline: 3px solid $yellow;
+
+  [type="radio"]:focus + span,
+  [type="checkbox"]:focus + span {
+    .inner {
+      border-color: $white;
+    }
+  }
+}
+
+// Remove focus from radio/checkboxes
+.js-enabled .focused input:focus {
+  outline: none;
+}
