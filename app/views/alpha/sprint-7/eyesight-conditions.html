@@ -1,0 +1,139 @@
+
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation3}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+
+<header class="page-header">
+
+</header>
+
+<main id="page-container" role="main">
+    
+  <h2 class="heading-medium process-step">
+    Step X of X
+  </h2>
+  
+  <h1 class="heading-xlarge">
+    Your eye conditions
+  </h1>
+  <span class="form-hint">
+    Please select all relevant conditions/treatments for each eye.
+  </span>
+  
+  <form action="medical-form" method="get" class="form">
+    
+    <div class="grid-row column-full" id="qq" style="display: block;">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Left</th>
+            <th scope="col">Right</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <span class="tableQuestion">
+                Total loss of sight
+              </span>
+            </td>
+            <td>
+              <label class="block-label" for="checkbox-left-1">
+                <input id="checkbox-left-1" type="checkbox" value="left-1">
+                Left
+              </label>
+            </td>
+            <td>
+              <label class="block-label" for="checkbox-right-1">
+                <input id="checkbox-right-1" type="checkbox" value="right-1">
+                Right
+              </label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span class="tableQuestion">
+                Laser treatment or injections
+              </span>
+              <span class="form-hint">
+                For diabetic eye disease or other eye conditions.
+                <br />Do not include corrective surgery for short sightedness.
+              </span>
+            </td>
+            <td>
+              <label class="block-label" for="checkbox-left-2">
+                <input id="checkbox-left-2" type="checkbox" value="left-2">
+                Left
+              </label>
+            </td>
+            <td>
+              <label class="block-label" for="checkbox-right-2">
+                <input id="checkbox-right-2" type="checkbox" value="right-2">
+                Right
+              </label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span class="tableQuestion">
+                Cataracts or any corneal dystrophies
+              </span>
+              <span class="form-hint">
+                (e.g. <a href="https://www.rnib.org.uk/eye-health-eye-conditions-z-eye-conditions/corneal-dystrophies" rel="external">Fuchs</a>)
+              </span>
+            </td>
+            <td>
+              <label class="block-label" for="checkbox-left-3">
+                <input id="checkbox-left-3" type="checkbox" value="left-3">
+                Left
+              </label>
+            </td>
+            <td>
+              <label class="block-label" for="checkbox-right-3">
+                <input id="checkbox-right-3" type="checkbox" value="right-3">
+                Right
+              </label>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <!-- spacer -->
+    <div class="column-full">
+      <p></p>      
+    </div>
+    <div class="column-full">
+      <p></p>      
+    </div>
+    
+    <div class="form-group">
+      <input id="continue" name="continue" type="button" class="button" value="Continue" onclick="decision(this,'{{flow}}','{{conditions}}')" disabled="true"> 
+    </div>
+    
+    <ul>
+      <li><a href="javascript:history.go(-1);">Back</a></li>
+    </ul>
+    
+  </form>
+  
+ </main>
+
+{{/content}}
+
+{{$bodyEnd}}
+{{/bodyEnd}}
+
+{{/govuk_template}}
