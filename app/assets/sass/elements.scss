@@ -224,7 +224,7 @@ margin: 0.5em 0 0 0;
 }
 
 
-    .declarationheading{
+  .declarationheading{
   font-family: "nta", Arial, sans-serif;
   font-size: 24px;
   font-weight: 700;
@@ -232,7 +232,7 @@ margin: 0.5em 0 0 0;
 
   }
 
-      .finishheading{
+  .finishheading{
   font-family: "nta", Arial, sans-serif;
   font-size: 36px;
   font-weight: 700;
@@ -241,16 +241,16 @@ margin: 0.5em 0 0 0;
 
   }
 
-      .finishtick{
+  .finishtick{
   vertical-align: middle; 
   margin-top: -10px; 
   margin-right: 10px;
   }
 
   .searchBox{
-  background-image: url("../images/icons/tick.png");
+  background-image: url("../images/icons/downarrow.png");
   background-repeat: no-repeat;
-  background-position: 105% 50%;
+  background-position: 98% 65%;
   padding: em(7) em(41) em(4) em(16);
 }
 
