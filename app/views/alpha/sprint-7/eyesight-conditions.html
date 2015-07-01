@@ -16,6 +16,14 @@
 
 <header class="page-header">
 
+<script>
+
+function next() {
+  window.location.href = 'your-vehicle?flow={{flow}}&conditions={{conditions}}';
+}
+
+</script>
+
 </header>
 
 <main id="page-container" role="main">
@@ -127,7 +135,7 @@
     
     <div class="form-group">
       <!--input id="continue" name="continue" type="button" class="button" value="Continue" onclick="decision(this,'{{flow}}','{{conditions}}')"/--> 
-      <input id="continue" name="continue" type="button" class="button" value="Continue" onclick="window.location.href = 'special-adaptations';"/> 
+      <input id="continue" name="continue" type="button" class="button" value="Continue" onclick="next();"/> 
     </div>
     
     <ul>
