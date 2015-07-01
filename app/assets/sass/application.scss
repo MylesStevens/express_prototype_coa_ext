@@ -579,10 +579,10 @@ div.icon-tick, div.icon-cross, div.icon-question-mark {
 }
 
 #accordion h3.ui-accordion-header-active {
-  background-position: .2em -1.5em;
+  background-position: 0 -2.5em;
  
  @include media(tablet) {
-    background-position: 0 -2.5em;
+    background-position: .2em -1.5em;
   }
 }
 
