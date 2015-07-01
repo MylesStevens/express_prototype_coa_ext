@@ -15,6 +15,18 @@
 
 <header>
 
+<!-- https://jqueryui.com/accordion/ -->
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script>
+  $(function() {
+    $( "#accordion" ).accordion({
+      collapsible: true, active: false, heightStyle: "content"
+    });
+  });
+  </script>
+  <!-- End of accordion -->
+
 <script>
 
 function next() {
@@ -37,35 +49,141 @@ function next() {
   <p class="form-hint">Please select all the modifications that you have</p>
 
   <div class="grid-row">
+    <div class="column-two-thirds">
+
+  <div id="accordion">
+    <h3 class="heading-medium car">Car</h3>
+    <div>
+      <label class="block-label" for="car-1">
+        <input id="car-1" type="checkbox" value="car-1">
+        Combined braking and accelerator system
+      </label>
+
+      <label class="block-label" for="car-2">
+        <input id="car-2" type="checkbox" value="car-2">
+        Accelerator system
+      </label>
+
+      <label class="block-label" for="car-3">
+        <input id="car-3" type="checkbox" value="car-3">
+        Rear view mirror
+      </label>
+
+      <label class="block-label" for="car-4">
+        <input id="car-4" type="checkbox" value="car-4">
+        Braking system
+      </label>
+
+      <label class="block-label" for="car-5">
+        <input id="car-5" type="checkbox" value="car-5">
+        Clutch
+      </label>
+
+      <label class="block-label" for="car-6">
+        <input id="car-6" type="checkbox" value="car-6">
+        Control layouts
+      </label>
+
+      <label class="block-label" for="car-7">
+        <input id="car-7" type="checkbox" value="car-7">
+        Driver seat
+      </label>
+
+      <label class="block-label" for="car-8">
+        <input id="car-8" type="checkbox" value="car-8">
+        Steering
+      </label>
+
+      <label class="block-label" for="car-9">
+        <input id="car-9" type="checkbox" value="car-9">
+        Transmission
+      </label>
+
+    </div>
+
+    <h3 class="heading-medium motorcycle">Motorcycle</h3>
+    <div>
+      <label class="block-label" for="motorcycle-1">
+        <input id="motorcycle-1" type="checkbox" value="motorcycle-1">
+        Adjusted commands
+      </label>
+
+      <label class="block-label" for="motorcycle-2">
+        <input id="motorcycle-2" type="checkbox" value="motorcycle-2">
+        Adjusted foot operated brake
+      </label>
+
+      <label class="block-label" for="motorcycle-3">
+        <input id="motorcycle-3" type="checkbox" value="motorcycle-3">
+        Adjusted hand operated brake
+      </label>
+
+      <label class="block-label" for="motorcycle-4">
+        <input id="motorcycle-4" type="checkbox" value="motorcycle-4">
+        Adjusted manual transmission and clutch
+      </label>
+
+      <label class="block-label" for="motorcycle-5">
+        <input id="motorcycle-5" type="checkbox" value="motorcycle-5">
+        Only with sidecar
+      </label>
+
+      <label class="block-label" for="motorcycle-6">
+        <input id="motorcycle-6" type="checkbox" value="motorcycle-6">
+        Single operated brake
+      </label>
+
+      <label class="block-label" for="motorcycle-7">
+        <input id="motorcycle-7" type="checkbox" value="motorcycle-7">
+        Seat height
+        <span class="form-hint">allows driver in a seated position to have contact with the ground</span>
+      </label>
+
+    </div>
+
+    <h3 class="heading-medium moped">Moped</h3>
+    <div>
+      <label class="block-label" for="moped-1">
+        <input id="moped-1" type="checkbox" value="moped-1">
+        Adjusted foot operated brake
+      </label>
+
+      <label class="block-label" for="moped-2">
+        <input id="moped-2" type="checkbox" value="moped-2">
+        Adjusted hand operated brake
+      </label>
+
+      <label class="block-label" for="moped-3">
+        <input id="moped-3" type="checkbox" value="moped-3">
+        Adjusted manual transmission and clutch
+      </label>
+
+      <label class="block-label" for="moped-4">
+        <input id="moped-4" type="checkbox" value="moped-4">
+        Only with sidecar
+      </label>
+
+      <label class="block-label" for="moped-5">
+        <input id="moped-5" type="checkbox" value="moped-5">
+        Single operated brake
+      </label>
+
+    </div>
+  </div>
+
+</div>
+</div>
+
+
+  <div class="grid-row">
 
     <div class="column-two-thirds">
 
-      <div class="special-controls">
-      
-      <h2 class="heading-medium">Car</h2>
-
-      <div class="special-controls-questions">
-
-        <label class="block-label" for="car-1">
-          <input id="car-1" type="checkbox" value="car-1">
-          Combined braking and accelerator system
-        </label>
-
-        <label class="block-label" for="car-2">
-          <input id="car-2" type="checkbox" value="car-2">
-          Accelerator system
-        </label>
-
-        <label class="block-label" for="car-3">
-          <input id="car-3" type="checkbox" value="car-3">
-          Rear view mirror
-        </label>
+      <div id="car" class="car special-controls">
 
       </div>
 
     </div>
-
-  </div>
   </div>
 
 

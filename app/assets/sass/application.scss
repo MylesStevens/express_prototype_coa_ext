@@ -552,26 +552,57 @@ div.icon-tick, div.icon-cross, div.icon-question-mark {
   padding-left: 16px;
 }
 
-.special-controls {
-  border: 1px solid $panel-colour;
+// Special Controls
+
+#accordion {
   margin: $gutter 0;
 }
 
-.special-controls h2 {
-  background-color: $panel-colour;
-  margin: 0;
-  padding: .75em 1em;
+.accordian-section {
+  position: relative;
 }
 
-.special-controls-questions {
-  padding: .5em;
+#accordion h3 {
+  border: 1px solid $panel-colour;
+  background: $panel-colour url(../images/icons/accordian-arrow.png) no-repeat .2em .5em;
+  margin: $gutter 0 0 0;
+  padding: .75em 1em .75em 2em;
+  cursor: pointer;
+  position: relative;
 }
 
-.special-controls .block-label {
+#accordion h3.ui-accordion-header-active {
+  background-position: .2em -1.5em;
+}
+
+#accordion h3:after {
+  position: absolute;
+  top: .9em;
+  right: .9em;
+}
+
+#accordion h3.car:after {
+  content: url(../images/icons/b-1x.png);
+}
+
+#accordion h3.motorcycle:after {
+  content: url(../images/icons/a-1x.png);
+}
+
+#accordion h3.moped:after {
+  content: url(../images/icons/am-1x.png);
+}
+
+#accordion div {
+  border: 1px solid $panel-colour;
+  border-top: none;
+}
+#accordion .block-label {
   background-color: $page-colour;
   border: none;
   float: none;
 }
+
 // Large hit area
 // Radio buttons & checkboxes
 // ==========================================================================
