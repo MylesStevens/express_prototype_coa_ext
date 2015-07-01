@@ -552,6 +552,26 @@ div.icon-tick, div.icon-cross, div.icon-question-mark {
   padding-left: 16px;
 }
 
+.special-controls {
+  border: 1px solid $panel-colour;
+  margin: $gutter 0;
+}
+
+.special-controls h2 {
+  background-color: $panel-colour;
+  margin: 0;
+  padding: .75em 1em;
+}
+
+.special-controls-questions {
+  padding: .5em;
+}
+
+.special-controls .block-label {
+  background-color: $page-colour;
+  border: none;
+  float: none;
+}
 // Large hit area
 // Radio buttons & checkboxes
 // ==========================================================================
