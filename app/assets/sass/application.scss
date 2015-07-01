@@ -599,13 +599,13 @@ div.icon-tick, div.icon-cross, div.icon-question-mark {
     padding: 4px;
     border-radius: 20px;
 }
+
+label.selected.large-block-label  {
+    outline: 3px solid #FFBF47;
+}
   
 .large-block-label .bounding-input-radio .bounding-input-inner {
     border-radius: 20px;
-}
-
-label.large-block-label:hover {
-  background-color: #ffbf47;
 }
 
 label.large-block-label.selected span.bounding-input-inner {
