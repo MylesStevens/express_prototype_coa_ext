@@ -46,6 +46,9 @@ function change(name) {
 
 function update(name) {
   try {
+    var newValue = document.getElementById(name).value;
+    document.getElementById(name+'-text').innerHTML = newValue;
+    
     hide(name+'-edit');
     show(name+'-text');
 
