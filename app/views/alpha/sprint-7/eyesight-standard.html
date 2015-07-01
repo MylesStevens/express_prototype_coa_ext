@@ -21,7 +21,7 @@
 <main id="page-container" role="main">
     
   <h2 class="heading-medium process-step">
-    Step X of X
+    Step 4 of 7
   </h2>
   
   <h1 class="heading-xlarge">
@@ -30,9 +30,9 @@
   
   <form action="medical-form" method="get" class="form">
     
-    <div class="grid-row" id="qx" style="display: block;">
+    <div class="grid-row" id="q1" style="display: block;">
       <div class="column-two-thirds">
-        <h4 class="heading-medium">Can you meet this legal eyesight standard for driving?</h4>
+        <h4 class="heading-medium">Can you meet the legal eyesight standard for driving?</h4>
         <details>
           <summary><span class="summary">More about the legal standard for driving</span></summary>
           <div class="panel-indent">
@@ -47,16 +47,16 @@
           </div>
         </details>
         <div class="form-group">
-          <label class="block-label" for="qx-a1" id="qx-a1-label">
-            <input id="qx-a1" type="radio" name="qx-answer" value="0" onclick="answer(this,'{{flow}}','{{conditions}}')">
+          <label class="block-label" for="q1-a1" id="q1-a1-label">
+            <input id="q1-a1" type="radio" name="q1-answer" value="0" onclick="answer(this)">
             Yes
           </label>
-          <label class="block-label" for="qx-a2" id="qx-a2-label">
-            <input id="qx-a2" type="radio" name="qx-answer" value="1" onclick="answer(this,'{{flow}}','{{conditions}}')">
+          <label class="block-label" for="q1-a2" id="q1-a2-label">
+            <input id="q1-a2" type="radio" name="q1-answer" value="1" onclick="answer(this)">
             Yes, with glasses or corrective lenses
           </label>
-          <label class="block-label" for="qx-a3" id="qx-a3-label">
-            <input id="qx-a3" type="radio" name="qx-answer" value="2" onclick="answer(this,'{{flow}}','{{conditions}}')">
+          <label class="block-label" for="q1-a3" id="q1-a3-label">
+            <input id="q1-a3" type="radio" name="q1-answer" value="2" onclick="answer(this)">
             No
           </label>
         </div>
@@ -78,6 +78,29 @@
     
   </form>
   
+<script>
+
+  var data = {
+    state: "",
+    validate: "true",
+    questions: [
+      {id: "q1", type: "radio", active: "true", answers: [
+          {id: "q1-a1", value: "", show: [], hide: [], decision: "1"},
+          {id: "q1-a2", value: "", show: [], hide: [], decision: "1"},
+          {id: "q1-a3", value: "", show: [], hide: [], decision: "2"}
+        ]
+      }
+    ],
+    decisions: [
+      {id: "1", description: "Yes", message: "", redirect: "eyesight-conditions?flow={{flow}}&conditions={{conditions}}"},
+      {id: "2", description: " No", message: "", redirect: "finish?code=revoke"}
+    ]
+  };
+
+  initialise(data);
+
+</script>
+
  </main>
 
 {{/content}}

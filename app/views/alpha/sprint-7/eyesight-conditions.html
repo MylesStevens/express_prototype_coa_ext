@@ -21,11 +21,11 @@
 <main id="page-container" role="main">
     
   <h2 class="heading-medium process-step">
-    Step X of X
+    Step 4 of 7
   </h2>
   
   <h1 class="heading-xlarge">
-    Your eye conditions
+    Your eyesight
   </h1>
   <span class="form-hint">
     Please select all relevant conditions/treatments for each eye.
@@ -126,7 +126,8 @@
     </div>
     
     <div class="form-group">
-      <input id="continue" name="continue" type="button" class="button" value="Continue" onclick="decision(this,'{{flow}}','{{conditions}}')" disabled="true"> 
+      <!--input id="continue" name="continue" type="button" class="button" value="Continue" onclick="decision(this,'{{flow}}','{{conditions}}')"/--> 
+      <input id="continue" name="continue" type="button" class="button" value="Continue" onclick="window.location.href = 'special-adaptations';"/> 
     </div>
     
     <ul>
