@@ -46,7 +46,7 @@
         <div class="form-group" id="q11">
           <label class="form-label" for="Consultantname">
             <span style="font-weight: 600;">Location</span> (optional)
-            <input placeholder="e.g. postcode or town" id="q11-a1" name="location" value="{{location}}" type="text" class="stretch-textbox form-control" onkeyup="">
+            <input placeholder="e.g. Morriston Hospital" id="q11-a1" name="location" value="{{location}}" type="text" class="stretch-textbox form-control" onkeyup="">
               <br/>
           </label>
         </div>
@@ -73,9 +73,9 @@
               <span id="inner-span-1" name="inner-span-1" class="bounding-input-inner"></span>
             </span> 
             <div class="consultant-record">
-              <div class="consultant-name">John Smith</div>
+              <div class="consultant-name">{{name}}</div>
               <div class="consultant-occupation">Diabetes specialist nurse</div>
-              <div class="consultant-location">Morriston Hospital &ndash; Singleton Hospital</div>
+              <div class="consultant-location">{{location}}</div>
             </div>
 		  </label>
           <label id="outer-label-2" name="outer-label-2" class="large-block-label" for="consultant-2">
