@@ -1,0 +1,134 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation3}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+<header class="page-header">
+
+</header>
+
+<main id="page-container" role="main">
+  
+  <h2 class="heading-medium process-step">
+    Step 4 of 7
+  </h2>
+  <h1 class="heading-xlarge process-heading">
+    Your {{flow}} care
+  </h1>
+
+  <form id="medical-form" class="form">
+
+    <h4 class="form-title heading-medium">
+      What is the name and address of your consultant?
+    </h4>
+
+    <div class="grid-row">
+      <div class="column-third">
+        <div class="form-group" id="q10">
+          <label class="form-label" for="postcode">
+            Name
+            <input placeholder="e.g. Smith or John Smith" id="q10-a1" name="q10-a1" type="text" class="stretch-textbox form-control" onkeyup="">
+            <br/>
+          </label>
+        </div>
+      </div>
+
+      <div class="column-third">
+        <div class="form-group" id="q11">
+          <label class="form-label" for="Consultantname">
+              Location (optional)
+            <input placeholder="e.g. postcode or town" id="q11-a1" name="q10-a1" type="text" class="stretch-textbox form-control" onkeyup="">
+              <br/>
+          </label>
+        </div>
+      </div>
+      
+      <div class="column-third">
+        <fieldset class="search-submit">
+          <button type="submit" class="search-button-blue button">
+            Search
+          </button>
+        </fieldset>
+      </div>
+
+    </div>
+    
+    <div class="grid-row">
+      <div class="column-full">
+        <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Occupation</th>
+            <th>Address</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Doctor 1</td>
+            <td>Surgeon</td>
+            <td>Singleton Hospital, Swansea</td>
+            <td><a href="">(Select)</a></td>
+          </tr>
+          <tr>
+            <td>Doctor 2</td>
+            <td>Surgeon</td>
+            <td>Morriston Hospital, Swansea</td>
+            <td><a href="">(Select)</a></td>
+          </tr>
+          <tr>
+            <td>Doctor 3</td>
+            <td>Surgeon</td>
+            <td>Fforestfach Hospital, Swansea</td>
+            <td><a href="">(Select)</a></td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+    
+    <div class="grid-row">
+      <p></p>
+    </div>
+    
+    <div class="grid-row">
+      <div class="column-quarter">
+        <div class="form-group">
+          <input id="continue" type="button" class="button" value="Save and continue" onclick="decision(this,'{{flow}}','{{conditions}}')"/> 
+        </div>
+      </div>
+      <div class="column-two-thirds">
+        <ul class="skip-link">
+          <li><a href="javascript:history.go(-1);">Skip, I want to enter the details manually</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <ul>
+      <li><a href="javascript:history.go(-1);">Back</a></li>
+    </ul>
+
+  </form>
+
+<script>
+
+</script>
+
+</main>
+
+{{/content}}
+
+{{$bodyEnd}}
+{{/bodyEnd}}
+
+{{/govuk_template}}
