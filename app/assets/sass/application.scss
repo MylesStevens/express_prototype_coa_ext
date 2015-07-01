@@ -513,6 +513,15 @@ div.icon-tick, div.icon-cross, div.icon-question-mark {
   padding: 3px 0px 6px 45px;
 }
 
+.icon-automatic-gears {
+  padding: 0 0 $gutter 0;
+
+  @include media(tablet) {
+    padding: $gutter 0 0 0;
+  }
+}
+
+
 .visionTestIcon {
   max-width: 45%;
   /*margin-top: 2em;
