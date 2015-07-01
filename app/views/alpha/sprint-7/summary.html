@@ -29,7 +29,7 @@
 
 <script>
 
-function change(name) {
+function changeText(name) {
   try {
     hide(name+'-text');
     show(name+'-edit');
@@ -44,11 +44,11 @@ function change(name) {
   }
 }
 
-function update(name) {
+function updateText(name) {
   try {
     var newValue = document.getElementById(name).value;
     document.getElementById(name+'-text').innerHTML = newValue;
-    
+
     hide(name+'-edit');
     show(name+'-text');
 
@@ -67,7 +67,7 @@ function update(name) {
 <main id="page-container" role="main">
 
   <h2 class="heading-medium process-step">
-    Step 6 of 7
+    Summary
   </h2>
 
   <h1 class="heading-xlarge">
@@ -78,10 +78,13 @@ function update(name) {
    
     <div><h2 class="heading-large">Your details</h2> </div>
        
-    <div class="grid-row border-bottom-summary" >
+    <!-- Driving Licence Number -->
+    <div class="grid-row border-bottom-summary">
+
       <div class="column-quarter"> 
         <div class="light-small summary-title">Driving licence number</div >
       </div>
+
       <div class="column-half">
         <div  class="bold-small summary-text">
           <div id="driving-licence-number-text" class="">
@@ -92,37 +95,58 @@ function update(name) {
           </div>
         </div >
       </div>
+
       <div class="column-quarter"> 
         <div id="driving-licence-number-change" class="light-small summary-title" style="text-align: right;">
-          <a href="javascript:change('driving-licence-number');">Change</a>
+          <a href="javascript:changeText('driving-licence-number');">Change</a>
         </div >
         <div id="driving-licence-number-update" class="light-small summary-title starthidden" style="text-align: right;">
-          <a href="javascript:update('driving-licence-number');">Save</a>
+          <a href="javascript:updateText('driving-licence-number');">Save</a>
         </div >
       </div>
+
     </div>
 
-    <div class="grid-row border-bottom-summary" >
+    <div class="grid-row border-bottom-summary">
+
       <div class="column-quarter"> 
         <div class="light-small summary-title">Name</div >
       </div>
+
       <div class="column-half">
-        <div  class="bold-small summary-text">Mrs Emily Lines </div >
+        <div  class="bold-small summary-text">
+          <div id="name-text" class="">
+            Mrs Emily Lines
+          </div>
+          <div id="name-edit" class="starthidden">
+            <input type="text" id="name" name="name" value="Mrs Emily Lines" size="25" />
+          </div>
+        </div >
       </div>
+
+      <div class="column-quarter"> 
+        <div id="name-change" class="light-small summary-title" style="text-align: right;">
+          <a href="javascript:changeText('name');">Change</a>
+        </div >
+        <div id="name-update" class="light-small summary-title starthidden" style="text-align: right;">
+          <a href="javascript:updateText('name');">Save</a>
+        </div >
+      </div>
+
     </div>
        
     <div class="grid-row border-bottom-summary">
       <div class="column-quarter"> 
-        <div class="light-small summary-title" >Date of birth</div>
+        <div class="light-small summary-title">Date of birth</div>
       </div>
       <div class="column-half">
-        <div  class="bold-small summary-text">9 Jun 1971</div >
+        <div class="bold-small summary-text">9 Jun 1971</div >
       </div>
     </div>
 
     <div class="grid-row border-bottom-summary">
       <div class="column-quarter"> 
-        <div class="light-small summary-title" >Gender</div>
+        <div class="light-small summary-title">Gender</div>
       </div>
       <div class="column-half">
         <div  class="bold-small summary-text">Female</div >
@@ -131,7 +155,7 @@ function update(name) {
 
     <div class="grid-row border-bottom-summary">
       <div class="column-quarter"> 
-        <div class="light-small summary-title" >Address</div>
+        <div class="light-small summary-title">Address</div>
       </div>
       <div class="column-half">
         <div  class="bold-small summary-text">86 Tanylan Road, Morriston, SWANSEA, <span class="postcode">SA6 7DU</span></div >
@@ -140,7 +164,7 @@ function update(name) {
   
     <br>
     
-    <div><h2 class="heading-small">Your medical condition(s)</h2> </div>
+    <div><h2 class="heading-large">Your conditions</h2> </div>
 
     <div class="grid-row border-bottom-summary" >
       <div class="column-quarter"> 
@@ -152,7 +176,7 @@ function update(name) {
     </div>
   
     <br>
-    <div><h2 class="heading-small">Your medical consultant</h2> </div>
+    <div><h2 class="heading-large">Your consultant</h2> </div>
 
     <div class="grid-row border-bottom-summary">
       <div class="column-quarter"> 
@@ -180,7 +204,7 @@ function update(name) {
     </div>
 
     <br>
-    <div><h2 class="heading-small">Confirmations</h2> </div>
+    <div><h2 class="heading-large">Confirmations</h2> </div>
 
     <div class="grid-row border-bottom-summary">
       <div class ="column-full">

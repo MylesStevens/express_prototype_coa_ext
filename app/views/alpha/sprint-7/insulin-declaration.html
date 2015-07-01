@@ -16,12 +16,24 @@
 
 <header class="page-header">
 
+<script>
+
+function next() {
+  window.location.href = 'eyesight-standard?flow={{flow}}&conditions={{conditions}}';
+}
+
+function handle(element) {
+  document.getElementById('continue').disabled = (!(element.checked));
+}
+
+</script>
+
 </header>
 
 <main id="page-container" role="main">
     
   <h2 class="heading-medium process-step">
-    Step x of x
+    Step 4 of 7
   </h2>
   <h1 class="heading-xlarge">
     Insulin declaration
@@ -34,20 +46,23 @@
         <div class="important-notice">
           <p>Please read the following information carefully and tick the consent box.</p>
         </div>
-        <div class="form-group">
-		  <label class="large-block-label" for="declaration">
-		    <input id="declaration" type="checkbox" style="display: none;">
-            <span class="bounding-input">
-              <span class="bounding-input-inner"></span>
-            </span> I understand the need to test my blood glucose/sugar at times relevant to driving (not more than 2 hours before the start of the first journey and every 2 hours while driving).
-		  </label>
+
+        <div id="outer-group" name="outer-group" class="form-group">
+		      <label id="outer-label" name="outer-label" class="large-block-label" for="declaration">
+		        <input id="declaration" name="declaration" type="checkbox" style="display: none;" onchange="handle(this);"/>
+              <span id="outer-span" name="outer-span" class="bounding-input">
+                <span id="inner-span" name="inner-span" class="bounding-input-inner"></span>
+              </span> 
+              I understand the need to test my blood glucose/sugar at times relevant to driving (not more than 2 hours before the start of the first journey and every 2 hours while driving).
+		      </label>
         </div>
+
       </div>
     </div>
     
     <div class="form-group">
       <!--input id="continue" name="continue" type="button" class="button" value="Continue" onclick="decision(this,'{{flow}}','{{conditions}}')"/--> 
-      <input id="continue" name="continue" type="button" class="button" value="Save and continue" onclick="window.location.href = '';"/> 
+      <input id="continue" name="continue" type="button" class="button" value="Save and continue" onclick="next();" disabled="true"/> 
     </div>
     
     <ul>
@@ -55,6 +70,7 @@
     </ul>
     
   </form>
+
 </main>
 
 {{/content}}
