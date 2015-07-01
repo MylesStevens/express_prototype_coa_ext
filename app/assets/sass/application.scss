@@ -613,6 +613,7 @@ div.icon-tick, div.icon-cross, div.icon-question-mark {
   border: none;
   float: none;
   margin-top: 0;
+  padding-bottom: 5px;
 }
 
 // Large hit area
@@ -628,6 +629,7 @@ div.icon-tick, div.icon-cross, div.icon-question-mark {
   cursor: pointer;
   background: #dee0e2;
   border: 1px solid #dee0e2;
+  margin: 10px 0;
 }
 
 .large-block-label em {
@@ -699,19 +701,18 @@ label.large-block-label.selected span.bounding-input-radio span.bounding-input-i
   box-shadow: none;
   z-index: 4;
   right: 0;
-  top: 0.5em;
-  width: 115px;
-  height: 50px;
-  padding-left: 45px;
+  top: 25px;
+  width: 110px;
+  height: 36px;
+  padding-left: 42px;
   border: none;
   overflow: hidden;
-  //text-indent: -5000px;
   color: #fff;
   background-color: #2b8cc4;
   background-image: url(https://assets.digital.cabinet-office.gov.uk/frontend/search/search-button-b231bf371989287a124d40d323caf470.png);
   background-repeat: no-repeat;
-  background-position: -25px 0px;
-  background-size: 60%;
+  background-position: -18px -3px;
+  background-size: 55%;
 }
 
 .search-button-blue.button:hover {
@@ -720,4 +721,22 @@ label.large-block-label.selected span.bounding-input-radio span.bounding-input-i
 
 .skip-link {
   padding-top: 10px;
+}
+
+.consultant-record {
+}
+
+.consultant-record .consultant-name {
+  font-weight: 600;
+}
+
+.consultant-record .consultant-occupation {
+  font-size: 80%;
+  padding-bottom: 10px;
+  font-style: italic;
+  color: #6f777b
+}
+
+.consultant-record .consultant-location {
+  font-size: 80%;
 }

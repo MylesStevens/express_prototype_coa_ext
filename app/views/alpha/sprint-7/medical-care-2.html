@@ -25,18 +25,18 @@
     Your {{flow}} care
   </h1>
 
-  <form id="medical-form" class="form">
+  <form id="medical-form" action="medical-care-2" method="get" class="form">
 
-    <h4 class="form-title heading-medium">
+    <span class="form-hint">
       What is the name and address of your consultant?
-    </h4>
+    </span>
 
-    <div class="grid-row">
+    <div class="grid-row" style="margin-top: 2em;">
       <div class="column-third">
         <div class="form-group" id="q10">
           <label class="form-label" for="postcode">
-            Name
-            <input placeholder="e.g. Smith or John Smith" id="q10-a1" name="q10-a1" type="text" class="stretch-textbox form-control" onkeyup="">
+            <span style="font-weight: 600;">Consultant name</span>
+            <input placeholder="e.g. Smith or John Smith" id="q10-a1" name="name" value="{{name}}" type="text" class="stretch-textbox form-control" onkeyup="">
             <br/>
           </label>
         </div>
@@ -45,8 +45,8 @@
       <div class="column-third">
         <div class="form-group" id="q11">
           <label class="form-label" for="Consultantname">
-              Location (optional)
-            <input placeholder="e.g. postcode or town" id="q11-a1" name="q10-a1" type="text" class="stretch-textbox form-control" onkeyup="">
+            <span style="font-weight: 600;">Location</span> (optional)
+            <input placeholder="e.g. postcode or town" id="q11-a1" name="location" value="{{location}}" type="text" class="stretch-textbox form-control" onkeyup="">
               <br/>
           </label>
         </div>
@@ -62,7 +62,40 @@
 
     </div>
     
-    <div class="grid-row">
+    <div id="search-results" class="grid-row" style="display: none;">
+      <div class="column-two-thirds">
+    
+        <div id="outer-group" name="outer-group" class="form-group">
+          <fieldset class="">
+		  <label id="outer-label-1" name="outer-label-1" class="large-block-label" for="consultant-1">
+		    <input id="consultant-1" name="consultant" type="radio" style="display: none;" onchange=""/>
+            <span id="outer-span-1" name="outer-span-1" class="bounding-input bounding-input-radio">
+              <span id="inner-span-1" name="inner-span-1" class="bounding-input-inner"></span>
+            </span> 
+            <div class="consultant-record">
+              <div class="consultant-name">John Smith</div>
+              <div class="consultant-occupation">Diabetes specialist nurse</div>
+              <div class="consultant-location">Morriston Hospital &ndash; Singleton Hospital</div>
+            </div>
+		  </label>
+          <label id="outer-label-2" name="outer-label-2" class="large-block-label" for="consultant-2">
+		    <input id="consultant-2" name="consultant" type="radio" style="display: none;" onchange=""/>
+            <span id="outer-span-2" name="outer-span-2" class="bounding-input bounding-input-radio">
+              <span id="inner-span-2" name="inner-span-2" class="bounding-input-inner"></span>
+            </span> 
+            <div class="consultant-record">
+              <div class="consultant-name">John Adams</div>
+              <div class="consultant-occupation">Diabetes specialist nurse</div>
+              <div class="consultant-location">University Hospital of Wales, Cardiff</div>
+            </div>
+		  </label>
+          </fieldset>
+        </div>
+        
+      </div>
+    </div>
+    
+    <!--<div class="grid-row">
       <div class="column-full">
         <table>
         <thead>
@@ -95,7 +128,7 @@
         </tbody>
       </table>
       </div>
-    </div>
+    </div>-->
     
     <div class="grid-row">
       <p></p>
@@ -121,6 +154,12 @@
   </form>
 
 <script>
+
+
+if("{{name}}".length > 0) {
+  document.getElementById('search-results').style.display = 'block';
+  document.getElementById("q10-a1").focus();
+}
 
 </script>
 

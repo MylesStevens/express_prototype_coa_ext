@@ -175,6 +175,10 @@ module.exports = {
         res.render('alpha/'+p2+'/review-conditions', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions': req.query.conditions})
     });
     
+    app.get('/alpha/'+p2+'/medical-care-2', function (req, res) {
+        res.render('alpha/'+p2+'/medical-care-2', {'assetPath' : assetPath, 'flow': req.query.flow, 'name': req.query.name,  'location': req.query.location})
+    });
+    
     app.get('/alpha/'+p2+'/summary', function (req, res) {
         res.render('alpha/'+p2+'/summary', {'assetPath' : assetPath, 'flow' : req.query.flow, 'conditions' : req.query.conditions})
     });
