@@ -552,7 +552,9 @@ div.icon-tick, div.icon-cross, div.icon-question-mark {
   padding-left: 16px;
 }
 
-// Special Controls
+// Special controls
+// Accordian styles
+// ==========================================================================
 
 #accordion {
   margin: $gutter 0;
@@ -564,15 +566,24 @@ div.icon-tick, div.icon-cross, div.icon-question-mark {
 
 #accordion h3 {
   border: 1px solid $panel-colour;
-  background: $panel-colour url(../images/icons/accordian-arrow.png) no-repeat .2em .5em;
+  background: $panel-colour url(../images/icons/accordian-arrow.png) no-repeat .1em .1em;
   margin: $gutter 0 0 0;
-  padding: .75em 1em .75em 2em;
+  padding: .75em 1em .75em 2.5em;
   cursor: pointer;
   position: relative;
+
+ @include media(tablet) {
+    background-position: .2em .5em;
+    padding-left: 2em;
+  }
 }
 
 #accordion h3.ui-accordion-header-active {
   background-position: .2em -1.5em;
+ 
+ @include media(tablet) {
+    background-position: 0 -2.5em;
+  }
 }
 
 #accordion h3:after {
@@ -601,6 +612,7 @@ div.icon-tick, div.icon-cross, div.icon-question-mark {
   background-color: $page-colour;
   border: none;
   float: none;
+  margin-top: 0;
 }
 
 // Large hit area
