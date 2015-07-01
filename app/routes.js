@@ -168,7 +168,7 @@ module.exports = {
     });
 
     app.get('/alpha/'+p2+'/medical-conditions', function (req, res) {
-        res.render('alpha/'+p2+'/medical-conditions', {'assetPath' : assetPath, 'conditions': req.query.conditions})
+        res.render('alpha/'+p2+'/medical-conditions', {'assetPath' : assetPath, 'search': req.query.search})
     });
 
     app.get('/alpha/'+p2+'/review-conditions', function (req, res) {
