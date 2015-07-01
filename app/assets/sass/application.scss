@@ -185,6 +185,10 @@ margin: 0.5em 0 0 0;
   padding: 0.4em 0px 0px 2em;
 }
 
+.important-notice p {
+  font-weight: 600
+}
+
 @media (min-width: 640px) {
   .help-notice {background-position: 0 0.5em;}
   .help-notice h2 {padding-left: 1.5em;}
@@ -532,12 +536,6 @@ div.icon-tick, div.icon-cross, div.icon-question-mark {
   padding-left: 4%;
 }
 
-@media (max-width: 640px) {
-  .visionTestIcon {
-    
-  }
-}
-
 .tableQuestion {
   font-weight: 700;
 }
@@ -552,4 +550,71 @@ div.icon-tick, div.icon-cross, div.icon-question-mark {
 
 .right-eye-icon {
   padding-left: 16px;
+}
+
+// Large hit area
+// Radio buttons & checkboxes
+// ==========================================================================
+
+// Inline block labels
+.large-block-label {
+  display: block;
+  position: relative;
+  color: #0b0c0c;
+  padding: 20px 20px 20px 70px;
+  cursor: pointer;
+  background: #dee0e2;
+  border: 1px solid #dee0e2;
+}
+
+.large-block-label em {
+    display: block;
+    color: #6f777b;
+    font-style: normal;
+}
+
+.large-block-label input {
+    display: none;
+}
+
+.large-block-label .bounding-input {
+    display: block;
+    position: absolute;
+    left: 20px;
+    top: 35%;
+    width: 20px;
+    height: 20px;
+    padding: 3px;
+    border: 2px solid #0b0c0c;
+    background: #fff;
+}
+
+.large-block-label .bounding-input-radio {
+    display: block;
+    position: absolute;
+    left: 20px;
+    top: 35%;
+    width: 18px;
+    height: 18px;
+    padding: 4px;
+    border-radius: 20px;
+}
+  
+.large-block-label .bounding-input-radio .bounding-input-inner {
+    border-radius: 20px;
+}
+
+label.large-block-label:hover {
+  background-color: #ffbf47;
+}
+
+label.large-block-label.selected span.bounding-input-inner {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url(/public/images/tick.png);
+  background-size: cover;
+}
+label.large-block-label.selected span.bounding-input-radio span.bounding-input-inner {
+  background: #0b0c0c;
 }
