@@ -12,17 +12,26 @@
 {{$headerClass}}with-proposition{{/headerClass}}
 
 {{$content}}
+
 <header class="page-header">
+
+<script>
+
+function next() {
+  window.location.href = 'your-vehicle?flow={{flow}}&conditions={{conditions}}';
+}
+
+</script>
 
 </header>
 
 <main id="page-container" role="main">
   
   <h2 class="heading-medium process-step">
-    Step 4 of 7
+    Step 5 of 7
   </h2>
   <h1 class="heading-xlarge process-heading">
-    Your {{flow}} care
+    Your diabetes care
   </h1>
 
   <form id="medical-form" action="medical-care-2" method="get" class="form">
@@ -137,7 +146,8 @@
     <div class="grid-row">
       <div class="column-quarter">
         <div class="form-group">
-          <input id="continue" type="button" class="button" value="Save and continue" onclick="decision(this,'{{flow}}','{{conditions}}')"/> 
+          <!--input id="continue" type="button" class="button" value="Save and continue" onclick="decision(this,'{{flow}}','{{conditions}}')"/--> 
+          <input id="continue" type="button" class="button" value="Save and continue" onclick="next();"/> 
         </div>
       </div>
       <div class="column-two-thirds">
