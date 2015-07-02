@@ -62,6 +62,7 @@ function addCondition(condition) {
   try {
     document.getElementById('Remove_'+condition).style.display = 'block';
     document.getElementById('Add_'+condition).style.display = 'none';
+    document.getElementsByName(''+condition)[0].style.display ='none';
   } catch(e) {
     document.getElementById('Remove_unknown').style.display = 'block';
   }
@@ -81,6 +82,7 @@ function removeCondition(condition) {
   try {
     document.getElementById('Remove_'+condition).style.display = 'none';
     document.getElementById('Add_'+condition).style.display = 'block';
+    document.getElementsByName(''+condition)[0].style.display ='block';
   } catch(e) {
     
   }
@@ -157,7 +159,7 @@ function removeCondition(condition) {
         <div class="">
           <h2 class="heading-medium">Or, add a common one:</h2>
           <div class="column-half">
-            <p id="Add_diabetes"><a href="javascript:addCondition('diabetes');">+ Diabetes</a></p>
+            <p id="Add_diabetes" name="diabetes"><a href="javascript:addCondition('diabetes');">+ Diabetes</a></p>
             <p id="Add_epilepsy"><a href="javascript:addCondition('epilepsy');">+ Epilepsy</a></p>
             <p id="Add_glaucoma"><a href="javascript:addCondition('glaucoma');">+ Glaucoma</a></p>
             <p id="Add_dementia"><a href="javascript:addCondition('dementia');">+ Dementia</a></p>

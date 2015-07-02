@@ -16,7 +16,7 @@
 <main id="page-container" role="main">
 
   <h2 class="heading-medium process-step">
-    Step X of X
+    Step 6 of 7
   </h2>
   <h1 class="heading-xlarge process-heading">
     Your vehicle
@@ -38,7 +38,7 @@
     <div class="grid-row starthidden" id="q15">
 
       <div class="column-two-thirds">
-        <label class="form-label"> <h2 class="heading-medium">Do you need to drive a vehicle with automatic gears as a result of your medical condition?</h2></label>
+        <label class="form-label"> <h4 class="heading-medium question-heading">Do you need to drive a vehicle with automatic gears as a result of your medical condition?</h4></label>
         <div class="form-group">
           <label class="block-label" for="q15-a1" id="q15-a1-label">
             <input id="q15-a1" type="radio" name="q15-answer" value="Y" onclick="answer(this)">
@@ -60,7 +60,7 @@
     <div class="grid-row starthidden" id="q16">
 
       <div class="column-two-thirds">
-        <label class="form-label"><h2 class="heading-medium">Do you need to drive a vehicle with special controls?</h2></label>
+        <label class="form-label"><h2 class="heading-medium question-heading">Do you need to drive a vehicle with special controls?</h2></label>
         <span class="form-hint">For example 'Combined braking with accelerator system'</span>
         <div class="form-group">
           <label class="block-label" for="q16-a1" id="q16-a1-label">
@@ -108,8 +108,8 @@
       }
     ],
     decisions: [
-      {id: "1", description: "Q16: Yes", message: "", redirect: "D497?flow={{flow}}&conditions={{conditions}}"},
-      {id: "2", description: "Q16: No", message: "", redirect: "another-condition?flow={{flow}}&conditions={{conditions}}"}
+      {id: "1", description: "Q16: Yes", message: "", redirect: "special-controls?flow={{flow}}&conditions={{conditions}}"},
+      {id: "2", description: "Q16: No", message: "", redirect: "summary?flow={{flow}}&conditions={{conditions}}"}
     ]
   };
 

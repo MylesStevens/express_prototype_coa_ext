@@ -17,8 +17,14 @@
 
 <script>
 
-function next() {
-  window.location.href = 'your-vehicle?flow={{flow}}&conditions={{conditions}}';
+function continueNext() {
+  window.location.href = 'medical-care-3?flow={{flow}}&conditions={{conditions}}&name={{name}}&location={{location}}';
+}
+function skipNext() {
+  window.location.href = 'medical-care-3?flow={{flow}}&conditions={{conditions}}';
+}
+function enableContinue() {
+  document.getElementById('continue').removeAttribute('disabled');
 }
 
 </script>
@@ -77,7 +83,7 @@ function next() {
         <div id="outer-group" name="outer-group" class="form-group">
           <fieldset class="">
 		  <label id="outer-label-1" name="outer-label-1" class="large-block-label" for="consultant-1">
-		    <input id="consultant-1" name="consultant" type="radio" style="display: none;" onchange=""/>
+		    <input id="consultant-1" name="consultant" type="radio" style="display: none;" onclick="javacript:enableContinue()" onchange=""/>
             <span id="outer-span-1" name="outer-span-1" class="bounding-input bounding-input-radio">
               <span id="inner-span-1" name="inner-span-1" class="bounding-input-inner"></span>
             </span> 
@@ -88,7 +94,7 @@ function next() {
             </div>
 		  </label>
           <label id="outer-label-2" name="outer-label-2" class="large-block-label" for="consultant-2">
-		    <input id="consultant-2" name="consultant" type="radio" style="display: none;" onchange=""/>
+		    <input id="consultant-2" name="consultant" type="radio" style="display: none;" onclick="javacript:enableContinue()" onchange=""/>
             <span id="outer-span-2" name="outer-span-2" class="bounding-input bounding-input-radio">
               <span id="inner-span-2" name="inner-span-2" class="bounding-input-inner"></span>
             </span> 
@@ -147,12 +153,12 @@ function next() {
       <div class="column-quarter">
         <div class="form-group">
           <!--input id="continue" type="button" class="button" value="Save and continue" onclick="decision(this,'{{flow}}','{{conditions}}')"/--> 
-          <input id="continue" type="button" class="button" value="Save and continue" onclick="next();"/> 
+          <input id="continue" type="button" class="button" value="Save and continue" onclick="javascript:continueNext()" disabled="true"/> 
         </div>
       </div>
       <div class="column-two-thirds">
         <ul class="skip-link">
-          <li><a href="javascript:history.go(-1);">Skip, I want to enter the details manually</a></li>
+          <li><a href="javascript:skipNext()">Skip, I want to enter the details manually</a></li>
         </ul>
       </div>
     </div>
