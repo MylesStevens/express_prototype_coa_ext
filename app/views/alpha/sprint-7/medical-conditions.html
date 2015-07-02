@@ -20,6 +20,7 @@
 var conditions = [];
 
 function next() { 
+  /*
   var supported = ['diabetes','glaucoma'];
 
   conditions.sort();
@@ -39,6 +40,8 @@ function next() {
   } else {
     alert('The only conditions that are supported are: ['+supported+']');
   }
+  */
+  window.location.href = 'review-conditions?flow=diabetes&conditions=diabetes';
 }
   
 function checkLayout() {
