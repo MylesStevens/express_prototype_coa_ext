@@ -18,7 +18,7 @@
 <script>
 
 function next() {
-  window.location.href = 'special-adaptations?flow={{flow}}&conditions={{conditions}}';
+  window.location.href = 'your-vehicle?flow={{flow}}&conditions={{conditions}}';
 }
 
 </script>
@@ -40,9 +40,9 @@ function next() {
         Consultant's Address
       </h4>
       <div class="validation-wrapper">
-        <p><input id="q13-a1" name="q13-a1" type="text" class="form-control" value="Dr Gregory House" onkeyup="answer(this)"></p>
+        <p><input id="q13-a1" name="q13-a1" type="text" class="form-control" value="Dr {{name}}" onkeyup="answer(this)"></p>
         <p><input id="q13-a2" name="q13-a2" type="text" class="form-control" value="Diabetes Clinic"></p>
-        <p><input id="q13-a3" name="q13-a3" type="text" class="form-control" value="Morriston Hospital"></p>
+        <p><input id="q13-a3" name="q13-a3" type="text" class="form-control" value="{{location}}"></p>
         <p><input id="q13-a4" name="q13-a4" type="text" class="form-control" value="Heol Maes Eglwys" ></p>
         <p><input id="q13-a5" name="q13-a5" type="text" class="form-control" value="SWANSEA"></p>
         <p><input id="q13-a6" name="q13-a6" type="text" class="form-control" value="SA6 6NL"></p>
