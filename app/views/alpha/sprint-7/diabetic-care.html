@@ -13,7 +13,15 @@
 
 {{$content}}
 
-<header>
+<header class="page-header">
+
+<script>
+
+function next() {
+  window.location.href = 'medical-care-2?flow={{flow}}&conditions={{conditions}}';
+}
+
+</script>
 
 </header>
 
@@ -22,10 +30,10 @@
   {{>includes/phase_banner}}
   
   <h2 class="heading-medium process-step">
-    Step x of x
+    Step 5 of 7
   </h2>
   <h1 class="heading-xlarge process-heading">
-    Your diabetic care
+    Your diabetes care
   </h1>
 
   <form action="hypocheck" method="get" class="form inline">     
@@ -55,7 +63,7 @@
     </div>
     
     <div class="form-group">
-      <input id="continue" type="button" class="button" value="Continue" onclick="decision(this,'{{flow}}','{{conditions}}')" disabled="true"/> 
+      <input id="continue" type="button" class="button" value="Continue" onclick="javascript:next();" disabled="true"/> 
     </div>
 
     <ul>

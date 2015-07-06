@@ -154,7 +154,7 @@ function enableContinue() {
     </div>
     
     <div class="grid-row">
-      <div class="column-quarter">
+      <div id="continueBlock" class="column-quarter" style="display: none;">
         <div class="form-group">
           <!--input id="continue" type="button" class="button" value="Save and continue" onclick="decision(this,'{{flow}}','{{conditions}}')"/--> 
           <input id="continue" type="button" class="button" value="Save and continue" onclick="javascript:continueNext()" disabled="true"/> 
@@ -162,7 +162,7 @@ function enableContinue() {
       </div>
       <div class="column-two-thirds">
         <ul class="skip-link">
-          <li><a href="javascript:skipNext()">Skip, I want to enter the details manually</a></li>
+          <li><a href="javascript:skipNext()">Skip, I want to enter the details manually</a></li><p></p>
         </ul>
       </div>
     </div>
@@ -178,6 +178,7 @@ function enableContinue() {
 
 if("{{name}}".length > 0) {
   document.getElementById('search-results').style.display = 'block';
+  document.getElementById('continueBlock').style.display = 'block';
   document.getElementById("q10-a1").focus();
 }
 
