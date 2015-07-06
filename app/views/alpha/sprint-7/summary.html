@@ -60,7 +60,16 @@ function updateText(name) {
   }
 }
 
+function next() {
+  window.location.href = 'eyesight-standard?flow={{flow}}&conditions={{conditions}}';
+}
+
+function handle(element) {
+  document.getElementById('continue').disabled = (!(element.checked));
+}
+
 </script>
+
 
 </header>
 
@@ -288,17 +297,19 @@ function updateText(name) {
 
     <div class="grid-row"> </div>
 
-    <div class="dwp-permission-group" >
-      <label style="display: block; margin-left: 20px"><input type="checkbox" id="dwpPermission" name="dwpPermission" value="1" style="float: left; margin-left: -20px; margin-right: 7px;">
+    <div id="outer-group" name="outer-group" class="form-group">
+      <label id="outer-label" name="outer-label" class="large-block-label" for="declaration">
+        <input id="declaration" name="declaration" type="checkbox" style="display: none;" onchange="handle(this);"/>
+        <span id="outer-span" name="outer-span" class="bounding-input">
+          <span id="inner-span" name="inner-span" class="bounding-input-inner"></span>
+        </span> 
         I confirm that the answers I have given are correct to the best of my knowledge and I am aware that it is a criminal offence to make a false declaration and that this could lead to imprisonment.
       </label>
     </div>
-       
+
     <p class ="validation-message" id="postcodeerror"> </p>
 
-    <form action="finish" method="get" class="form inline">
-      <button type="submit" id="sub" name="sub" value ="{{ROUTECHOICE}}" class="button next validation-submit">Continue</button>
-    </form>  
+    <button type="submit" id="continue" name="continue" value ="" class="button next validation-submit" onclick="next();" disabled="true">Continue</button>
     
     <br/><br/>
     <a href="/">Back</a>
