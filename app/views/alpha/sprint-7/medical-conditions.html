@@ -105,13 +105,16 @@ function removeCondition(condition) {
 
   <form id="medical-form" action="medical-conditions" method="get" class="form">
 
+    <input type="hidden" id="flow" name="flow" value="{{flow}}"/>
+
     <div class="grid-row">
       <div class="column-half">
         <h2 class="heading-medium">Search for your condition</h2>
 
-          <input type="text" id="search" name="search" list="conditions-list" value="{{conditions}}" size="40" placeholder="eg. diabetes" />
+          <div id="search-panel">
+            <input type="text" id="search" name="search" list="conditions-list" value="{{conditions}}" placeholder="eg. diabetes" class="stretch-textbox form-control" style="display: inline;"/>
 
-          <datalist id="conditions-list">
+            <datalist id="conditions-list">
             <option value="Diabetes" />
             <option value="Diabetes (Type 1)"/>
             <option value="Diabetes (Type 2)"/>
@@ -123,9 +126,16 @@ function removeCondition(condition) {
             <option value="Stroke" />
             <option value="Sleep Apnoea" />
             <option value="Hypertension" />
-          </datalist>
+            </datalist>
 
-          <br/><br/>
+            <button type="submit" class="search-button-blue button">
+              Search
+            </button>
+
+          </div>
+
+          <br/>
+
           <div id="my-conditions">
             <div id="none">
               <span class="form-hint">You have not selected a medical condition.</span>
