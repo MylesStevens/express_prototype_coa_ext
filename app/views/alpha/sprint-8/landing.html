@@ -1,0 +1,139 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation3}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+
+
+<header class="page-header">
+<script>
+    function start() {
+      var verify = '{{verify}}';
+      var auth = '{{auth}}';
+
+      var target = 'new-or-renew';
+      if((verify.length > 0) && (auth.length > 0)) {
+        target = verify+'?auth='+auth+target;
+      }
+      window.location.href = target;
+    }
+</script>
+</header>
+
+<main id="page-container" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <div class="page-header">
+
+        <h1 class="heading-large">Notify the DVLA about a new or existing medical condition</h1>
+
+        <p class="heading-medium">Telling DVLA about a medical condition or disability</p>
+        <p>You must tell <abbr title="Driver and Vehicle Licensing Agency">DVLA</abbr> if you have a driving licence and: </p>
+
+        <ul class="list-bullet text">
+          <li>you develop a ‘notifiable’ medical condition or disability </li>
+          <li>a condition or disability has got worse since you got your licence</li>
+        </ul>
+
+        <p></p>
+        
+        <p>
+          <h3>Failure to tell us of a relevant condition could compromise road safety, endanger life and invalidate your insurance </h3>
+        </p>
+
+        <h2 class="heading-small">Please Note</h2>
+        <p>
+          <h3>90% of drivers are allowed to retain their current licence or are issued a short period licence subject to medical review on renewal.</h3>
+        </p>
+
+      </div>
+
+    </div>
+  </div>
+ 
+  <div class="grid-row">
+    <div class="column-two-thirds">
+    
+      <div class="page-header">
+
+        <details>
+          <summary>
+            <span class="summary">I don't want to drive any more</span>
+          </summary>
+
+          <div class="panel-indent">
+            <p>There’s no legal age at which you must stop driving. You can decide when to stop, but medical conditions can affect your driving and might mean you have to give up your driving licence until you can meet the medical standards of fitness to drive again.</p>
+
+            <p>When you decide to stop driving or are advised by your doctor to stop you’ll need to tell DVLA and send them your licence.</p>
+
+            <a href="https://www.gov.uk/giving-up-your-driving-licence">Surrender your driving licence</a>
+          </div>    
+
+        </details>
+
+        <br/>
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="page-header">
+    <div class="sign-in-wrap">
+
+      <div class="button-wrap">
+        <a class="button button-get-started" href="javascript:start();">
+          <strong>Start now</strong>
+        </a>
+      </div>
+
+      <hr>
+
+    </div>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds"> 
+      
+      <h3 class="heading-medium">Other ways to apply</h3>
+      
+      <h3 class="heading-medium">By post</h3>
+    
+      <h4 class="heading-small">Please provide the following</h4>
+ 
+      <ul class="list-bullet text">
+        <li>Your full name and address</li>
+        <li>Your driver number (or your date of birth if you do not know your driver number)</li>
+        <li>Details about your medical condition</li>
+      </ul>
+
+      <h4 class="heading-medium">Send to</h4>
+      <P>Drivers Medical Group<BR>
+DVLA<br>
+Swansea<pr>
+SA99 1TU</P>
+<h4 class="heading-small">It’s a criminal offence to obtain someone else’s personal information without their permission.</h4>
+    </div>
+    
+
+ </div>
+ 
+    </main>
+
+{{/content}}
+
+{{$bodyEnd}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

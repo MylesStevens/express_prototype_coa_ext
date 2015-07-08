@@ -1,0 +1,164 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation3}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+
+<header class="page-header">
+
+<script>
+
+function next() {
+  window.location.href = 'medical-conditions';
+}
+
+</script>
+
+</header>
+
+<main id="page-container" role="main">
+
+  <h1 class="heading-large">
+    Your personal details   
+  </h1> 
+
+  <form id="form1" action="medical-conditions" method="get" class="form">
+   
+    <h4 class="heading-small">Enter details below as shown on your driving licence</h4>
+
+    <br/>
+
+    <div class="form-group">
+      <label class="form-label" for="drivernumber">
+        Your driving licence number
+      </label>
+      
+      <span class="form-hint">
+        For example, 'MORGA753116SM9IJ'
+      </span>
+      
+      <input type="text" maxlength="16" class="form-control" id="driver-number" />
+
+      <p></p>
+
+      <details>
+        <summary><span class="summary">Where to find your driving licence number</span></summary>
+        <div class="panel-indent">
+          <p>
+            Your driving licence number can be found in section 5 of your driving licence photocard.
+          </p>
+          <p>
+            <img src="{{assetPath}}images/driving_licence.png" alt="An example of your photocard licence"/>
+          </p>
+          <p>
+            <a href="" target="_new">I don't have my driving licence</a>
+          </p>
+        </div>
+      </details>
+    </div>
+
+    <div class="form-group">
+       <label class="form-label">
+        <label for="forename">First name(s)
+            <span class="form-hint">For example, Sarah Meredyth</span>
+           <input type="text" class="form-control" id="first" >
+          <br>
+      </label>
+    
+      <p></p>
+     <label class="form-label" >
+        <label for="forename">Surname
+            <span class="form-hint">For example, Smith</span>
+           <input type="text" class="form-control" id="surname" >
+          <br>
+      </label>
+    
+    <p></p>
+    <label class="form-label" >
+        <label for="forename">Postcode
+            <span class="form-hint">For example, EH1 9SP</span>
+           <input type="text" class="form-control" id="postcode">
+          <br>
+      </label>
+    </div>
+</div>
+<p></p>
+
+
+<div class="grid-row">
+<div id="dob-control-group" class="column-third inline ">
+   
+    <fieldset>
+        <legend><span id="dobLabel">Date of birth</span>
+            <span class="form-hint">Example: 31 12 1975</span>
+        </legend>
+      <div class="grid-row">  
+        <div class="column-quarter">
+          <label class="form-label" >
+          <label for="forename">Day
+            <span class="form-hint"></span>
+           <input type="text" class="form-control-3-4" id="Day" >
+         </label>
+        </div>
+
+        <div class="column-quarter">
+          <label class="form-label" >
+          <label for="forename">Month
+            <span class="form-hint"></span>
+           <input type="text" class="form-control-3-4" id="Month">
+         </label>
+        </div>
+
+        <div class="column-half">
+          <label class="form-label" >
+          <label for="forename">Year
+            <span class="form-hint"></span>
+           <input type="text" class="form-control-3-4" id="Year">
+         
+          </label>
+        </div>
+        </div>
+    </fieldset>
+    
+</div>
+</div>
+     
+
+<div class="grid-row">
+   <div class="column-full">
+   <br>
+      <input type="button" id="continue" name="continue" class="button" value="Confirm" onclick="next(this);"/>
+    
+    </form>  
+    
+      <ul>
+    
+       
+        <li><a href="javascript:history.go(-1);">Back</a></li>
+      </ul>
+    </div>
+    </div>
+
+    
+<script>
+document.getElementById("driver-number").focus();
+</script>
+    
+</main>
+
+
+{{/content}}
+
+{{$bodyEnd}}
+{{/bodyEnd}}
+
+{{/govuk_template}}
