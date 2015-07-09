@@ -3,6 +3,7 @@ module.exports = {
 
     var p1 = 'sprint-6';
     var p2 = 'sprint-7';
+    var p3 = 'sprint-8';
 
     /*-----------------------------------------------------*/
     app.get('/', function (req, res) {
@@ -10,32 +11,7 @@ module.exports = {
     });
 
     /*-----------------------------------------------------*/
-    /* PROTOTYPE 1 - DO NOT REMOVE/MODIFY THIS AREA!       */
-    /*-----------------------------------------------------*/
-    app.get('/alpha/'+p1+'/landing', function (req, res) {
-        res.render('alpha/'+p1+'/landing', {'assetPath' : assetPath, 'verify' : req.query.verify, 'auth' : req.query.auth})
-    });
-
-    app.get('/alpha/'+p1+'/new-or-renew', function (req, res) {
-        res.render('alpha/'+p1+'/new-or-renew', {'assetPath' : assetPath})
-    });
-
-    app.get('/alpha/'+p1+'/your-details', function (req, res) {
-        res.render('alpha/'+p1+'/your-details', {'assetPath' : assetPath})
-    });
-
-    app.get('/alpha/'+p1+'/medical-conditions', function (req, res) {
-        res.render('alpha/'+p1+'/medical-conditions', {'assetPath' : assetPath})
-    });
-    
-    app.get('/alpha/'+p1+'/summary', function (req, res) {
-        res.render('alpha/'+p1+'/summary', {'assetPath' : assetPath, 'flow' : req.query.flow, 'conditions' : req.query.conditions})
-    });
-    
-    app.get('/alpha/'+p1+'/finish', function (req, res) {
-        res.render('alpha/'+p1+'/finish', {'assetPath' : assetPath})
-    });
-    
+    /* DVLA VERIFY - DO NOT REMOVE/MODIFY THIS AREA!       */
     /*-----------------------------------------------------*/
     app.get('/verify/verify-1', function (req, res) {
         res.render('verify/verify-1', {'assetPath' : assetPath, 'auth' : req.query.auth})
@@ -65,6 +41,33 @@ module.exports = {
         res.render('verify/verify-7', {'assetPath' : assetPath, 'auth' : req.query.auth})
     });
 
+    /*-----------------------------------------------------*/
+    /* PROTOTYPE 1 - DO NOT REMOVE/MODIFY THIS AREA!       */
+    /*-----------------------------------------------------*/
+    app.get('/alpha/'+p1+'/landing', function (req, res) {
+        res.render('alpha/'+p1+'/landing', {'assetPath' : assetPath, 'verify' : req.query.verify, 'auth' : req.query.auth})
+    });
+
+    app.get('/alpha/'+p1+'/new-or-renew', function (req, res) {
+        res.render('alpha/'+p1+'/new-or-renew', {'assetPath' : assetPath})
+    });
+
+    app.get('/alpha/'+p1+'/your-details', function (req, res) {
+        res.render('alpha/'+p1+'/your-details', {'assetPath' : assetPath})
+    });
+
+    app.get('/alpha/'+p1+'/medical-conditions', function (req, res) {
+        res.render('alpha/'+p1+'/medical-conditions', {'assetPath' : assetPath})
+    });
+    
+    app.get('/alpha/'+p1+'/summary', function (req, res) {
+        res.render('alpha/'+p1+'/summary', {'assetPath' : assetPath, 'flow' : req.query.flow, 'conditions' : req.query.conditions})
+    });
+    
+    app.get('/alpha/'+p1+'/finish', function (req, res) {
+        res.render('alpha/'+p1+'/finish', {'assetPath' : assetPath})
+    });
+    
     /*-----------------------------------------------------*/
     app.get('/alpha/'+p1+'/diabetes-start', function (req, res) {
         res.render('alpha/'+p1+'/diabetes-start', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions})
@@ -227,6 +230,120 @@ module.exports = {
     /*-----------------------------------------------------*/
     app.get('/alpha/'+p2+'/glaucoma-start', function (req, res) {
         res.render('alpha/'+p2+'/glaucoma-start', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions})
+    });
+
+    /*-----------------------------------------------------*/
+    /* PROTOTYPE 3 - DO NOT REMOVE/MODIFY THIS AREA!       */
+    /*-----------------------------------------------------*/
+    app.get('/alpha/'+p3+'/landing', function (req, res) {
+        res.render('alpha/'+p3+'/landing', {'assetPath' : assetPath, 'verify' : req.query.verify, 'auth' : req.query.auth})
+    });
+
+    app.get('/alpha/'+p3+'/new-or-renew', function (req, res) {
+        res.render('alpha/'+p3+'/new-or-renew', {'assetPath' : assetPath})
+    });
+
+    app.get('/alpha/'+p3+'/your-details', function (req, res) {
+        res.render('alpha/'+p3+'/your-details', {'assetPath' : assetPath})
+    });
+
+    app.get('/alpha/'+p3+'/medical-conditions', function (req, res) {
+        res.render('alpha/'+p3+'/medical-conditions', {'assetPath' : assetPath})
+    });
+    
+    app.get('/alpha/'+p3+'/summary', function (req, res) {
+        res.render('alpha/'+p3+'/summary', {'assetPath' : assetPath, 'flow' : req.query.flow, 'conditions' : req.query.conditions})
+    });
+    
+    app.get('/alpha/'+p3+'/finish', function (req, res) {
+        res.render('alpha/'+p3+'/finish', {'assetPath' : assetPath})
+    });
+    
+    /*-----------------------------------------------------*/
+    app.get('/alpha/'+p3+'/diabetes-start', function (req, res) {
+        res.render('alpha/'+p3+'/diabetes-start', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions})
+    });
+
+    app.get('/alpha/'+p3+'/diabetes-symptoms', function (req, res) {
+        res.render('alpha/'+p3+'/diabetes-symptoms', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions})
+    });
+
+    app.get('/alpha/'+p3+'/hypoglycaemia-episodes', function (req, res) {
+        res.render('alpha/'+p3+'/hypoglycaemia-episodes', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions})
+    });
+
+    /*-----------------------------------------------------*/
+    app.get('/alpha/'+p3+'/glaucoma-start', function (req, res) {
+        res.render('alpha/'+p3+'/glaucoma-start', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions})
+    });
+
+    app.get('/alpha/'+p3+'/double-vision', function (req, res) {
+        res.render('alpha/'+p3+'/double-vision', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions})
+    });
+
+    app.get('/alpha/'+p3+'/vision-control', function (req, res) {
+        res.render('alpha/'+p3+'/vision-control', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions})
+    });
+
+    app.get('/alpha/'+p3+'/eyesight-standard', function (req, res) {
+        res.render('alpha/'+p3+'/eyesight-standard', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions})
+    });
+
+    app.get('/alpha/'+p3+'/vision-condition', function (req, res) {
+        res.render('alpha/'+p3+'/vision-condition', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions})
+    });
+
+    app.get('/alpha/'+p3+'/another-condition', function (req, res) {
+        res.render('alpha/'+p3+'/another-condition', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions})
+    });
+
+    /*-------- Medical Consent ---------------------------*/
+    app.get('/alpha/'+p3+'/medical-consent', function (req, res) {
+        res.render('alpha/'+p3+'/medical-consent', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions, 'path' : req.query.path})
+    });
+    
+    app.get('/alpha/'+p3+'/medical-care-1', function (req, res) {
+        res.render('alpha/'+p3+'/medical-care-1', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions, 'path' : req.query.path})
+    });
+
+    app.get('/alpha/'+p3+'/medical-care-2', function (req, res) {
+        res.render('alpha/'+p3+'/medical-care-2', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions, 'path' : req.query.path})
+    });
+
+    app.get('/alpha/'+p3+'/medical-care-3', function (req, res) {
+        res.render('alpha/'+p3+'/medical-care-3', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions, 'path' : req.query.path})
+    });
+
+    app.get('/alpha/'+p3+'/medical-care-4', function (req, res) {
+        res.render('alpha/'+p3+'/medical-care-4', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions, 'path' : req.query.path})
+    });
+
+    app.get('/alpha/'+p3+'/eyesight-treatment', function (req, res) {
+        res.render('alpha/'+p3+'/eyesight-treatment', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions, 'path' : req.query.path})
+    });
+
+    app.get('/alpha/'+p3+'/insulin-declaration', function (req, res) {
+        res.render('alpha/'+p3+'/insulin-declaration', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions, 'path' : req.query.path})
+    });
+
+    app.get('/alpha/'+p3+'/diabetic-care', function (req, res) {
+        res.render('alpha/'+p3+'/diabetic-care', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions, 'path' : req.query.path})
+    });
+
+    app.get('/alpha/'+p3+'/eyesight-dystrophies', function (req, res) {
+        res.render('alpha/'+p3+'/eyesight-dystrophies', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions, 'path' : req.query.path})
+    });
+
+    app.get('/alpha/'+p3+'/catmac-details', function (req, res) {
+        res.render('alpha/'+p3+'/catmac-details', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions, 'path' : req.query.path})
+    });
+
+    app.get('/alpha/'+p3+'/special-adaptations', function (req, res) {
+        res.render('alpha/'+p3+'/special-adaptations', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions, 'path' : req.query.path})
+    });
+
+    app.get('/alpha/'+p3+'/D497', function (req, res) {
+        res.render('alpha/'+p3+'/D497', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions, 'path' : req.query.path})
     });
 
   }
