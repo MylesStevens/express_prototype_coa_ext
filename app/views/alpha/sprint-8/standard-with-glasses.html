@@ -23,7 +23,7 @@
   <div class="grid-row" id="q3">
 
     <div class="column-two-thirds">
-      <h4 class="heading-medium">Do you have cataracts or any corneal dystrophies (eg Fuchs) in both of your eyes?</h4> 
+      <h4 class="heading-medium">Can you meet the legal standard when wearing glasses or corrective lenses?</h4> 
       <div class="form-group">
         <label class="block-label" for="q3-a1" id="q3-a1-label">
           <input id="q3-a1" type="radio" name="q3-answer" value="Y" onclick="answer(this)">Yes
@@ -40,25 +40,6 @@
   
   </div>
 
-  <div class="grid-row" id="q4">
-
-    <div class="column-two-thirds">
-      <h4 class="heading-medium">Do you have cataracts or any corneal dystrophies (eg Fuchs) in both of your eyes?</h4> 
-      <div class="form-group">
-        <label class="block-label" for="q4-a1" id="q4-a1-label">
-          <input id="q4-a1" type="radio" name="q4-answer" value="Y" onclick="answer(this)">Yes
-        </label>
-        <label class="block-label" for="q4-a2" id="q4-a2-label">
-          <input id="q4-a2" type="radio" name="q4-answer" value="N" onclick="answer(this)">No
-        </label>
-      </div>
-    </div>
-  
-    <div class="column-third">
-      &nbsp;      
-    </div>
-  
-  </div>
 
   <div class="form-group">
     <input id="continue" type="button" class="button" value="Continue" onclick="decision(this,'{{flow}}','{{conditions}}')" disabled="true"/> 
@@ -74,14 +55,9 @@
     state: "",
     validate: "true",
     questions: [
-      {id: "q3", type: "radio", active: "false", answers: [
+      {id: "q3", type: "radio", active: "true", answers: [
           {id: "q3-a1", value: "", show: [], hide: [], decision: "1"},
           {id: "q3-a2", value: "", show: [], hide: [], decision: "2"}
-        ]
-      },
-      {id: "q4", type: "radio", active: "false", answers: [
-          {id: "q4-a1", value: "", show: [], hide: [], decision: "1"},
-          {id: "q4-a2", value: "", show: [], hide: [], decision: "2"}
         ]
       }
     ],

@@ -25,33 +25,20 @@
     <div class="grid-row" id="q1">
       <div class="column-full">
 
-        <h4 class="heading-medium">Do any of the symptoms listed below affect you?</h4>
+        <h4 class="heading-medium">Do you know what the symptoms of hypoglycaemia are?</h4>
 
       </div>
     </div>
   
-    <div class="panel-indent" id="q1-info">
-      <h3 class="heading-small"><a href="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/193489/INF188_2.pdf" target="_new">[Download more information (PDF)]</a> for drivers with diabetes treated by non insulin medication, diet, or both.</h3>
-      <p></p>
-      <ul class="list-bullet">
-        <li>You suffer more than one episode of severe hypoglycaemia within the last 12 months.</li>
-        <li>You develop impaired awareness of hypoglycaemia.</li>
-        <li>You suffer severe hypoglycaemia while driving.</li>
-        <li>You need laser treatment to both eyes or in the remaining eye if you have sight in one eye only.</li>
-        <li>You have problems with vision in both eyes, or in the remaining eye if you have sight in one eye only.</li>
-        <li>You develop any problems with the circulation, or sensation in your legs or feet.</li>
-      </ul>
-    </div>
-
     <div class="grid-row" id="q1">
       <div class="column-full">
 
         <div class="form-group">
           <label class="block-label" for="q1-a1" id="q1-a1-label">
-            <input id="q1-a1" type="radio" name="q1-answer" value="Y" onclick="answer(this,'{{flow}}','{{conditions}}')">Yes
+            <input id="q1-a1" type="radio" name="q1-answer" value="Y" onclick="answer(this)">Yes
           </label>
           <label class="block-label" for="q1-a2" id="q1-a2-label">
-            <input id="q1-a2" type="radio" name="q1-answer" value="N" onclick="answer(this,'{{flow}}','{{conditions}}')">No
+            <input id="q1-a2" type="radio" name="q1-answer" value="N" onclick="answer(this)">No
           </label>
         </div>
 

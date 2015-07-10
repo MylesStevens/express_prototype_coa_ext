@@ -1,3 +1,4 @@
+
 {{<govuk_template}}
 
 {{$head}}
@@ -6,7 +7,7 @@
 {{/head}}
 
 {{$propositionHeader}}
-  {{>includes/propositional_navigation3}}
+  {{>includes/propositional_navigation4}}
 {{/propositionHeader}}
 
 {{$headerClass}}with-proposition{{/headerClass}}
@@ -17,59 +18,59 @@
 
 <script>
 
-  function next() { 
-    window.location.href ="";
-  }
+function next() {
+  window.location.href = 'diabetes-symptoms?flow={{flow}}&conditions={{conditions}}';
+}
+
+function handle(element) {
+  document.getElementById('continue').disabled = (!(element.checked));
+}
 
 </script>
 
 </header>
 
 <main id="page-container" role="main">
+  {{>includes/phase_banner}}
+    
+  <h2 class="heading-medium process-step">
+    Step 4 of 7
+  </h2>
+  <h1 class="heading-xlarge process-heading">
+    Insulin declaration
+  </h1>
+  
+  <form action="medical-form" method="get" class="form">
+    
+    <div class="grid-row content-block" id="qq" style="display: block;">
+      <div class="column-two-thirds">
+        <div class="important-notice">
+          <p>Please read the following information carefully and tick the consent box:</p>
+        </div>
 
-  <h1 class="form-title heading-medium">
-    Declaration: For insulin treated only
-  </h1> 
- 
-  <div class="grid-row">
-    <div class="column-full">
-      <div class="dwp-permission-group" id="q1">
-        <label>
-          <input type="checkbox" id="q1-a1" name="q1-answer" value="1" onclick="answer(this)" />
-          <span class="heading-small">
-            Please read the following information carefully and tick the consent box
-          </span>
-          <p>I have insulin treated diabetes and I understand the need to test my blood glucose/sugar at times relevant to driving (not more than 2 hours before the start of the first journey and every 2 hours while driving).</p>
-        </label>
+        <div id="outer-group" name="outer-group" class="form-group">
+		      <label id="outer-label" name="outer-label" class="large-block-label" for="declaration">
+		        <input id="declaration" name="declaration" type="checkbox" style="display: none;" onchange="handle(this);"/>
+              <span id="outer-span" name="outer-span" class="bounding-input">
+                <span id="inner-span" name="inner-span" class="bounding-input-inner"></span>
+              </span> 
+              I have insulin treated diabetes and I understand the need to test my blood glucose/sugar at times relevant to driving (not more than 2 hours before the start of the first journey and every 2 hours while driving).
+		      </label>
+        </div>
+
       </div>
     </div>
-  </div>
-
-  <p>&nbsp;</p>
-
-  <div class="form-group">
-    <input id="continue" type="button" class="button" value="Continue" onclick="decision(this,'{{flow}}','{{conditions}}')" disabled="true"/> 
-  </div>
-
-<script>
-
-  var data = {
-    state: "",
-    validate: "true",
-    questions: [
-      {id: "q1", type: "checkbox", active: "true", answers: [
-          {id: "q1-a1", value: "", show: [], hide: [], decision: "1"}
-        ]
-      }
-    ],
-    decisions: [
-      {id: "1", description: "Q6: Yes", message: "", redirect: "diabetic-care?flow={{flow}}&conditions={{conditions}}"}
-    ]
-  };
-
-  initialise(data);
-
-</script>
+    
+    <div class="form-group">
+      <!--input id="continue" name="continue" type="button" class="button" value="Continue" onclick="decision(this,'{{flow}}','{{conditions}}')"/--> 
+      <input id="continue" name="continue" type="button" class="button" value="Save and continue" onclick="next();" disabled="true"/> 
+    </div>
+    
+    <ul>
+      <li><a href="javascript:history.go(-1);">Back</a></li>
+    </ul>
+    
+  </form>
 
 </main>
 

@@ -272,6 +272,22 @@ module.exports = {
         res.render('alpha/'+p3+'/hypoglycaemia-episodes', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions})
     });
 
+    app.get('/alpha/'+p3+'/hypoglycaemia-severe', function (req, res) {
+        res.render('alpha/'+p3+'/hypoglycaemia-severe', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions})
+    });
+
+    app.get('/alpha/'+p3+'/hypoglycaemia-warning', function (req, res) {
+        res.render('alpha/'+p3+'/hypoglycaemia-warning', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions})
+    });
+
+    app.get('/alpha/'+p3+'/hypoglycaemia-symptoms-information', function (req, res) {
+        res.render('alpha/'+p3+'/hypoglycaemia-symptoms-information', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions})
+    });
+
+    app.get('/alpha/'+p3+'/eyesight', function (req, res) {
+        res.render('alpha/'+p3+'/eyesight', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions})
+    });
+
     /*-----------------------------------------------------*/
     app.get('/alpha/'+p3+'/glaucoma-start', function (req, res) {
         res.render('alpha/'+p3+'/glaucoma-start', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions})
