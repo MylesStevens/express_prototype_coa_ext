@@ -264,20 +264,20 @@ module.exports = {
         res.render('alpha/'+p3+'/diabetes-start', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions})
     });
 
-    app.get('/alpha/'+p3+'/diabetes-symptoms', function (req, res) {
-        res.render('alpha/'+p3+'/diabetes-symptoms', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions})
+    app.get('/alpha/'+p3+'/hypoglycaemia-symptoms', function (req, res) {
+        res.render('alpha/'+p3+'/hypoglycaemia-symptoms', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions})
     });
 
-    app.get('/alpha/'+p3+'/hypoglycaemia-episodes', function (req, res) {
-        res.render('alpha/'+p3+'/hypoglycaemia-episodes', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions})
+    app.get('/alpha/'+p3+'/hypoglycaemia-episode', function (req, res) {
+        res.render('alpha/'+p3+'/hypoglycaemia-episode', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions})
     });
 
-    app.get('/alpha/'+p3+'/hypoglycaemia-severe', function (req, res) {
-        res.render('alpha/'+p3+'/hypoglycaemia-severe', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions})
+    app.get('/alpha/'+p3+'/hypoglycaemia-severe-episodes', function (req, res) {
+        res.render('alpha/'+p3+'/hypoglycaemia-severe-episodes', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions})
     });
 
-    app.get('/alpha/'+p3+'/hypoglycaemia-warning', function (req, res) {
-        res.render('alpha/'+p3+'/hypoglycaemia-warning', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions})
+    app.get('/alpha/'+p3+'/hypoglycaemia-warning-symptoms', function (req, res) {
+        res.render('alpha/'+p3+'/hypoglycaemia-warning-symptoms', {'assetPath' : assetPath, 'flow': req.query.flow, 'conditions' : req.query.conditions})
     });
 
     app.get('/alpha/'+p3+'/hypoglycaemia-symptoms-information', function (req, res) {
