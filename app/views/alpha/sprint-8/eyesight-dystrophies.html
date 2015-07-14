@@ -43,7 +43,7 @@
   <div class="grid-row" id="q4">
 
     <div class="column-two-thirds">
-      <h4 class="heading-medium">Do you have cataracts or any corneal dystrophies (eg Fuchs) in both of your eyes?</h4> 
+      <h4 class="heading-medium">Do you have cataracts or any corneal dystrophies (eg Fuchs) in your remaining eye?</h4> 
       <div class="form-group">
         <label class="block-label" for="q4-a1" id="q4-a1-label">
           <input id="q4-a1" type="radio" name="q4-answer" value="Y" onclick="answer(this)">Yes
@@ -68,32 +68,32 @@
     <li><a href="javascript:history.go(-1);">Back</a></li>
   </ul>
 
-<script>
+// <script>
 
-  var data = {
-    state: "",
-    validate: "true",
-    questions: [
-      {id: "q3", type: "radio", active: "false", answers: [
-          {id: "q3-a1", value: "", show: [], hide: [], decision: "1"},
-          {id: "q3-a2", value: "", show: [], hide: [], decision: "2"}
-        ]
-      },
-      {id: "q4", type: "radio", active: "false", answers: [
-          {id: "q4-a1", value: "", show: [], hide: [], decision: "1"},
-          {id: "q4-a2", value: "", show: [], hide: [], decision: "2"}
-        ]
-      }
-    ],
-    decisions: [
-      {id: "1", description: "Yes", message: "", redirect: "eyesight-treatment?flow={{flow}}&conditions={{conditions}}"},
-      {id: "2", description: "No", message: "", redirect: "eyesight-treatment?flow={{flow}}&conditions={{conditions}}"}
-    ]
-  };
+//   var data = {
+//     state: "",
+//     validate: "true",
+//     questions: [
+//       {id: "q3", type: "radio", active: "false", answers: [
+//           {id: "q3-a1", value: "", show: [], hide: [], decision: "1"},
+//           {id: "q3-a2", value: "", show: [], hide: [], decision: "2"}
+//         ]
+//       },
+//       {id: "q4", type: "radio", active: "false", answers: [
+//           {id: "q4-a1", value: "", show: [], hide: [], decision: "1"},
+//           {id: "q4-a2", value: "", show: [], hide: [], decision: "2"}
+//         ]
+//       }
+//     ],
+//     decisions: [
+//       {id: "1", description: "Yes", message: "", redirect: "eyesight-treatment?flow={{flow}}&conditions={{conditions}}"},
+//       {id: "2", description: "No", message: "", redirect: "eyesight-treatment?flow={{flow}}&conditions={{conditions}}"}
+//     ]
+//   };
 
-  initialise(data);
+//   initialise(data);
 
-</script>
+// </script>
 
  </main>
 
