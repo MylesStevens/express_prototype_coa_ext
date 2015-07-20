@@ -7,7 +7,7 @@
 {{/head}}
 
 {{$propositionHeader}}
-  {{>includes/propositional_navigation3}}
+  {{>includes/propositional_navigation4}}
 {{/propositionHeader}}
 
 {{$headerClass}}with-proposition{{/headerClass}}
@@ -19,29 +19,24 @@
 </header>
 
 <main id="page-container" role="main">
+  {{>includes/phase_banner}}
     
-  <div class="grid-row" id="q3">
+  <h4 class="heading-large">Have you had more than one episode of severe hypoglycaemia (requiring assistance from another person) in the last 12 months? </h4> 
 
-    <div class="column-two-thirds">
-      <h4 class="heading-medium">Have you had more than one episode of severe hypoglycaemia (requiring assistance from another person) in the last 12 months? </h4> 
+  <span class="form-hint">Do not count episodes where you were given help but could have helped yourself.</span>
 
-      <span class="form-hint">Do not count episodes where you were given help but could have helped yourself.</span>
+  <fieldset class="inline" id="q3">
+    <label class="block-label" for="q3-a1" id="q3-a1-label">
+      <input id="q3-a1" type="radio" name="q3-answer" value="Y" onclick="answer(this)">Yes
+    </label>
+    <label class="block-label" for="q3-a2" id="q3-a2-label">
+      <input id="q3-a2" type="radio" name="q3-answer" value="N" onclick="answer(this)">No
+    </label>
+  </fieldset>
 
-      <div class="form-group">
-        <label class="block-label" for="q3-a1" id="q3-a1-label">
-          <input id="q3-a1" type="radio" name="q3-answer" value="Y" onclick="answer(this)">Yes
-        </label>
-        <label class="block-label" for="q3-a2" id="q3-a2-label">
-          <input id="q3-a2" type="radio" name="q3-answer" value="N" onclick="answer(this)">No
-        </label>
-      </div>
-    </div>
-  
-    <div class="column-third">
-      &nbsp;      
-    </div>
-  
-  </div>
+  <p>
+    <br/><br/><br/>
+  </p>
 
   <div class="form-group">
     <input id="continue" type="button" class="button" value="Continue" onclick="decision(this,'{{flow}}','{{conditions}}')" disabled="true"/> 

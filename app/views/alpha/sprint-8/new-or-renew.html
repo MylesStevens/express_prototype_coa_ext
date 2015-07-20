@@ -7,7 +7,7 @@
 {{/head}}
 
 {{$propositionHeader}}
-  {{>includes/propositional_navigation3}}
+  {{>includes/propositional_navigation4}}
 {{/propositionHeader}}
 
 {{$headerClass}}with-proposition{{/headerClass}}
@@ -19,20 +19,21 @@
 </header>
 
 <main id="page-container" role="main">
+  {{>includes/phase_banner}}
 
   <form action="medical-form" method="get" class="form inline">
 
     <div class="grid-row" id="q1">
       <div class="column-full">
 
-        <h4 class="heading-medium">Have you told us about this condition before?</h4>
+        <h4 class="heading-large">Have you told us about this condition before?</h4>
 
         <div class="form-group">
           <label class="block-label" for="q1-a1" id="q1-a1-label">
-            <input id="q1-a1" type="radio" name="q1-answer" value="Y" onclick="answer(this,'empty','empty')">Yes
+            <input id="q1-a1" type="radio" name="q1-answer" value="Y" onclick="answer(this)">Yes
           </label>
           <label class="block-label" for="q1-a2" id="q1-a2-label">
-            <input id="q1-a2" type="radio" name="q1-answer" value="N" onclick="answer(this,'empty','empty')">No
+            <input id="q1-a2" type="radio" name="q1-answer" value="N" onclick="answer(this)">No
           </label>
         </div>
       </div>
@@ -64,8 +65,8 @@
       }
     ],
     decisions: [
-      {id: "1", description: "Q1: Yes (Insulin)", message: "", redirect: "your-details"},
-      {id: "2", description: "Q1: No (Insulin)", message: "", redirect: "your-details"}
+      {id: "1", description: "Q1: Yes (Insulin)", message: "", redirect: "your-driving-licence-number"},
+      {id: "2", description: "Q1: No (Insulin)", message: "", redirect: "your-driving-licence-number"}
     ]
   };
 

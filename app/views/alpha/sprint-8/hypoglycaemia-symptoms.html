@@ -7,7 +7,7 @@
 {{/head}}
 
 {{$propositionHeader}}
-  {{>includes/propositional_navigation3}}
+  {{>includes/propositional_navigation4}}
 {{/propositionHeader}}
 
 {{$headerClass}}with-proposition{{/headerClass}}
@@ -19,13 +19,14 @@
 </header>
 
 <main id="page-container" role="main">
+  {{>includes/phase_banner}}
 
   <form action="medical-form" method="get" class="form inline">
 
     <div class="grid-row" id="q1">
       <div class="column-full">
 
-        <h4 class="heading-medium">Do you know what the symptoms of hypoglycaemia are?</h4>
+        <h4 class="heading-large">Do you know what the symptoms of hypoglycaemia are?</h4>
 
       </div>
     </div>
@@ -71,8 +72,8 @@
       }
     ],
     decisions: [
-      {id: "1", description: "Q1: Yes (Affect you)", message: "", redirect: "hypoglycaemia-episodes?flow={{flow}}&conditions={{conditions}}"},
-      {id: "2", description: "Q1: No (Affect you)", message: "", redirect: "finish?code=non-notify"}
+      {id: "1", description: "Q1: Yes (Affect you)", message: "", redirect: "hypoglycaemia-episode?flow={{flow}}&conditions={{conditions}}"},
+      {id: "2", description: "Q1: No (Affect you)", message: "", redirect: "hypoglycaemia-symptoms-information"}
     ]
   };
 

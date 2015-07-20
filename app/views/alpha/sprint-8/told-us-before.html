@@ -1,17 +1,31 @@
-{{<layout}}
+{{<govuk_template}}
 
-{{$pageTitle}}Told us before{{/pageTitle}}
+{{$head}}
+  {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation4}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
 
 {{$content}}
 
-<main id="content" role="main">
+<header class="page-header">
+
+</header>
+
+<main id="page-container" role="main">
+  {{>includes/phase_banner}}
 
 	<div class="grid-row">
 
 		<div class="column-two-thirds">
 
 	      	<div class="form-group">
-				<h1 class="heading-medium">Have you told us about your Diabetes before?</h1>
+				<h1 class="heading-large">Have you told us about your Diabetes before?</h1>
 				<fieldset class="inline">
 					<label class="block-label" for="radio-inline-1">
 						<input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
@@ -30,10 +44,13 @@
     	</div>
   </div>
 
-  <a class="button" href="/condition-changed">Save and continue</a>
+  <a class="button" href="condition-changed">Save and continue</a>
 
 </main>
 
 {{/content}}
 
-{{/layout}}
+{{$bodyEnd}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

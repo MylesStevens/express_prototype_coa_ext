@@ -1,15 +1,29 @@
-{{<layout}}
+{{<govuk_template}}
 
-{{$pageTitle}}Your postcode{{/pageTitle}}
+{{$head}}
+  {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation4}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
 
 {{$content}}
 
-<main id="content" role="main">
+<header class="page-header">
+
+</header>
+
+<main id="page-container" role="main">
+  {{>includes/phase_banner}}
 
 	<div class="form-group postcode">
 
 		<label class="form-label" for="postcode">
-			<h1 class="heading-medium">What is your postcode?</h1>
+			<h1 class="heading-large">What is your postcode?</h1>
 		<span class="form-hint">Please enter your postcode as it appears on your licence</span>
 		</label>
 		<input class="form-control" id="postcode" type="text">
@@ -26,10 +40,13 @@
 
 	</div>
 
-	<a class="button" href="/your-medical-conditions">Save and continue</a>
+	<a class="button" href="your-medical-conditions">Save and continue</a>
 
 </main>
 
 {{/content}}
 
-{{/layout}}
+{{$bodyEnd}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

@@ -1,13 +1,27 @@
-{{<layout}}
+{{<govuk_template}}
 
-{{$pageTitle}}Your full name{{/pageTitle}}
+{{$head}}
+  {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation4}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
 
 {{$content}}
 
-<main id="content" role="main">
+<header class="page-header">
+
+</header>
+
+<main id="page-container" role="main">
+  {{>includes/phase_banner}}
 
 	<div class="form-group">
-		<h1 class="heading-medium">What is your full name?</h1>
+		<h1 class="heading-large">What is your full name?</h1>
 		<span class="form-hint">Please enter your name as it appears on your licence</span>
 
 		<label class="form-label" for="first-name">
@@ -27,10 +41,15 @@
 
 	</div>
 
-	<a class="button" href="/your-date-of-birth">Save and continue</a>
+	<a class="button" href="your-date-of-birth">Save and continue</a>
+
+</main>
 
 </main>
 
 {{/content}}
 
-{{/layout}}
+{{$bodyEnd}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

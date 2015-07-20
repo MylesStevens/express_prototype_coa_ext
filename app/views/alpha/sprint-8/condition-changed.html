@@ -1,14 +1,28 @@
-{{<layout}}
+{{<govuk_template}}
 
-{{$pageTitle}}Condition changed{{/pageTitle}}
+{{$head}}
+  {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation4}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
 
 {{$content}}
 
-<main id="content" role="main">
+<header class="page-header">
+
+</header>
+
+<main id="page-container" role="main">
+  {{>includes/phase_banner}}
 
 	<div class="form-group">
 
-		<h1 class="heading-medium">Has your condition changed since you told us about it last time?</h1>
+		<h1 class="heading-large">Has your condition changed since you told us about it last time?</h1>
 
 		<fieldset class="inline">
 			<label class="block-label" for="radio-inline-1">
@@ -23,13 +37,16 @@
 
 	</div>
 
-	<a class="button" href="/renew">Save and continue</a>
+	<a class="button" href="renew">Save and continue</a>
 
 </main>
 
 {{/content}}
 
-{{/layout}}
+{{$bodyEnd}}
+{{/bodyEnd}}
+
+{{/govuk_template}}
 
 <!-- <main id="content" role="main">
 

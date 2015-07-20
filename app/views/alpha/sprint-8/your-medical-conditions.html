@@ -1,24 +1,42 @@
-{{<layout}}
+{{<govuk_template}}
 
-{{$pageTitle}}Your medical conditions{{/pageTitle}}
+{{$head}}
+  {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation4}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
 
 {{$content}}
 
-<main id="content" role="main">
+<header class="page-header">
+
+</header>
+
+<main id="page-container" role="main">
+  {{>includes/phase_banner}}
+
 
 	<div class="form-group">
 
 		<label class="form-label" for="condition">
-			<h1 class="heading-medium">What medical conditions are you telling us about?</h1>
+			<h1 class="heading-large">What medical conditions are you telling us about?</h1>
 		</label>
 		<input class="form-control" id="condition" type="text">
 
 	</div>
 
-	<a class="button" href="/told-us-before">Save and continue</a>
+	<a class="button" href="told-us-before">Save and continue</a>
 
 </main>
 
 {{/content}}
 
-{{/layout}}
+{{$bodyEnd}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

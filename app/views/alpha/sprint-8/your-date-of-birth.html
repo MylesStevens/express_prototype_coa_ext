@@ -1,13 +1,27 @@
-{{<layout}}
+{{<govuk_template}}
 
-{{$pageTitle}}Your date of birth{{/pageTitle}}
+{{$head}}
+  {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation4}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
 
 {{$content}}
 
-<main id="content" role="main">
+<header class="page-header">
+
+</header>
+
+<main id="page-container" role="main">
+  {{>includes/phase_banner}}
 
 	<div class="form-group">
-		<h1 class="heading-medium">What is your date of birth?</h1>
+		<h1 class="heading-large">What is your date of birth?</h1>
 		<span class="form-hint">Please enter your date of birth as it appears on your licence</span>
 
 		<div class="day field-wrapper">
@@ -35,10 +49,13 @@
 
 	</div>
 
-	<a class="button" href="/your-postcode">Save and continue</a>
+	<a class="button" href="your-postcode">Save and continue</a>
 
 </main>
 
 {{/content}}
 
-{{/layout}}
+{{$bodyEnd}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

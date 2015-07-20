@@ -7,7 +7,7 @@
 {{/head}}
 
 {{$propositionHeader}}
-  {{>includes/propositional_navigation3}}
+  {{>includes/propositional_navigation4}}
 {{/propositionHeader}}
 
 {{$headerClass}}with-proposition{{/headerClass}}
@@ -19,26 +19,22 @@
 </header>
 
 <main id="page-container" role="main">
+  {{>includes/phase_banner}}
     
-  <div class="grid-row" id="q3">
+      <h4 class="heading-large">Can you meet the legal eyesight standard for driving?</h4> 
 
-    <div class="column-two-thirds">
-      <h4 class="heading-medium">Can you meet the legal eyesight standard for driving?</h4> 
-      <div class="form-group inline">
+      <fieldset class="inline" id="q3">
         <label class="block-label" for="q3-a1" id="q3-a1-label">
           <input id="q3-a1" type="radio" name="q3-answer" value="Y" onclick="answer(this)">Yes
         </label>
         <label class="block-label" for="q3-a2" id="q3-a2-label">
           <input id="q3-a2" type="radio" name="q3-answer" value="N" onclick="answer(this)">No
         </label>
-      </div>
-    </div>
-  
-    <div class="column-third">
-      &nbsp;      
-    </div>
-  
-  </div>
+      </fieldset>
+
+  <p>
+    <br/><br/><br/>
+  </p>
 
   <div class="form-group">
     <input id="continue" type="button" class="button" value="Continue" onclick="decision(this,'{{flow}}','{{conditions}}')" disabled="true"/> 
@@ -70,7 +66,7 @@
 
 </script>
 
- </main>
+</main>
 
 {{/content}}
 

@@ -1,34 +1,55 @@
-{{<layout}}
+{{<govuk_template}}
 
-{{$pageTitle}}Your Driving Licence number{{/pageTitle}}
+{{$head}}
+  {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation4}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
 
 {{$content}}
 
-<main id="content" role="main">
+<header class="page-header">
 
-	<div class="form-group">
-		<label class="form-label" for="driving-licence-number">
-	    	<h1 class="heading-medium">What is your Driving Licence number?</h1>
-		</label>
+</header>
+
+<main id="page-container" role="main">
+  {{>includes/phase_banner}}
+
+   	<h1 class="heading-large">What is your Driving Licence number?</h1>
+
 		<input class="form-control" id="driving-licence-number" type="text">
 		<span class="form-hint">Example: MORGA753116SM9IJ</span>
 
-		<div><details>
-		<summary role="button" aria-controls="details-content" tabindex="0" aria-expanded="true">
-		<span class="summary">I don’t know my driving licence number</span>
-		</summary>
-		<div class="panel-indent" id="details-content" aria-hidden="false" style="display:block;">
-			<p>Your driving licence number can be found in section 5 of your driving licence photocard.</p>
-			<p><a href="/your-title">I don't have my driving licence</a></p>
+		<p></p>
+
+		<div>
+			<details>
+				<summary role="button" aria-controls="details-content" tabindex="0" aria-expanded="true">
+					<span class="summary">I don’t know my driving licence number</span>
+				</summary>
+				<div class="panel-indent" id="details-content" aria-hidden="false" style="display:block;">
+					<p>Your driving licence number can be found in section 5 of your driving licence photocard.</p>
+					<p><a href="/your-title">I don't have my driving licence</a></p>
+				</div>
+			</details>
 		</div>
-		</details></div>
 
 	</div>
 
-	<a class="button" href="/your-full-name">Save and continue</a>
+	<p></p>
+
+	<a class="button" href="your-full-name">Save and continue</a>
 
 </main>
 
 {{/content}}
 
-{{/layout}}
+{{$bodyEnd}}
+{{/bodyEnd}}
+
+{{/govuk_template}}
