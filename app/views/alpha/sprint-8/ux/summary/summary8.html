@@ -1,0 +1,168 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation4}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+
+<header class="page-header">
+
+<style type="text/css">
+
+.border-bottom-summary {
+  padding-right: -15px;
+  border-width: 1px;
+  border-color: #c0c0c0;
+  border-bottom-style: solid;
+  margin: 0 0px;
+}
+
+</style>
+
+<script>
+
+function changeText(name) {
+  try {
+    hide(name+'-text');
+    show(name+'-edit');
+
+    document.getElementById(name).focus();
+
+    hide(name+'-change');
+    show(name+'-update');
+
+  } catch(e) {
+    alert(e.errorMessage);
+  }
+}
+
+function updateText(name) {
+  try {
+    var newValue = document.getElementById(name).value;
+    document.getElementById(name+'-text').innerHTML = newValue;
+
+    hide(name+'-edit');
+    show(name+'-text');
+
+    hide(name+'-update');
+    show(name+'-change');
+
+  } catch(e) {
+    alert(e.errorMessage);
+  }
+}
+
+function next() {
+  window.location.href = 'finish';
+}
+
+function handle(element) {
+  document.getElementById('continue').disabled = (!(element.checked));
+}
+
+</script>
+
+
+</header>
+
+<main id="page-container" role="main">
+  <div class="phase-banner">
+    <p><strong class="phase-tag">ALPHA</strong><span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+
+  <h2 class="heading-medium process-step">
+    Summary
+  </h2>
+  <h1 class="heading-xlarge process-heading">
+    Your application is 90% complete
+  </h1> 
+
+  <div>
+      <div class="column-full"> 
+        <img src="{{assetPath}}images/icons/icon-printer.png" width="20" height="20"/> <a href="#">Print summary</a>
+        &nbsp;&nbsp;&nbsp;
+        <img src="{{assetPath}}images/icons/icon-email.png" width="20" height="20"/> <a href="#">Email summary</a>
+      </div>
+  </div>
+
+  <br/>
+
+  <div id="blueBar"></div>
+    <!-- Driving Licence Number -->
+    <div class="grid-row border-bottom-summary">
+
+    <br>
+    <div><h2 class="heading-large">Confirmations</h2> </div>
+
+    <div class="grid-row border-bottom-summary">
+      <div class ="column-two-thirds">
+        <div class="light-small summary-title">You have confirmed you can meet the legal eyesight standard for driving</div>
+      </div>
+      <div class="column-third light-small" style="text-align: right;">
+        <a href="eyesight-standard?flow={{flow}}&conditions={{conditions}}">Change</a>
+      </div>
+    </div>
+
+    <div class="grid-row border-bottom-summary">
+      <div class ="column-two-thirds">
+        <div class="light-small summary-title">You have confirmed that you are not registered blind or partially sighted</div>
+      </div>
+      <div class ="column-third light-small" style="text-align: right;">
+          <a href="glaucoma-start?flow={{flow}}&conditions={{conditions}}"></a>
+      </div>
+    </div>
+    <div class="grid-row border-bottom-summary">
+      <div class ="column-two-thirds">
+        <div class="light-small summary-title">You have confirmed you do not drive a vehicle with special controls</div>
+      </div>
+      <div class ="column-third light-small" style="text-align: right;">
+        <a href="special-controls?flow={{flow}}&conditions={{conditions}}">Change?</a>
+      </div>
+    </div>
+    <div class="grid-row border-bottom-summary">
+      <div class ="column-two-thirds">
+        <div class="light-small summary-title">You have confirmed that you drive a vehicle fitted with an automatic gears</div>
+      </div>
+      <div class ="column-third light-small" style="text-align: right;">
+        <a href="your-vehicle?flow={{flow}}&conditions={{conditions}}">Edit</a>
+      </div>
+    </div>
+    <div class="grid-row border-bottom-summary">
+      <div class ="column-two-thirds">
+        <div class="light-small summary-title">You have confirmed that you understand the symptoms of hypoglycaemia</div>
+      </div>
+      <div class ="column-third light-small" style="text-align: right;">
+        <a href="hypoglycaemia-episodes?flow={{flow}}&conditions={{conditions}}">Change this</a>
+      </div>
+    </div>
+    <div class="grid-row"> </div>
+
+ <br>
+      
+
+    <button type="submit" id="continue" name="continue" value ="" class="button next validation-submit" onclick="next();" >Continue</button>
+    
+    <br/><br/>
+    <a href="/">Back</a>
+
+  </div>
+
+
+</main>
+
+
+{{/content}}
+
+{{$bodyEnd}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

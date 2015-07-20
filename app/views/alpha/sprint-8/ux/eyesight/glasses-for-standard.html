@@ -1,0 +1,82 @@
+
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation3}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+
+<header class="page-header">
+
+</header>
+
+<main id="page-container" role="main">
+  <div class="phase-banner">
+    <p><strong class="phase-tag">ALPHA</strong><span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+    
+  <div class="grid-row" id="q3">
+
+    <div class="column-two-thirds">
+      <h4 class="heading-medium" id="question"></h4> 
+      <div class="form-group inline">
+        <label class="block-label" for="q3-a1" id="q3-a1-label">
+          <input id="q3-a1" type="radio" name="q3-answer" value="Y" onclick="enable()">Yes
+        </label>
+        <label class="block-label" for="q3-a2" id="q3-a2-label">
+          <input id="q3-a2" type="radio" name="q3-answer" value="N" onclick="enable()">No
+        </label>
+      </div>
+    </div>
+  
+    <div class="column-third" style="margin-top: 1.5em; margin-bottom:0.75em;">
+      <nav class="popular-needs text-small">
+
+        <h3 class="heading-small" style="border-top:10px solid #005ea5;margin-top:0;padding-top:1em">The legal eyesight standard</h3>
+
+        <p>If required, you may wear glasses or corrective lenses to meet the legal eyesight standard.</p>
+      </nav>
+    </div>
+  
+  </div>
+
+  <div class="form-group">
+    <input id="continue" type="button" class="button" value="Continue" onclick="" disabled/> 
+  </div>
+
+  <ul>
+    <li><a href="javascript:history.go(-1);">Back</a></li>
+  </ul>
+
+<script>
+
+if ('{{q}}' == 1) {
+  $('#question').html("Do you need to wear glasses or corrective lenses to meet this standard?");
+} else {
+  $('#question').html("Can you meet the standard when you wear glasses or corrective lenses?");
+}
+  
+  function enable(response) {
+    $("#continue").removeAttr("disabled");
+  }
+
+</script>
+
+ </main>
+
+{{/content}}
+
+{{$bodyEnd}}
+{{/bodyEnd}}
+
+{{/govuk_template}}
+

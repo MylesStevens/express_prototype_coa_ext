@@ -1,0 +1,326 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation4}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+
+<header class="page-header">
+
+<style type="text/css">
+
+.border-bottom-summary {
+  padding-right: -15px;
+  border-width: 1px;
+  border-color: #c0c0c0;
+  border-bottom-style: solid;
+  margin: 0 0px;
+}
+
+</style>
+
+<script>
+
+function changeText(name) {
+  try {
+    hide(name+'-text');
+    show(name+'-edit');
+
+    document.getElementById(name).focus();
+
+    hide(name+'-change');
+    show(name+'-update');
+
+  } catch(e) {
+    alert(e.errorMessage);
+  }
+}
+
+function updateText(name) {
+  try {
+    var newValue = document.getElementById(name).value;
+    document.getElementById(name+'-text').innerHTML = newValue;
+
+    hide(name+'-edit');
+    show(name+'-text');
+
+    hide(name+'-update');
+    show(name+'-change');
+
+  } catch(e) {
+    alert(e.errorMessage);
+  }
+}
+
+function next() {
+  window.location.href = 'finish';
+}
+
+function handle(element) {
+  document.getElementById('continue').disabled = (!(element.checked));
+}
+
+</script>
+
+
+</header>
+
+<main id="page-container" role="main">
+  <div class="phase-banner">
+    <p><strong class="phase-tag">ALPHA</strong><span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+
+  <h2 class="heading-medium process-step">
+    Summary
+  </h2>
+  <h1 class="heading-xlarge process-heading">
+    Your application is 90% complete
+  </h1> 
+
+  <div>
+      <div class="column-full"> 
+        <img src="{{assetPath}}images/icons/icon-printer.png" width="20" height="20"/> <a href="#">Print summary</a>
+        &nbsp;&nbsp;&nbsp;
+        <img src="{{assetPath}}images/icons/icon-email.png" width="20" height="20"/> <a href="#">Email summary</a>
+      </div>
+  </div>
+
+  <br/>
+
+  <div id="blueBar"></div>
+   
+    <div><h2 class="heading-large">Your details</h2> </div>
+       
+    <!-- Driving Licence Number -->
+    <div class="grid-row border-bottom-summary">
+
+      <div class="column-quarter"> 
+        <div class="light-small summary-title">Driving licence number</div >
+      </div>
+
+      <div class="column-half">
+        <div  class="bold-small summary-text">
+          <div id="driving-licence-number-text" class="">
+            MORGA753116SM9IJ
+          </div>
+          <div id="driving-licence-number-edit" class="starthidden">
+            <input type="text" id="driving-licence-number" name="driving-licence-number" value="MORGA753116SM9IJ" size="25" />
+          </div>
+        </div >
+      </div>
+
+      <div class="column-quarter"> 
+        <div id="driving-licence-number-change" class="light-small summary-title" style="text-align: right;">
+          <a href="javascript:changeText('driving-licence-number');"></a>
+        </div >
+        <div id="driving-licence-number-update" class="light-small summary-title starthidden" style="text-align: right;">
+          <a href="javascript:updateText('driving-licence-number');">Save</a>
+        </div >
+      </div>
+
+    </div>
+
+    <div class="grid-row border-bottom-summary">
+
+      <div class="column-quarter"> 
+        <div class="light-small summary-title">Name</div >
+      </div>
+
+      <div class="column-half">
+        <div  class="bold-small summary-text">
+          <div id="name-text" class="">
+            Mrs Emily Lines
+          </div>
+          <div id="name-edit" class="starthidden">
+            <input type="text" id="name" name="name" value="Mrs Emily Lines" size="25" />
+          </div>
+        </div >
+      </div>
+
+      <div class="column-quarter"> 
+        <div id="name-change" class="light-small summary-title" style="text-align: right;">
+          <a href="javascript:changeText('name');"></a>
+        </div >
+        <div id="name-update" class="light-small summary-title starthidden" style="text-align: right;">
+          <a href="javascript:updateText('name');">Save</a>
+        </div >
+      </div>
+
+    </div>
+       
+    <div class="grid-row border-bottom-summary">
+      <div class="column-quarter"> 
+        <div class="light-small summary-title">Date of birth</div>
+      </div>
+      <div class="column-half">
+        <div class="bold-small summary-text">9 Jun 1971</div >
+      </div>
+    </div>
+
+    <div class="grid-row border-bottom-summary">
+      <div class="column-quarter"> 
+        <div class="light-small summary-title">Gender</div>
+      </div>
+      <div class="column-half">
+        <div  class="bold-small summary-text">Female</div >
+      </div>
+    </div>
+
+    <div class="grid-row border-bottom-summary">
+      <div class="column-quarter"> 
+        <div class="light-small summary-title">Address</div>
+      </div>
+      <div class="column-half">
+        <div  class="bold-small summary-text">86 Tanylan Road, Morriston, SWANSEA, <span class="postcode">SA6 7DU</span></div >
+      </div>
+    </div>
+  
+    <br>
+    
+    <div><h2 class="heading-large">Your conditions</h2> </div>
+
+    <div class="grid-row border-bottom-summary" >
+      <div class="column-quarter"> 
+        <div class="light-small summary-title" >Medical condition</div >
+      </div>
+      <div class="column-half">
+        <div  class="bold-small summary-text">Diabetes</div >
+      </div>
+      <div class="column-quarter" style="text-align: right;"> 
+        <div class="light-small summary-title"><a href="medical-conditions?flow={{flow}}&conditions={{conditions}}"></a></div >
+      </div>
+    </div>
+  
+    <br>
+    <div><h2 class="heading-large">Your consultant</h2> </div>
+
+    <div class="grid-row border-bottom-summary">
+      <div class="column-quarter"> 
+        <div class="light-small summary-title">Name</div>
+      </div>
+      <div class="column-half">
+        <div  class="bold-small summary-text">Dr Stephen Bain</div >
+      </div>
+      <div class="column-quarter" style="text-align: right;"> 
+        <div class="light-small summary-title"><a href="medical-care-2?flow={{flow}}&conditions={{conditions}}"></a></div>
+      </div>
+    </div>
+
+    <div class="grid-row border-bottom-summary">
+      <div class="column-quarter"> 
+        <div class="light-small summary-title">Address</div>
+      </div>
+      <div class="column-half">
+        <div  class="bold-small summary-text">Singleton Hospital, Sketty Lane, Sketty, SA2 8QA</div >
+      </div>
+      <div class="column-quarter" style="text-align: right;"> 
+        <div class="light-small summary-title"><a href="medical-care-3?flow={{flow}}&conditions={{conditions}}"></a></div>
+      </div>
+    </div>
+
+    <div class="grid-row border-bottom-summary">
+      <div class="column-quarter"> 
+        <div class="light-small summary-title">Phone number</div>
+      </div>
+      <div class="column-half">
+        <div  class="bold-small summary-text">01792 123321 </div >
+      </div>
+      <div class="column-quarter" style="text-align: right;"> 
+        <div class="light-small summary-title"><a href="medical-care-3?flow={{flow}}&conditions={{conditions}}"></a></div>
+      </div>
+    </div>
+
+    <br>
+    <div><h2 class="heading-large">Confirmations</h2> </div>
+
+    <div class="grid-row border-bottom-summary">
+      <div class ="column-two-thirds">
+        <div class="light-small summary-title">You have confirmed you can meet the legal eyesight standard for driving</div>
+      </div>
+      <div class="column-third light-small" style="text-align: right;">
+        <a href="eyesight-standard?flow={{flow}}&conditions={{conditions}}"></a>
+      </div>
+    </div>
+
+    <div class="grid-row border-bottom-summary">
+      <div class ="column-two-thirds">
+        <div class="light-small summary-title">You have confirmed that you are not registered blind or partially sighted</div>
+      </div>
+      <div class ="column-third light-small" style="text-align: right;">
+          <a href="glaucoma-start?flow={{flow}}&conditions={{conditions}}"></a>
+      </div>
+    </div>
+    <div class="grid-row border-bottom-summary">
+      <div class ="column-two-thirds">
+        <div class="light-small summary-title">You have confirmed you do not drive a vehicle with special controls</div>
+      </div>
+      <div class ="column-third light-small" style="text-align: right;">
+        <a href="special-controls?flow={{flow}}&conditions={{conditions}}"></a>
+      </div>
+    </div>
+    <div class="grid-row border-bottom-summary">
+      <div class ="column-two-thirds">
+        <div class="light-small summary-title">You have confirmed that you drive a vehicle fitted with an automatic gears</div>
+      </div>
+      <div class ="column-third light-small" style="text-align: right;">
+        <a href="your-vehicle?flow={{flow}}&conditions={{conditions}}"></a>
+      </div>
+    </div>
+    <div class="grid-row border-bottom-summary">
+      <div class ="column-two-thirds">
+        <div class="light-small summary-title">You have confirmed that you understand the symptoms of hypoglycaemia</div>
+      </div>
+      <div class ="column-third light-small" style="text-align: right;">
+        <a href="hypoglycaemia-episodes?flow={{flow}}&conditions={{conditions}}"></a>
+      </div>
+    </div>
+
+    <br>
+    <div><h2 class="heading-large">Hypoglycaemia</h2> </div>
+
+    <div class="grid-row border-bottom-summary">
+      <div class ="column-two-thirds">
+        <div class="light-small summary-title">You have not had more than one episode of severe hypoglycaemia (requiring assistance from another person) in the last 12 months</div>
+      </div>
+      <div class ="column-third" style="text-align: right;">
+        <a href="hypoglycaemia-episodes?flow={{flow}}&conditions={{conditions}}"></a>
+      </div>
+    </div>
+  
+  <br>
+  
+  <div class="dwp-permission-group" >
+      <label style="display: block; margin-left: 20px"><input type="checkbox" id="dwpPermission" name="dwpPermission" value="1" style="float: left; margin-left: -20px; margin-right: 7px;">
+        I confirm that the answers I have given are correct to the best of my knowledge and I am aware that it is a criminal offence to make a false declaration and that this could lead to imprisonment.
+      </label>
+    </div>
+       
+    <p class ="validation-message" id="postcodeerror"> </p>
+
+    <form action="finish" method="get" class="form inline">
+      <button type="submit" id="sub" name="sub" value ="{{ROUTECHOICE}}" class="button next validation-submit">Continue</button>
+    </form>  
+    
+    <br/><br/>
+    <a href="/">Back</a>
+
+  </div>
+
+</main>
+
+
+{{/content}}
+
+{{$bodyEnd}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

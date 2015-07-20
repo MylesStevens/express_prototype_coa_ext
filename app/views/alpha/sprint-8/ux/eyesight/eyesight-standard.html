@@ -1,0 +1,87 @@
+
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation3}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+
+<header class="page-header">
+
+</header>
+
+<main id="page-container" role="main">
+  <div class="phase-banner">
+    <p><strong class="phase-tag">ALPHA</strong><span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+    
+  <div class="grid-row" id="q3">
+
+    <div class="column-two-thirds">
+      <h4 class="heading-medium">Can you meet the legal eyesight standard for driving?</h4> 
+      <div class="form-group inline">
+        <label class="block-label" for="q3-a1" id="q3-a1-label">
+          <input id="q3-a1" type="radio" name="q3-answer" value="Y" onclick="javascript:enable(1)">Yes
+        </label>
+        <label class="block-label" for="q3-a2" id="q3-a2-label">
+          <input id="q3-a2" type="radio" name="q3-answer" value="N" onclick="javascript:enable(0)">No
+        </label>
+      </div>
+      <div class="form-group">
+        <input id="continue" type="button" class="button" value="Continue" onclick="javascript:next()" disabled="true"/> 
+      </div>
+
+      <ul>
+        <li><a href="javascript:history.go(-1);">Back</a></li>
+      </ul>
+    </div>
+    
+    <div class="column-third" style="margin-top: 1.5em; margin-bottom:0.75em;">
+      <nav class="popular-needs text-small">
+
+        <h3 class="heading-small" style="border-top:10px solid #005ea5;margin-top:0;padding-top:1em">The legal eyesight standard</h3>
+
+        <ul class="list-bullet">
+              <li>you must be able to read a car number plate from 20 metres</li>
+              <li>you must not have been told by a doctor or optician that your eyesight is currently worse than 6/12 (decimal 0.5) on the Snellen scale</li>
+            </ul>
+            <p>If you are in any doubt, you should discuss with your optician or doctor.</p>
+      </nav>
+    </div>
+    
+  
+  </div>
+
+<script>
+  
+  var standard = 1;
+  
+  function enable(response) {
+    $("#continue").removeAttr("disabled");
+    standard = response;
+  }
+  
+  function next(){
+    window.location.href = "glasses-for-standard?q=" + standard;
+  }
+
+</script>
+
+ </main>
+
+{{/content}}
+
+{{$bodyEnd}}
+{{/bodyEnd}}
+
+{{/govuk_template}}
+
