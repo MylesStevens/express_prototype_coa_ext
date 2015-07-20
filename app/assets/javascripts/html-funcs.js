@@ -22,6 +22,10 @@ var QueryString = function () {
 } ();
 
 // HTML helper functions
+function go(link) {
+  window.location.href = link;
+}
+
 function show(id) {
 	document.getElementById(id).style.display = 'block';
 }
