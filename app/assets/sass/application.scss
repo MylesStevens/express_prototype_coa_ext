@@ -754,3 +754,45 @@ label.large-block-label.selected span.bounding-input-radio span.bounding-input-i
 }
 
 // End
+
+// General typography tweaks
+
+.heading-large {
+  margin-bottom: $gutter;
+}
+
+.form-hint {
+  margin-bottom: $gutter;
+}
+
+label {
+  margin-top: $gutter-half;
+}
+
+// Styles for date of birth form
+
+.field-wrapper {
+  display: inline-block;
+  width: 3em;
+  margin-right:.5em;
+}
+
+.year {
+  width: 5em;
+}
+
+.field-wrapper label {
+  margin-top: 0;
+}
+
+.field-wrapper .form-control {
+  width: 100%;
+}
+
+.postcode .form-control {
+  width: 10em;
+}
+
+.block-label .form-hint {
+  margin: 0;
+}
