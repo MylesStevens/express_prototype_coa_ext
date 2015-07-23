@@ -1,39 +1,49 @@
-{{<layout}}
+{{<govuk_template}}
 
-{{$pageTitle}}Have you been seen recently?{{/pageTitle}}
+{{$head}}
+  {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation4}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
 
 {{$content}}
 
-<main id="content" role="main">
+<header class="page-header">
 
-	<div class="grid-row">
+</header>
 
-		<div class="column-two-thirds">
+<main id="page-container" role="main">
+  {{>includes/phase_banner}}
 
-	      	<div class="form-group">
-				<h1 class="heading-medium">Have you been seen within the last 12 months for your diabetic care?</h1>
-				<fieldset class="inline">
-					<label class="block-label" for="radio-inline-1">
-						<input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
-						Yes
-					</label>
-					<label class="block-label" for="radio-inline-2">
-						<input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
-						No
-					</label>
-				</fieldset>
-			</div>
+	<h1 class="form-title heading-large">
+		Have you been seen within the last 12 months for your diabetic care?
+	</h1>
 
-    	</div>
-    	<div class="column-third">
-    		&nbsp;
-    	</div>
-  </div>
+	<fieldset class="inline" id="q1">
+		<label class="block-label" for="radio-inline-1">
+			<input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">Yes
+		</label>
+		<label class="block-label" for="radio-inline-2">
+			<input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">No
+		</label>		
+	</fieldset>
 
-  <a class="button" href="care-last-see">Save and continue</a>
+	<p>
+		<br/><br/><br/>
+	</p>
+	
+  	<a class="button" href="care-last-see">Save and continue</a>
 
 </main>
 
 {{/content}}
 
-{{/layout}}
+{{$bodyEnd}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

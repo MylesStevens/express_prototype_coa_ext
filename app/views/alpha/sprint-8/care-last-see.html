@@ -1,40 +1,55 @@
-{{<layout}}
+{{<govuk_template}}
 
-{{$pageTitle}}Who did you last see?{{/pageTitle}}
+{{$head}}
+  {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation4}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
 
 {{$content}}
 
-<main id="content" role="main">
+<header class="page-header">
 
-	<div class="form-group">
+</header>
 
-		<h1 class="heading-medium">Who did you last see for your diabetes care?</h1>
+<main id="page-container" role="main">
+  {{>includes/phase_banner}}
 
-		<fieldset>
-			<label class="block-label" for="radio-1">
-				<input id="radio-1" type="radio" name="radio-group" value="consultant">
-				Consultant
-			</label>
-			<label class="block-label" for="radio-2">
-				<input id="radio-2" type="radio" name="radio-group" value="gp">
-				GP
-			</label>
-			<label class="block-label" for="radio-3">
-				<input id="radio-3" type="radio" name="radio-group" value="hospital-nurse">
-				Nurse Specialist at hospital clinic
-			</label>
-			<label class="block-label" for="radio-4">
-				<input id="radio-4" type="radio" name="radio-group" value="gp-nurse">
-				GP Nurse
-			</label>
-		</fieldset>
+  <h1 class="form-title heading-large">
+    Who did you last see for your diabetic care? 
+  </h1>
 
-	</div>
+  <fieldset class="inline" id="q7">
+    <label class="block-label" for="q7-a1" id="q7-a1-label">
+      <input id="q7-a1" type="radio" name="q7-answer" value="CN" onclick="answer(this)">Consultant
+    </label>
+    <label class="block-label" for="q7-a2" id="q7-a2-label">
+      <input id="q7-a2" type="radio" name="q7-answer" value="GP" onclick="answer(this)">GP 
+    </label>
+    <label class="block-label" for="q7-a3" id="q7-a3-label">
+      <input id="q7-a3" type="radio" name="q7-answer" value="NS" onclick="answer(this)">Nurse Specialist
+    </label>
+    <label class="block-label" for="q7-a4" id="q7-a4-label">
+      <input id="q7-a4" type="radio" name="q7-answer" value="GN" onclick="answer(this)">GP Nurse
+    </label>
+  </fieldset>
 
-	<a class="button" href="care-name">Save and continue</a>
+	<p>
+		<br/><br/><br/>
+	</p>
+
+  <a class="button" href="care-last-see">Save and continue</a>
 
 </main>
 
 {{/content}}
 
-{{/layout}}
+{{$bodyEnd}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

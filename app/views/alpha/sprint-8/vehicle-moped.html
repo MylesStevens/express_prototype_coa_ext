@@ -1,49 +1,56 @@
-{{<layout}}
+{{<govuk_template}}
 
-{{$pageTitle}}Moped or trike special controls{{/pageTitle}}
+{{$head}}
+  {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation4}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
 
 {{$content}}
 
-<main id="content" role="main">
+<header class="page-header">
 
-	<div class="grid-row">
+</header>
 
-		<div class="column-two-thirds">
+<main id="page-container" role="main">
+	{{>includes/phase_banner}}
 
-			<div class="form-group">
+	<div class="form-group">
 
-				<h1 class="heading-medium">As a result of your medical condition, which special controls have been fitted to your moped or trike?</h1>
-				<span class="form-hint">Select all options that are relevant to you</span>
+		<h1 class="form-title heading-large">
+			As a result of your medical condition, which special controls have been fitted to your moped or trike?
+		</h1>
+		
+		<span class="form-hint">Select all options that are relevant to you</span>
 
-				<fieldset>
-					<label class="block-label" for="checkbox-1">
-						<input id="checkbox-1" type="checkbox" name="checkbox-group" value="1">
-						Adjusted foot operated brake
-					</label>
-					<label class="block-label" for="checkbox-2">
-						<input id="checkbox-2" type="checkbox" name="checkbox-group" value="2">
-						Adjusted hand operated brake
-					</label>
-					<label class="block-label" for="checkbox-3">
-						<input id="checkbox-3" type="checkbox" name="checkbox-group" value="3">
-						Adjusted manual transmission and clutch
-					</label>
-					<label class="block-label" for="checkbox-4">
-						<input id="checkbox-4" type="checkbox" name="checkbox-group" value="4">
-						Only with sidecar
-					</label>
-					<label class="block-label" for="checkbox-5">
-						<input id="checkbox-5" type="checkbox" name="checkbox-group" value="5">
-						Single operated brake
-					</label>
-				</fieldset>
+		<fieldset>
+			<label class="block-label" for="checkbox-1">
+				<input id="checkbox-1" type="checkbox" name="checkbox-group" value="1">Adjusted foot operated brake
+			</label>
+			<label class="block-label" for="checkbox-2">
+				<input id="checkbox-2" type="checkbox" name="checkbox-group" value="2">Adjusted hand operated brake
+			</label>
+			<label class="block-label" for="checkbox-3">
+				<input id="checkbox-3" type="checkbox" name="checkbox-group" value="3">Adjusted manual transmission and clutch
+			</label>
+			<label class="block-label" for="checkbox-4">
+				<input id="checkbox-4" type="checkbox" name="checkbox-group" value="4">Only with sidecar
+			</label>
+			<label class="block-label" for="checkbox-5">
+				<input id="checkbox-5" type="checkbox" name="checkbox-group" value="5">Single operated brake
+			</label>
+		</fieldset>
 
-			</div>
-		</div>
-		<div class="column-third">
-    		&nbsp;
-    	</div>
     </div>
+
+	<p>
+		<br/><br/><br/>
+	</p>
 
 	<a class="button" href="index">Save and continue</a>
 
@@ -51,4 +58,7 @@
 
 {{/content}}
 
-{{/layout}}
+{{$bodyEnd}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

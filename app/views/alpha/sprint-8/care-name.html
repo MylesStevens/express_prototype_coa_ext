@@ -1,24 +1,40 @@
-{{<layout}}
+{{<govuk_template}}
 
-{{$pageTitle}}Consultant’s name?{{/pageTitle}}
+{{$head}}
+  {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation4}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
 
 {{$content}}
 
-<main id="content" role="main">
+<header class="page-header">
 
-	<div class="form-group">
+</header>
 
-		<label class="form-label" for="care-name">
-			<h1 class="heading-medium">What is your Consultant or GP’s name?</h1>
-		</label>
-		<input class="form-control" id="care-name" type="text">
+<main id="page-container" role="main">
+  {{>includes/phase_banner}}
 
-	</div>
+	<h1 class="heading-large">What is your Consultant or GP’s name?</h1>
 
-	<a class="button" href="/care-location">Save and continue</a>
+	<input class="form-control" id="care-name" type="text">
+
+	<p>
+		<br/>
+	</p>
+
+	<a class="button" href="care-location">Save and continue</a>
 
 </main>
 
 {{/content}}
 
-{{/layout}}
+{{$bodyEnd}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

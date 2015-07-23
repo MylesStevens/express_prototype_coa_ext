@@ -1,41 +1,50 @@
-{{<layout}}
+{{<govuk_template}}
 
-{{$pageTitle}}Which vehicles{{/pageTitle}}
+{{$head}}
+  {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation4}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
 
 {{$content}}
 
-<main id="content" role="main">
+<header class="page-header">
 
-	<div class="grid-row">
+</header>
 
-		<div class="column-two-thirds">
+<main id="page-container" role="main">
+	{{>includes/phase_banner}}
 
-			<div class="form-group">
+	<div class="form-group">
 
-				<h1 class="heading-medium">Which of your vehicles have been modified as a result of your medical condition?</h1>
-				<span class="form-hint">Select all options that are relevant to you</span>
+		<h1 class="form-title heading-large">
+			Which of your vehicles have been modified as a result of your medical condition?
+		</h1>
+		
+		<span class="form-hint">Select all options that are relevant to you</span>
 
-				<fieldset>
-					<label class="block-label" for="checkbox-1">
-						<input id="checkbox-1" type="checkbox" name="checkbox-group" value="car">
-						Car
-					</label>
-					<label class="block-label" for="checkbox-2">
-						<input id="checkbox-2" type="checkbox" name="checkbox-group" value="motorcycle">
-						Motorcycle
-					</label>
-					<label class="block-label" for="checkbox-3">
-						<input id="checkbox-3" type="checkbox" name="checkbox-group" value="moped">
-						Moped or trike
-					</label>
-				</fieldset>
+		<fieldset>
+			<label class="block-label" for="checkbox-1">
+				<input id="checkbox-1" type="checkbox" name="checkbox-group" value="car">Car
+			</label>
+			<label class="block-label" for="checkbox-2">
+				<input id="checkbox-2" type="checkbox" name="checkbox-group" value="motorcycle">Motorcycle
+			</label>
+			<label class="block-label" for="checkbox-3">
+				<input id="checkbox-3" type="checkbox" name="checkbox-group" value="moped">Moped or trike
+			</label>
+		</fieldset>
 
-			</div>
-		</div>
-		<div class="column-third">
-    		&nbsp;
-    	</div>
-    </div>
+	</div>
+
+	<p>
+		<br/><br/><br/>
+	</p>
 
 	<a class="button" href="vehicle-car">Save and continue</a>
 
@@ -43,4 +52,7 @@
 
 {{/content}}
 
-{{/layout}}
+{{$bodyEnd}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

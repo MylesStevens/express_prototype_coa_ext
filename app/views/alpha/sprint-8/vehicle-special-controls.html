@@ -1,18 +1,28 @@
-{{<layout}}
+{{<govuk_template}}
 
-{{$pageTitle}}Special controls{{/pageTitle}}
+{{$head}}
+  {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation4}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
 
 {{$content}}
 
-<main id="content" role="main">
+<header class="page-header">
 
-	<div class="grid-row">
+</header>
 
-		<div class="column-two-thirds">
+<main id="page-container" role="main">
+	{{>includes/phase_banner}}
 
-			<div class="form-group">
+	<div class="form-group">
 
-				<h1 class="heading-medium">As a result of your medical condition, do you need to drive a vehicle with special controls?</h1>
+				<h1 class="form-title heading-large">As a result of your medical condition, do you need to drive a vehicle with special controls?</h1>
 
 				<fieldset class="inline">
 					<label class="block-label" for="radio-inline-1">
@@ -25,12 +35,11 @@
 					</label>
 				</fieldset>
 
-			</div>
-		</div>
-		<div class="column-third">
-    		&nbsp;
-    	</div>
     </div>
+
+	<p>
+		<br/><br/><br/>
+	</p>
 
 	<a class="button" href="which-vehicles">Save and continue</a>
 
@@ -38,4 +47,7 @@
 
 {{/content}}
 
-{{/layout}}
+{{$bodyEnd}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

@@ -6,42 +6,36 @@
 {{/head}}
 
 {{$propositionHeader}}
-  {{>includes/propositional_navigation3}}
+  {{>includes/propositional_navigation4}}
 {{/propositionHeader}}
 
 {{$headerClass}}with-proposition{{/headerClass}}
 
 {{$content}}
 
-<header>
+<header class="page-header">
 
 </header>
 
 <main id="page-container" role="main">
+  {{>includes/phase_banner}}
 
-  <form id="medical-form" class="form inline">     
-  
-    <div class="grid-row" id="q14">
-      <div class="column-two-thirds">
-
-        <h1 class="form-title heading-medium">
+        <h1 class="form-title heading-large">
           Have you had laser treatment or injections into both of your eyes?
         </h1>
      
-        <div class="form-group">
+        <fieldset class="inline" id="q14">
           <label class="block-label" for="q14-a1" id="q14-a1-label">
             <input id="q14-a1" type="radio" name="q14-answer" value="Y" onclick="answer(this)">Yes
           </label>
           <label class="block-label" for="q14-a2" id="q14-a2-label">
             <input id="q14-a2" type="radio" name="q14-answer" value="N" onclick="answer(this)">No
           </label>
+        </fieldset>
 
-          <div class="grid-row"> <br> </div>
-          <div class="grid-row"> <br> </div>
-        </div>
-
-      </div>
-    </div>
+    <p>
+      <br/><br/><br/>
+    </p>
 
     <div class="form-group">
       <input id="continue" type="button" class="button" value="Continue" onclick="decision(this,'{{flow}}','{{conditions}}')"/> 
@@ -50,9 +44,7 @@
     <ul>
       <li><a href="javascript:history.go(-1);">Back</a></li>
     </ul>
-    
-  </form>  
-    
+        
 <script>
 
   var data = {
@@ -60,18 +52,14 @@
     validate: "true",
     questions: [
       {id: "q14", type: "radio", active: "true", answers: [
-          {id: "q14-a1", value: "", show: [], hide: [], decision: "{{flow}}-{{path}}-1"},
-          {id: "q14-a2", value: "", show: [], hide: [], decision: "{{flow}}-{{path}}-2"}
+          {id: "q14-a1", value: "", show: [], hide: [], decision: "1"},
+          {id: "q14-a2", value: "", show: [], hide: [], decision: "2"}
         ]
       }
     ],
     decisions: [
-      {id: "diabetes-direct-1", description: "Q14: (Direct Path) Yes", message: "", redirect: "eyesight-dystrophies?flow={{flow}}&conditions={{conditions}}&code=specg1"},
-      {id: "diabetes-direct-2", description: "Q14: (Direct Path) No", message: "", redirect: "eyesight-dystrophies?flow={{flow}}&conditions={{conditions}}"},
-      {id: "diabetes-doctor-1", description: "Q14: (Doctor Path) Yes", message: "", redirect: "eyesight-dystrophies?flow={{flow}}&conditions={{conditions}}&code=specg1,diab3"},
-      {id: "diabetes-doctor-2", description: "Q14: (Doctor Path) No", message: "", redirect: "eyesight-dystrophies?flow={{flow}}&conditions={{conditions}}&code=diab3"},
-      {id: "glaucoma-direct-1", description: "Q14: (Doctor Path) Yes", message: "", redirect: "medical-consent?flow={{flow}}&conditions={{conditions}}&path={{path}}"},
-      {id: "glaucoma-direct-2", description: "Q14: (Doctor Path) No", message: "", redirect: "another-condition?flow={{flow}}&conditions={{conditions}}&path={{path}}"}
+      {id: "1", description: "Q14: (Direct Path) Yes", message: "", redirect: "eyesight-dystrophies"},
+      {id: "2", description: "Q14: (Doctor Path) No", message: "", redirect: "eyesight-dystrophies"}
     ]
   };
 
