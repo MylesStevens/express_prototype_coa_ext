@@ -1,0 +1,62 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation4}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+
+<header class="page-header">
+
+</header>
+
+<main id="page-container" role="main">
+  {{>includes/phase_banner}}
+
+  <div class="form-group">
+    
+    <h1 class="form-title heading-large">
+      Confirm your consultants details
+    </h1>
+
+      <label class="form-label" for="q13-answer">
+        Consultant's Address
+        <span class="form-hint">Amend address if needed and Confirm</span>
+      </label>
+      <div class="validation-wrapper">
+        <p><input id="q13-a1" name="q13-a1" type="text" class="form-control" value="Dr Gregory House" onkeyup="answer(this)"></p>
+        <p><input id="q13-a2" name="q13-a2" type="text" class="form-control" value="Diabetes Clinic"></p>
+        <p><input id="q13-a3" name="q13-a3" type="text" class="form-control" value="Morriston Hospital"></p>
+        <p><input id="q13-a4" name="q13-a4" type="text" class="form-control" value="Heol Maes Eglwys" ></p>
+        <p><input id="q13-a5" name="q13-a5" type="text" class="form-control" value="SWANSEA"></p>
+        <p><input id="q13-a6" name="q13-a6" type="text" class="form-control" value="SA6 6NL"></p>
+      </div>
+    </div>
+
+  <p>
+    <br/><br/><br/>
+  </p>
+  
+    <a class="button" href="vehicle-automatic">Save and continue</a>
+
+    <ul>
+      <li><a href="javascript:history.go(-1);">Back</a></li>
+    </ul>
+
+  </form>
+
+</main>
+
+{{/content}}
+
+{{$bodyEnd}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

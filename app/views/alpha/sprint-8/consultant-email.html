@@ -1,0 +1,57 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation4}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+
+<header class="page-header">
+
+</header>
+
+<main id="page-container" role="main">
+  {{>includes/phase_banner}}
+
+    <div class="form-group">
+
+      <h1 class="form-title heading-large">
+        Consultant's Email Address
+      </h1>
+   
+      <label class="form-label" for="postcode" id="q8-a1-label">
+        
+        <span class="form-hint">
+          For example, doc@hospital.com
+        </span>
+        <input id="q8-a1" name="q8-a1" type="text" maxlength="30" class="form-control">
+        <br/>
+      </label>
+
+    </div>
+
+  <p>
+    <br/><br/><br/>
+  </p>
+  
+    <a class="button" href="consultant-address">Save and continue</a>
+
+    <ul>
+      <li><a href="javascript:history.go(-1);">Back</a></li>
+    </ul>
+
+</main>
+
+{{/content}}
+
+{{$bodyEnd}}
+{{/bodyEnd}}
+
+{{/govuk_template}}
