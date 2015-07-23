@@ -1,25 +1,42 @@
-{{<layout}}
+{{<govuk_template}}
 
-{{$pageTitle}}Your title{{/pageTitle}}
+{{$head}}
+  {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation4}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
 
 {{$content}}
 
-<main id="content" role="main">
+<header class="page-header">
+
+</header>
+
+<main id="page-container" role="main">
+	{{>includes/phase_banner}}
 
 	<div class="form-group">
 
-		<label class="form-label" for="condition">
-			<h1 class="heading-medium">What is your title?</h1>
-		</label>
+		<h1 class="form-title heading-large">What is your title?</h1>
+		
 		<input class="form-control" id="condition" type="text">
 		<span class="form-hint">Example: Mr, Mrs, Miss, Ms</span>
 
 	</div>
 
-	<a class="button" href="/your-full-name">Save and continue</a>
+	<a class="button" href="your-full-name">Save and continue</a>
 
 </main>
 
+
 {{/content}}
 
-{{/layout}}
+{{$bodyEnd}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

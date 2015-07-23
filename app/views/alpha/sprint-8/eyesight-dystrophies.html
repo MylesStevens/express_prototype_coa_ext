@@ -7,7 +7,7 @@
 {{/head}}
 
 {{$propositionHeader}}
-  {{>includes/propositional_navigation3}}
+  {{>includes/propositional_navigation4}}
 {{/propositionHeader}}
 
 {{$headerClass}}with-proposition{{/headerClass}}
@@ -19,11 +19,12 @@
 </header>
 
 <main id="page-container" role="main">
+  {{>includes/phase_banner}}
     
-  <div class="grid-row" id="q3">
+  <div class="form-group">
 
-    <div class="column-two-thirds">
-      <h4 class="heading-medium">Do you have cataracts or any corneal dystrophies (eg Fuchs) in both of your eyes?</h4> 
+      <h4 class="form-title heading-large">Do you have cataracts or any corneal dystrophies (eg Fuchs) in one or both of your eyes?</h4> 
+
       <div class="form-group">
         <label class="block-label" for="q3-a1" id="q3-a1-label">
           <input id="q3-a1" type="radio" name="q3-answer" value="Y" onclick="answer(this)">Yes
@@ -32,70 +33,22 @@
           <input id="q3-a2" type="radio" name="q3-answer" value="N" onclick="answer(this)">No
         </label>
       </div>
-    </div>
-  
-    <div class="column-third">
-      &nbsp;      
-    </div>
-  
+    
   </div>
 
-  <div class="grid-row" id="q4">
-
-    <div class="column-two-thirds">
-      <h4 class="heading-medium">Do you have cataracts or any corneal dystrophies (eg Fuchs) in your remaining eye?</h4> 
-      <div class="form-group">
-        <label class="block-label" for="q4-a1" id="q4-a1-label">
-          <input id="q4-a1" type="radio" name="q4-answer" value="Y" onclick="answer(this)">Yes
-        </label>
-        <label class="block-label" for="q4-a2" id="q4-a2-label">
-          <input id="q4-a2" type="radio" name="q4-answer" value="N" onclick="answer(this)">No
-        </label>
-      </div>
-    </div>
-  
-    <div class="column-third">
-      &nbsp;      
-    </div>
-  
-  </div>
-
-  <div class="form-group">
-    <input id="continue" type="button" class="button" value="Continue" onclick="decision(this,'{{flow}}','{{conditions}}')" disabled="true"/> 
-  </div>
+  <a class="button" href="vehicle-car">Save and continue</a>
 
   <ul>
     <li><a href="javascript:history.go(-1);">Back</a></li>
   </ul>
 
-// <script>
+<script>
 
-//   var data = {
-//     state: "",
-//     validate: "true",
-//     questions: [
-//       {id: "q3", type: "radio", active: "false", answers: [
-//           {id: "q3-a1", value: "", show: [], hide: [], decision: "1"},
-//           {id: "q3-a2", value: "", show: [], hide: [], decision: "2"}
-//         ]
-//       },
-//       {id: "q4", type: "radio", active: "false", answers: [
-//           {id: "q4-a1", value: "", show: [], hide: [], decision: "1"},
-//           {id: "q4-a2", value: "", show: [], hide: [], decision: "2"}
-//         ]
-//       }
-//     ],
-//     decisions: [
-//       {id: "1", description: "Yes", message: "", redirect: "eyesight-treatment?flow={{flow}}&conditions={{conditions}}"},
-//       {id: "2", description: "No", message: "", redirect: "eyesight-treatment?flow={{flow}}&conditions={{conditions}}"}
-//     ]
-//   };
+QueryString.{{}}
 
-//   initialise(data);
+</script>
 
-// </script>
-
- </main>
+</main>
 
 {{/content}}
 
