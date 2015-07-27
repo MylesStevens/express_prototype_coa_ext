@@ -42,6 +42,13 @@ module.exports = {
     });
 
     /*-----------------------------------------------------*/
+    /* ALPHA PROTOTYPE - YOU CANT REMOVE/MODIFY THIS AREA! */
+    /*-----------------------------------------------------*/
+    app.get('/alpha/landing', function (req, res) {
+        res.render('alpha/landing', {'assetPath' : assetPath, 'verify' : req.query.verify, 'auth' : req.query.auth})
+    });
+
+    /*-----------------------------------------------------*/
     /* PROTOTYPE 1 - DO NOT REMOVE/MODIFY THIS AREA!       */
     /*-----------------------------------------------------*/
     app.get('/demos/'+p1+'/landing', function (req, res) {

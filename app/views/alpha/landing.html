@@ -1,0 +1,118 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation4}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+
+
+<header class="page-header">
+<script>
+    function start() {
+      var verify = '{{verify}}';
+      var auth = '{{auth}}';
+
+      var target = 'start-page';
+      if((verify.length > 0) && (auth.length > 0)) {
+        target = verify+'?auth='+auth+target;
+      }
+      window.location.href = target;
+    }
+</script>
+
+</header>
+
+<main id="page-container" role="main">
+  {{>includes/phase_banner}}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-xlarge">Tell the <abbr title="Driver and Vehicle Licensing Agency">DVLA</abbr> about your medical condition</h1>
+      <p class="lede">Use this service to tell the <abbr title="Driver and Vehicle Licensing Agency">DVLA</abbr> about any <a href="https://www.gov.uk/health-conditions-and-driving">medical conditions or disabilities</a> that may effect your ability to drive.</p>
+
+      <div class="panel-indent">
+        <div class="help-notice">
+          <h2 class="heading-medium">Don’t worry</h2>
+        </div>
+          <p>90% of drivers are allowed to retain their current licence or are issued a short period licence subject to medical review on renewal.</p>
+      </div>
+
+      <div class="need">
+        <h2 class="heading-medium">What you’ll need</h2>
+        <img src="/public/images/icons/icon-driving-licence.png" height="72" width="72"> 
+        <img src="/public/images/icons/icon-gp.png" height="72" width="72">
+        <ul class="list-bullet">
+          <li>your driving licence</li>
+          <li>your GP’s contact details</li>
+        </ul>
+      </div>
+
+  <a href="javascript:start();" class="button button-get-started" role="button">Start now</a>
+
+  <section class="more">
+    <div class="js-tabs nav-tabs">
+        <ul>
+            <li class="active"><a href="#surrender-your-licence">Surrendering your licence</a></li>
+
+            <li><a href="#other-ways-to-apply">Other ways to apply</a></li>
+        </ul>
+    </div>
+
+    <div class="js-tab-content tab-content">
+        <div class="js-tab-pane tab-pane" id="surrender-your-licence">
+
+          <p>There’s no legal age at which you must stop driving. You can decide when to stop, but medical conditions can affect your driving and might mean you have to give up your driving licence until you can meet the medical standards of fitness to drive again.</p>
+          
+          <p>When you decide to stop driving or are advised by your doctor to stop you’ll need to tell DVLA and send them your licence.</p>
+
+          <p>Learn more about <a href="https://www.gov.uk/giving-up-your-driving-licence">surrendering your licence</a>.</p>
+
+        </div>
+
+        <div class="js-tab-pane tab-pane" id="other-ways-to-apply">
+
+          <h3 class="heading-medium">By post</h3>
+
+          <p>Please provide the following:</p>
+
+          <ul class="list-bullet text">
+            <li>your full name and address</li>
+            <li>your driving licence number (or your date of birth if you do not know your driver number)</li>
+            <li>details about your medical condition</li>
+          </ul>
+
+          <h4 class="heading-medium">Send to</h4>
+          
+          <p>Drivers Medical Group<br>
+            DVLA<br>
+            Swansea<br>
+            SA99 1TU</p>
+
+          <h4 class="heading-small">It’s a criminal offence to obtain someone else’s personal information without their permission.</h4>
+
+        </div>
+    </div>
+
+</section>
+
+</div>
+
+  </div>
+
+</main>
+
+{{/content}}
+
+{{$bodyEnd}}
+{{/bodyEnd}}
+
+{{/govuk_template}}
