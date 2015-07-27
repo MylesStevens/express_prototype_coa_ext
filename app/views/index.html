@@ -1,40 +1,77 @@
-{{<layout}}
+{{<govuk_template}}
 
-{{$pageTitle}}
-	GOV.UK Prototyping Kit
-{{/pageTitle}}
+{{$head}}
+  {{>includes/elements_head}}
+  {{>includes/elements_scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation4}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
 
 {{$content}}
 
-<main id="content" role="main">
+<header class="page-header">
 
-	<header class="page-header">
-		<h1>DVLA Drivers - Fitness 2 Drive</h1>
-	</header>
+</header>
+
+<main id="page-container" role="main">
+  {{>includes/phase_banner}}
+
+	<h1 class="form-title heading-xlarge">DVLA Drivers - Fitness 2 Drive</h1>
 
 	<div id="content">
 
 		<div class="inner-block">
 
-			<h2 class="heading-large">Sprint 8: Single Questions</h2>
-			<a href="/alpha/sprint-8/landing?verify=/verify/verify-2&auth=/alpha/sprint-7/">Verify ON</a> &middot;
-			<a href="/alpha/sprint-8/landing?verify=&auth=">Verify OFF</a><br/>
+			<h2 class="heading-large">Prototypes</h2>
 
-			<h2 class="heading-large">Sprint 7: Visual Prototype</h2>
-			<a href="/alpha/sprint-7/landing?verify=/verify/verify-2&auth=/alpha/sprint-7/">Verify ON</a> &middot;
-			<a href="/alpha/sprint-7/landing?verify=&auth=">Verify OFF</a><br/>
+			<h2 class="heading-medium">Single Questions</h2>
+					<a href="/demos/p3/landing?verify=/verify/verify-2&auth=/demos/p3/">Verify ON</a> &middot;
+					<a href="/demos/p3/landing?verify=&auth=">Verify OFF</a><br/>
 
-			<h2 class="heading-large">Sprint 6: GDS Prototype</h2>
-			<a href="/alpha/sprint-6/landing?verify=/verify/verify-2&auth=/alpha/sprint-6/">Verify ON</a> &middot;
-			<a href="/alpha/sprint-6/landing?verify=&auth=">Verify OFF</a><br/>
-
-			<h2 class="heading-medium">Sprint 5: Added Glaucoma</h2>
-			<h2 class="heading-medium">Sprint 4: Added Diabetes</h2>
-			<h2 class="heading-medium">Sprint 3: Added Flows</h2>
+			<!--
+			<div class="griw-row">
+				<div class="column-quarter" style="text-align: center;">
+					Alpha Prototype
+				</div>
+				<div class="column-quarter" style="text-align: center;">
+					Single Questions
+				</div>
+				<div class="column-quarter" style="text-align: center;">
+					Visual Prototype
+				</div>
+				<div class="column-quarter" style="text-align: center;">
+					Initial Prototype
+				</div>
+			</div>
+			<div class="griw-row">
+				<div class="column-quarter" style="text-align: center;">
+					<a href="/alpha/landing?verify=/verify/verify-2&auth=/alpha/">Verify ON</a> &middot;
+					<a href="/alpha/landing?verify=&auth=">Verify OFF</a><br/>
+				</div>
+				<div class="column-quarter" style="text-align: center;">
+					<a href="/demos/p3/landing?verify=/verify/verify-2&auth=/demos/p3/">Verify ON</a> &middot;
+					<a href="/demos/p3/landing?verify=&auth=">Verify OFF</a><br/>
+				</div>
+				<div class="column-quarter" style="text-align: center;">
+					<a href="/demos/p2/landing?verify=/verify/verify-2&auth=/demos/p2/">Verify ON</a> &middot;
+					<a href="/demos/p2/landing?verify=&auth=">Verify OFF</a><br/>
+				</div>
+				<div class="column-quarter" style="text-align: center;">
+					<a href="/demos/p1/landing?verify=/verify/verify-2&auth=/demos/p1/">Verify ON</a> &middot;
+					<a href="/demos/p1/landing?verify=&auth=">Verify OFF</a><br/>
+				</div>
+			</div>
+		-->
 			
+			<br/><br/>
+
 			<h2 class="heading-large">Resources</h2>
 			<div>
-			<a href="https://github.com/alphagov/govuk_prototype_kit/wiki">GOV.UK kit documentation</a><br/>
+			<a href="https://github.com/demosgov/govuk_prototype_kit/wiki">GOV.UK kit documentation</a><br/>
 			<a href="http://govuk-elements.herokuapp.com/snippets/">Guide to GOV.UK elements HTML</a><br/>
 			<a href="https://www.gov.uk/service-manual">Service design manual</a><br/>
 			<a href="https://www.gov.uk/design-principles">Government Digital Service Design Principles</a><br/>
@@ -48,4 +85,7 @@
 
 {{/content}}
 
-{{/layout}}
+{{$bodyEnd}}
+{{/bodyEnd}}
+
+{{/govuk_template}}
